@@ -1,373 +1,107 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide',
- 	once: false
- });
-
-jQuery(document).ready(function($) {
-
-	"use strict";
-
-	
-	var siteMenuClone = function() {
-
-		$('.js-clone-nav').each(function() {
-			var $this = $(this);
-			$this.clone().attr('class', 'site-nav-wrap').appendTo('.site-mobile-menu-body');
-		});
-
-
-		setTimeout(function() {
-			
-			var counter = 0;
-      $('.site-mobile-menu .has-children').each(function(){
-        var $this = $(this);
-        
-        $this.prepend('<span class="arrow-collapse collapsed">');
-
-        $this.find('.arrow-collapse').attr({
-          'data-toggle' : 'collapse',
-          'data-target' : '#collapseItem' + counter,
-        });
-
-        $this.find('> ul').attr({
-          'class' : 'collapse',
-          'id' : 'collapseItem' + counter,
-        });
-
-        counter++;
-
-      });
-
-    }, 1000);
-
-		$('body').on('click', '.arrow-collapse', function(e) {
-      var $this = $(this);
-      if ( $this.closest('li').find('.collapse').hasClass('show') ) {
-        $this.removeClass('active');
-      } else {
-        $this.addClass('active');
-      }
-      e.preventDefault();  
-      
-    });
-
-		$(window).resize(function() {
-			var $this = $(this),
-				w = $this.width();
-
-			if ( w > 768 ) {
-				if ( $('body').hasClass('offcanvas-menu') ) {
-					$('body').removeClass('offcanvas-menu');
-				}
-			}
-		})
-
-		$('body').on('click', '.js-menu-toggle', function(e) {
-			var $this = $(this);
-			e.preventDefault();
-
-			if ( $('body').hasClass('offcanvas-menu') ) {
-				$('body').removeClass('offcanvas-menu');
-				$this.removeClass('active');
-			} else {
-				$('body').addClass('offcanvas-menu');
-				$this.addClass('active');
-			}
-		}) 
-
-		// click outisde offcanvas
-		$(document).mouseup(function(e) {
-	    var container = $(".site-mobile-menu");
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
-	      if ( $('body').hasClass('offcanvas-menu') ) {
-					$('body').removeClass('offcanvas-menu');
-				}
-	    }
-		});
-	}; 
-	siteMenuClone();
-
-
-	var sitePlusMinus = function() {
-		$('.js-btn-minus').on('click', function(e){
-			e.preventDefault();
-			if ( $(this).closest('.input-group').find('.form-control').val() != 0  ) {
-				$(this).closest('.input-group').find('.form-control').val(parseInt($(this).closest('.input-group').find('.form-control').val()) - 1);
-			} else {
-				$(this).closest('.input-group').find('.form-control').val(parseInt(0));
-			}
-		});
-		$('.js-btn-plus').on('click', function(e){
-			e.preventDefault();
-			$(this).closest('.input-group').find('.form-control').val(parseInt($(this).closest('.input-group').find('.form-control').val()) + 1);
-		});
-	};
-	// sitePlusMinus();
-
-
-	var siteSliderRange = function() {
-    $( "#slider-range" ).slider({
-      range: true,
-      min: 0,
-      max: 500,
-      values: [ 75, 300 ],
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-      }
-    });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-	};
-	// siteSliderRange();
-
-
-	
-
-	var siteCarousel = function () {
-		if ( $('.nonloop-block-13').length > 0 ) {
-			$('.nonloop-block-13').owlCarousel({
-		    center: false,
-		    items: 1,
-		    loop: true,
-				stagePadding: 0,
-		    margin: 20,
-		    smartSpeed: 1000,
-		    autoplay: true,
-		    nav: true,
-		    dots: true,
-		    responsive:{
-	        600:{
-	        	margin: 20,
-	        	nav: true,
-	          items: 1
-	        },
-	        1000:{
-	        	margin: 20,
-	        	stagePadding: 0,
-	        	nav: true,
-	          items: 1
-	        }
-		    }
-			});
-			$('.custom-next').click(function(e) {
-				e.preventDefault();
-				$('.nonloop-block-13').trigger('next.owl.carousel');
-			})
-			$('.custom-prev').click(function(e) {
-				e.preventDefault();
-				$('.nonloop-block-13').trigger('prev.owl.carousel');
-			})
-
-			
-		}
-
-		$('.slide-one-item').owlCarousel({
-	    center: false,
-	    items: 1,
-	    loop: true,
-			stagePadding: 0,
-	    margin: 0,
-	    smartSpeed: 1500,
-	    autoplay: true,
-	    pauseOnHover: false,
-	    dots: true,
-	    nav: true,
-	    navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">']
-	  });
-
-	  if ( $('.owl-all').length > 0 ) {
-			$('.owl-all').owlCarousel({
-		    center: false,
-		    items: 1,
-		    loop: false,
-				stagePadding: 0,
-		    margin: 0,
-		    autoplay: false,
-		    nav: false,
-		    dots: true,
-		    touchDrag: true,
-  			mouseDrag: true,
-  			smartSpeed: 1000,
-				navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
-		    responsive:{
-	        768:{
-	        	margin: 30,
-	        	nav: false,
-	        	responsiveRefreshRate: 10,
-	          items: 1
-	        },
-	        992:{
-	        	margin: 30,
-	        	stagePadding: 0,
-	        	nav: false,
-	        	responsiveRefreshRate: 10,
-	        	touchDrag: false,
-  					mouseDrag: false,
-	          items: 3
-	        },
-	        1200:{
-	        	margin: 30,
-	        	stagePadding: 0,
-	        	nav: false,
-	        	responsiveRefreshRate: 10,
-	        	touchDrag: false,
-  					mouseDrag: false,
-	          items: 3
-	        }
-		    }
-			});
-		}
-		
-	};
-	siteCarousel();
-
-	
-
-	var siteCountDown = function() {
-
-		$('#date-countdown').countdown('2020/10/10', function(event) {
-		  var $this = $(this).html(event.strftime(''
-		    + '<span class="countdown-block"><span class="label">%w</span> weeks </span>'
-		    + '<span class="countdown-block"><span class="label">%d</span> days </span>'
-		    + '<span class="countdown-block"><span class="label">%H</span> hr </span>'
-		    + '<span class="countdown-block"><span class="label">%M</span> min </span>'
-		    + '<span class="countdown-block"><span class="label">%S</span> sec</span>'));
-		});
-				
-	};
-	// siteCountDown();
-
-	var siteDatePicker = function() {
-
-		if ( $('.datepicker').length > 0 ) {
-			$('.datepicker').datepicker();
-		}
-
-	};
-	siteDatePicker();
-
-	var siteSticky = function() {
-		$(".js-sticky-header").sticky({topSpacing:0});
-	};
-	siteSticky();
-
-	// navigation
-  var OnePageNavigation = function() {
-    var navToggler = $('.site-menu-toggle');
-
-   	$("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a[href^='#']", function(e) {
-      e.preventDefault();
-
-      var hash = this.hash;
-
-      $('html, body').animate({
-        'scrollTop': $(hash).offset().top - 50
-      }, 600, 'easeInOutExpo', function() {
-        // window.location.hash = hash;
-
-      });
-
-    });
-  };
-  OnePageNavigation();
-
-  var siteScroll = function() {
-
-  	
-
-  	$(window).scroll(function() {
-
-  		var st = $(this).scrollTop();
-
-  		if (st > 100) {
-  			$('.js-sticky-header').addClass('shrink');
-  		} else {
-  			$('.js-sticky-header').removeClass('shrink');
-  		}
-
-  	}) 
-
-  };
-  siteScroll();
-
-  // Stellar
-  $(window).stellar({
-  	horizontalScrolling: false,
-    responsive: true,
-  });
-
-
-  var counter = function() {
-		
-		$('#about-section').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-
-				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-				$('.number > span').each(function(){
-					var $this = $(this),
-						num = $this.data('number');
-					$this.animateNumber(
-					  {
-					    number: num,
-					    numberStep: comma_separator_number_step
-					  }, 7000
-					);
-				});
-				
-			}
-
-		} , { offset: '95%' } );
-
-	}
-	counter();
-
-
-
-});
-
-
-// Initialize a flag variable at the start
-var contentChanged = false;
 
 function changeHeroContent() {
-  // Check the flag status and set the content accordingly
-  if (!contentChanged) {
-    // Set new content
-    var newTitle = "Welcome To Our Website";
-    var newHeading = "Cane Toad";
-    var newText = "Discover events for kids and family";
-    var newImageSrc = "/static/images/toad3.jpg";
+  // 设置新的内容
+  var newTitle = "Join Our Community";
+  var newHeading = "Explore Our Events";
+  var newText = "Discover events for kids and family";
+  var newImageSrc = "/static/images/img_1.jpg"; //
 
-    // Update the content
-    $('#hero-title').text(newTitle);
-    $('#hero-heading').text(newHeading);
-    $('#hero-text').text(newText);
-    $('#hero-image').attr('src', newImageSrc);
-
-    // Set the flag to true after content is changed
-    contentChanged = true;
-  } else {
-    // Set original content
-    var originalTitle = "Welcome To Our Website";
-    var originalHeading = "Cane Toad";
-    var originalText = "Amazing Playground for your kids";
-    var originalImageSrc = "/static/images/toad1.jpg";
-
-    // Update the content
-    $('#hero-title').text(originalTitle);
-    $('#hero-heading').text(originalHeading);
-    $('#hero-text').text(originalText);
-    $('#hero-image').attr('src', originalImageSrc);
-
-    // Set the flag to false after content is reverted
-    contentChanged = false;
-  }
+  // 更新内容
+  $('#hero-title').text(newTitle);
+  $('#hero-heading').text(newHeading);
+  $('#hero-text').text(newText);
+  $('#hero-image').attr('src', newImageSrc);
 }
 
 
+const quizData = {
+  "location": [
+    { question: "Cane toads prefer………..,……. areas.", answer: "" }, // 答案需要您根据实际情况填写
+    { question: "Cane toads thrive in …………………….", answer: "" },
+    { question: "Cane toads are the most common in ……………….", answer: "" },
+    { question: "Cane toads are commonly found in habitats such as ……., ……….. and urban areas.", answer: "" },
+    { question: "Cane toads prefer access to water for ………. and reproduction.", answer: "" }
+  ],
+  "behaviour": [
+    { question: "Cane toads are………… animals, they are the most active during the night.", answer: "" },
+    { question: "Cane toads prefer the night time because of …………… temperatures and ………….. moisture levels.", answer: "" },
+    { question: "Male cane toads produce unique ………… to attract the females. These calls on dependent on the cane toad’s …………, ……….. and …………… conditions.", answer: "" },
+    { question: "Cane toad mating generally happens in …………… locations.", answer: "" },
+    { question: "Female cane toads prefer male cane toads with ………. and ……….. calls.", answer: "" },
+    { question: "Female cane toads deposit their ………………. eggs in ………………….", answer: "" },
+    { question: "Cane toads ………… jump long distances.", answer: "" },
+    { question: "Cane toads stay close to the ………………….", answer: "" },
+    { question: "Being active in the night, cane toads are able to reduce their risk of ………… and ……….. conditions.", answer: "" },
+    { question: "Cane toads exhibit ……….. behaviours during mating.", answer: "" }
+  ]
+};
 
 
+
+// location quiz
+document.addEventListener('DOMContentLoaded', function() {
+    // 设置当前问题索引为 0
+    let currentQuestionIndex = 0;
+    const userAnswers = [];
+
+    // 绑定开始测试按钮的点击事件
+    document.querySelector('.start-quiz').addEventListener('click', function() {
+        const username = document.querySelector('.username').value.trim();
+        if (username.length > 0) {
+            document.getElementById('start-section').style.display = 'none';
+            document.querySelector('.quiz-section').style.display = 'block';
+            renderQuestion(quizType, currentQuestionIndex);
+        } else {
+            alert('Please input your name');
+        }
+    });
+
+    // 绑定下一题按钮的点击事件
+    document.querySelector('.next').addEventListener('click', function() {
+        const answerInput = document.querySelector('.answer');
+        userAnswers[currentQuestionIndex] = answerInput.value.trim(); // 存储答案
+        currentQuestionIndex++; // 增加问题索引
+
+        if (currentQuestionIndex < quizData[quizType].length) {
+            renderQuestion(quizType, currentQuestionIndex);
+        } else {
+            showResults(quizType, userAnswers);
+        }
+    });
+});
+
+function renderQuestion(quizType, index) {
+    const quizContainer = document.querySelector('.quiz');
+    const item = quizData[quizType][index];
+    quizContainer.innerHTML = `
+        <div class="quiz-question">
+            <p>${index + 1}. ${item.question}</p>
+            
+            <input type="text" class="answer" data-index="${index}" placeholder="Your Answer">
+            <br>
+        </div>
+    `;
+    // 如果是最后一个问题，更改按钮文本
+    const nextButton = document.querySelector('.next');
+    if (index === quizData[quizType].length - 1) {
+        nextButton.textContent = 'Submit The Answer';
+    } else {
+        nextButton.textContent = 'Next Question';
+    }
+}
+
+function showResults(quizType, userAnswers) {
+    let score = 0;
+    userAnswers.forEach((answer, index) => {
+        if (answer === quizData[quizType][index].answer) {
+            score++;
+        }
+    });
+    // 隐藏问题区域，显示结果
+    document.querySelector('.quiz-section').style.display = 'none';
+    const finalScoreElement = document.querySelector('.final-score');
+    finalScoreElement.style.display = 'block';
+    finalScoreElement.textContent = `Your Score：${score}/${quizData[quizType].length}`;
+}
 
 

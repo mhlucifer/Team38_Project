@@ -1,155 +1,96 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <title>Kiddy &mdash; Website Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <title>ToadInfo — Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- 主要的CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
 
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700|Indie+Flower" rel="stylesheet">
-    
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top site-navbar-target">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ToadInfo<span class="text-primary">.</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="history.html">History</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="Location.html">Location</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="Impact.html">Impact</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="behaviour.html">Behavior</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="Handling.html">Handling</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" href="Handling.html">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="/static/fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="/static/css/aos.css">
+<div class="pt-5">
+   <div id="toadCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#toadCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#toadCarousel" data-slide-to="1"></li>
+  </ul>
 
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="/static/css/style.css">
-
-  </head>
-
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-    
-    <div class="site-wrap" id="home-section">
-
-      <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-      </div>
-
-
-
-      <header class="site-navbar site-navbar-target" role="banner">
-
-        <div class="container mb-3">
-          <div class="d-flex align-items-center">
-            <div class="site-logo mr-auto">
-              <a href="index.html">ToadInfo<span class="text-primary">.</span></a>
-            </div>
-            <div class="site-quick-contact d-none d-lg-flex ml-auto ">
-              <nav class="site-navigation text-left mr-auto d-none d-lg-block" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav mr-auto ">
-                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="about.html" class="nav-link">History</a></li>
-                  <li><a href="packages.html" class="nav-link">Location</a></li>
-                  <li><a href="gallery.html" class="nav-link">Impact</a></li>
-                  <li><a href="pricing.html" class="nav-link">Behavior</a></li>
-                  <li><a href="pricing.html" class="nav-link">Handing</a></li>
-                  <li><a href="contact.html" class="nav-link">FAQ</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </header>
-<!--------------------------------------------------------------------->
- <div class="ftco-blocks-cover-1">
-  <!-- Carousel start -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-
-      <!-- First item (existing content) -->
-      <div class="carousel-item active">
-        <div class="site-section-cover overlay">
-          <div class="container">
-            <div class="row align-items-center ">
-              <div class="col-md-5 mt-5 pt-5">
-                <span id="hero-title" class="text-cursive h5 text-red">Welcome To Our Website</span>
-                <h1 id="hero-heading" class="mb-3 font-weight-bold text-teal">Cane Toad</h1>
-                <p id="hero-text">Amazing Playground for your kids</p>
-                <p class="mt-5"><a href="#" class="btn btn-primary py-4 btn-custom-1">Learn More</a></p>
-              </div>
-              <div class="col-md-6 ml-auto align-self-end">
-                <img id="hero-image" src="/static/images/toad1.jpg" alt="Image" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Second item (new content) -->
-      <div class="carousel-item">
-        <div class="site-section-cover overlay">
-          <div class="container">
-            <div class="row align-items-center ">
-              <div class="col-md-5 mt-5 pt-5">
-                <span id="hero-title1" class="text-cursive h5 text-red">Discover New Adventures</span>
-                <h1 id="hero-heading1" class="mb-3 font-weight-bold text-teal">Adventure Awaits</h1>
-                <p id="hero-text1">Explore the wild outdoors with your kids</p>
-                <p class="mt-5"><a href="#" class="btn btn-primary py-4 btn-custom-1">Discover More</a></p>
-              </div>
-              <div class="col-md-6 ml-auto align-self-end">
-                <img id="hero-image1" src="/static/images/toad2.jpg" alt="Image" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/images/toad1.jpg" class="d-block w-100" alt="Toad Image">
+      <div class="carousel-caption">
+        <h1 class="text-red">Cane Toad</h1>
+        <p class="lead">Amazing Playground for your kids</p>
+        <a href="#" class="btn btn-primary">Learn More</a>
       </div>
     </div>
-
-    <!-- Carousel controls -->
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+    <div class="carousel-item">
+      <!-- Duplicate the content of the first item for now -->
+      <img src="/static/images/toad2.jpg" class="d-block w-100" alt="Toad Image">
+      <div class="carousel-caption">
+        <h1 class="text-red">Cane Toad</h1>
+        <p class="lead">Amazing Playground for your kids</p>
+        <a href="#" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
   </div>
-  <!-- Carousel end -->
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#toadCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#toadCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
 </div>
 
-<!--------------------------->
 
 
-    <!-- add the row for image , some of text -->
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-5 mb-md-0">
-            <img src="/static/images/toad2.jpg" alt="Image" class="img-fluid" style="width: 800px; height: 400px;">
-          </div>
-          <div class="col-md-5 ml-auto pl-md-5">
-            <span class="text-cursive h5 text-red">About Us</span>
-            <h3 class="text-black">Bring Fun Life To Your Kids</h3>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et harum, magni sequi nostrum maxime enim.</span><span>Magnam id atque dicta deleniti, ipsam ipsum distinctio. Facilis praesentium voluptatem accusamus, earum veritatis, laudantium.</span></p>
 
-            <p class="mt-5"><a href="#" class="btn btn-warning py-4 btn-custom-1">More About Us</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-
-
-    
-
-    <footer class="site-footer">
+<!-- about us -->
+<footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
@@ -175,36 +116,23 @@
                   <li><a href="pricing.html">Handing</a></li>
                   <li><a href="contact.html" >FAQ</a></li>
                 </ul>
-                
+
               </div>
 
-              
-              
+
+
             </div>
           </div>
         </div>
       </div>
     </footer>
 
-    </div>
 
-    <script src="/static/js/jquery-3.3.1.min.js"></script>
-    <script src="/static/js/jquery-migrate-3.0.0.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/owl.carousel.min.js"></script>
-    <script src="/static/js/jquery.sticky.js"></script>
-    <script src="/static/js/jquery.waypoints.min.js"></script>
-    <script src="/static/js/jquery.animateNumber.min.js"></script>
-    <script src="/static/js/jquery.fancybox.min.js"></script>
-    <script src="/static/js/jquery.stellar.min.js"></script>
-    <script src="/static/js/jquery.easing.1.3.js"></script>
-    <script src="/static/js/bootstrap-datepicker.min.js"></script>
-    <script src="/static/js/aos.js"></script>
-
-    <script src="/static/js/main.js"></script>
-
-  </body>
+<!-- Bootstrap 和 主要的JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
 
 </html>
-

@@ -15,7 +15,7 @@ def handling_page():
 
 @app.route('/location')
 def location_page():
-    return render_template('location.html')
+    return render_template('Location.html')
 
 
 @app.route('/behaviour')

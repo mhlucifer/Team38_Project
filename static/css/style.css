@@ -156,6 +156,11 @@
 
 /*handling page css style*/
 /* 阻止蟾蜍扩散部分的样式 */
+#prevent-toads-section
+{
+    background:linear-gradient(to right, #fbdcdc 0%, #c5e4f3 33%, #f7f7b6 66%, #fbdcdc 100%) ;
+}
+
 .site-section {
   padding: 2rem 0; /* 为每个site-section添加上下边距 */
 }
@@ -334,18 +339,31 @@
 }
 
 
+
+
 /* Behavior网页 部分css 样式*/
+/* Global Card Styles */
+.card-info
+{
+    background: linear-gradient(to right, #fbdcdc 0%, #c5e4f3 33%, #f7f7b6 66%, #fbdcdc 100%);
+}
+.container {
+  padding: 0 5px;
+}
+
+
 
 
 .card-flip {
   perspective: 1000px;
-  margin-bottom: 30px; /* 卡片间距 */
+  margin-bottom: 30px; /* Space between cards */
+
 }
 
 .flip {
   position: relative;
   width: 100%;
-  height: 500px; /* 调整高度 */
+  height: 500px; /* Card height */
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -363,20 +381,18 @@
   justify-content: center;
   flex-direction: column;
   padding: 20px;
-  border-radius: 10px; /* 轻微的圆角 */
+  border-radius: 10px; /* Slight border radius */
+  color: #333;
+  overflow: hidden; /* Prevents content from spilling over */
 }
 
 .flip .front {
-  background-color: #fff; /* 前面的背景色 */
-  color: #333;
+  background-color: #fff; /* Front face background color */
 }
 
 .flip .back {
-  background-color: #f8f9fa; /* 背面的背景色 */
-  color: #333;
   transform: rotateY(180deg);
-  overflow: hidden; /* 防止内容溢出 */
-  justify-content: space-between; /* 分散对齐文本和图片 */
+  justify-content: space-between; /* Aligns text and image */
 }
 
 .flip:hover {
@@ -387,22 +403,65 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
+/* Card-specific styles for unique colors */
+/* Card 1 - Daytime preference */
+.card-flip1 .front {
+  background-color: RGB(254, 235, 238); /* A light pastel pink */
+}
+.card-flip1 .back {
+  background-color: RGB(249, 229, 232); /* A slightly different shade of light pastel pink for the back */
+}
+
+/* Card 2 - Mating Behaviour */
+.card-flip2 .front {
+  background-color:  RGB(226, 240, 253); /* A light pastel blue */
+}
+.card-flip2 .back {
+  background-color: RGB(210, 229, 246); /* A slightly different shade of light pastel blue for the back */
+}
+
+/* Card 3 - Mobility */
+.card-flip3 .front {
+  background-color: RGB(226, 253, 226); /* A light pastel green */
+}
+.card-flip3 .back {
+  background-color: RGB(212, 246, 212); /* A slightly different shade of light pastel green for the back */
+}
+
+
+/* Text styles for back content */
+.card-flip .back h2 {
+  font-weight: bold; /* Bold font for headers */
+  margin-bottom: 20px; /* Space below the header */
+}
+
 .card-flip .back p {
-  width: 100%; /* 使用可用的全部宽度 */
-  text-align: justify; /* 文本对齐方式 */
-  text-justify: inter-word; /* 优化空格，让对齐更自然 */
-  hyphens: auto; /* 允许在需要的地方自动断字 */
-  margin-bottom: 10px; /* 添加段落之间的空间 */
-  font-size: 0.9em; /* 根据需要调整字体大小 */
-  line-height: 1.4; /* 增加行高以改善可读性 */
+  text-align: left; /* Align text to the left */
+  margin-bottom: 10px; /* Space between paragraphs */
+  font-size: 1rem; /* Standard font size */
+  line-height: 1.6; /* Line height for readability */
 }
 
-.card-flip .back img {
-  width: 100%; /* 图片宽度设为100%，确保响应式并且不会超出边界 */
-  height: auto; /* 图片高度自适应 */
-  margin-top: 15px; /* 在图片顶部添加一些空间 */
+/* Image styles */
+.card-flip1 .back img {
+  width: 80%; /* Responsive image width */
+  height: auto; /* Auto height for proper aspect ratio */
+  margin-top: -5px; /* Space above the image */
 }
 
+/* Image styles */
+.card-flip2 .back img {
+  width: 80%; /* Responsive image width */
+  height: auto; /* Auto height for proper aspect ratio */
+  margin-top: -5px; /* Space above the image */
+}
+
+/* Image styles */
+.card-flip3 .back img {
+  width: 80%; /* Responsive image width */
+  height: auto; /* Auto height for proper aspect ratio */
+  margin-top: -5px; /* Space above the image */
+}
 
 
 
@@ -518,5 +577,68 @@
 .map-section .btn-primary {
     width: 100%; /* Full width buttons */
     margin-bottom: 10px; /* Spacing between buttons */
-    /* Add more styles if necessary */
+}
+
+
+
+
+
+
+/*tips css style */
+/* Tips Section Background */
+.tips-section {
+    background-color: #6c757d; /* A light grey-blue that is easy on the eyes */
+}
+
+/* Tips Section Title */
+.tips-section .section-title {
+    color: #fff
+}
+
+/* Card Style */
+.tips-section .card1 {
+    background-color: #F8BBD0;
+    color: black;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.tips-section .card2 {
+    background-color:#E1BEE7;
+    color: black;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+
+/* Second Card Header */
+.tips-section .card-header.sightings {
+    background-color: #27678d;
+    color: white;
+}
+
+/* Collapsible Button Style */
+.tips-section .btn-link {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+/* Collapsible Button Hover */
+.tips-section .btn-link:hover {
+    color: red;
+}
+
+
+
+/* Collapsible Content Text Style */
+.tips-section .collapse.show p {
+    font-family: 'Arial', sans-serif; /* A commonly used, readable font */
+    color: #333; /* Dark grey for readability */
+    font-size: 1rem; /* A standard size for body text */
+    line-height: 1.5; /* Spacing for readability */
 }

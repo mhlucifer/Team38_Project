@@ -15,26 +15,45 @@ function changeHeroContent() {
 
 
 const quizData = {
+  "handling": [
+    { question: "Cane toads are invasive species for ...", answer: "Australia" },
+    { question: "Cane toads' poison can cause ... harm to other species that come into contact.", answer: "harm" },
+    { question: "The uncontrolled increase in cane toad populations poses a significant threat to ...", answer: "native ecosystems" },
+    { question: "There has been a loss in ... due to loss of native species.", answer: "tourism" },
+    { question: "... are some of the predators whose population has decreased due to cane toads.", answer: "Snakes/lizards" },
+    { question: "Cane toads release poison via ... gland on their ...", answer: "parotoid, shoulder" },
+    { question: "The dominance of cane toads ... the survival of smaller animals.", answer: "threatens" },
+    { question: "Cane toads have no ... in Australia, leading to their excessive populations.", answer: "natural predators" },
+    { question: "Cane toads cause ... modification because the native species must leave their natural ... due to the threat of cane toads.", answer: "habitat, habitat" },
+    { question: "Cane toads cause a decline in ... stocks due to poison.", answer: "fish" },
+    { question: "The best method to kill toads is to ... them.", answer: "freeze" },
+    { question: "One way to stop the spread of cane toads is to remove ...", answer: "water" },
+    { question: "Make sure you stay ... when you encounter a cane toad.", answer: "calm" },
+    { question: "Keep your ... away.", answer: "pets" },
+    { question: "Notify ..., they can provide guidance on the next steps.", answer: "authorities" },
+    { question: "Share your ... and raise ...", answer: "knowledge, awareness" }
+  ],
   "location": [
-    { question: "Cane toads prefer………..,……. areas.", answer: "" }, // 答案需要您根据实际情况填写
-    { question: "Cane toads thrive in …………………….", answer: "" },
-    { question: "Cane toads are the most common in ……………….", answer: "" },
-    { question: "Cane toads are commonly found in habitats such as ……., ……….. and urban areas.", answer: "" },
-    { question: "Cane toads prefer access to water for ………. and reproduction.", answer: "" }
+    { question: "Cane toads prefer ... areas.", answer: "large, open" },
+    { question: "Cane toads thrive in ...", answer: "moist areas" },
+    { question: "Cane toads are the most common in ...", answer: "Queensland and New South Wales" },
+    { question: "Cane toads are commonly found in habitats such as ..., ... and urban areas.", answer: "grasslands, open woodlands" },
+    { question: "Cane toads prefer access to water for ... and reproduction.", answer: "hydration" }
   ],
   "behaviour": [
-    { question: "Cane toads are………… animals, they are the most active during the night.", answer: "" },
-    { question: "Cane toads prefer the night time because of …………… temperatures and ………….. moisture levels.", answer: "" },
-    { question: "Male cane toads produce unique ………… to attract the females. These calls on dependent on the cane toad’s …………, ……….. and …………… conditions.", answer: "" },
-    { question: "Cane toad mating generally happens in …………… locations.", answer: "" },
-    { question: "Female cane toads prefer male cane toads with ………. and ……….. calls.", answer: "" },
-    { question: "Female cane toads deposit their ………………. eggs in ………………….", answer: "" },
-    { question: "Cane toads ………… jump long distances.", answer: "" },
-    { question: "Cane toads stay close to the ………………….", answer: "" },
-    { question: "Being active in the night, cane toads are able to reduce their risk of ………… and ……….. conditions.", answer: "" },
-    { question: "Cane toads exhibit ……….. behaviours during mating.", answer: "" }
+    { question: "Cane toads are ... animals, they are the most active during the night.", answer: "nocturnal" },
+    { question: "Cane toads prefer the night time because of ... temperatures and ... moisture levels.", answer: "cooler, higher" },
+    { question: "Male cane toads produce unique ... to attract the females. These calls on dependent on the cane toad’s ..., ... and ... conditions.", answer: "mating calls, size, health, environmental" },
+    { question: "Cane toad mating generally happens in ... locations.", answer: "wet" },
+    { question: "Female cane toads prefer male cane toads with ... and ... calls.", answer: "loud, intense" },
+    { question: "Female cane toads deposit their ... eggs in ...", answer: "string like, water" },
+    { question: "Cane toads ... jump long distances.", answer: "cannot" },
+    { question: "Cane toads stay close to the ...", answer: "ground" },
+    { question: "Being active in the night, cane toads are able to reduce their risk of ... in hot and ... conditions.", answer: "dehydration, dry" },
+    { question: "Cane toads exhibit ... behaviours during mating.", answer: "aggressive" }
   ]
 };
+
 
 
 
@@ -59,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 绑定下一题按钮的点击事件
     document.querySelector('.next').addEventListener('click', function() {
         const answerInput = document.querySelector('.answer');
-        userAnswers[currentQuestionIndex] = answerInput.value.trim(); // 存储答案
+        userAnswers[currentQuestionIndex] = answerInput.value.trim(); // save answer
         currentQuestionIndex++; // 增加问题索引
 
         if (currentQuestionIndex < quizData[quizType].length) {
@@ -76,7 +95,6 @@ function renderQuestion(quizType, index) {
     quizContainer.innerHTML = `
         <div class="quiz-question">
             <p>${index + 1}. ${item.question}</p>
-            
             <input type="text" class="answer" data-index="${index}" placeholder="Your Answer">
             <br>
         </div>

@@ -413,37 +413,110 @@
 
 /*quiz css style*/
 .site-section.bg-info {
-    padding: 2rem 0; /* 上下留有一点边框 */
+    padding: 2rem 0; /* Add more padding for a spacious look */
+    background-color: #17a2b8; /* A more vibrant background color */
+    color: #fff; /* White text color for better readability on the vibrant background */
 }
 
 .section-title {
-    margin-top: 0; /* 移动到最上面，去除外边距 */
-    padding-top: 1rem; /* 顶部留有一点距离 */
+    margin-top: 0;
+    padding-top: 1rem;
+    font-size: 2rem; /* Make the title larger and more prominent */
+    font-weight: 700; /* Add bold styling to the title */
 }
 
-.quiz-start-section {
-    padding: 2rem 0; /* 上下内边距 */
+.quiz-start-section,
+.quiz-section {
+    padding: 2rem 0;
 }
 
 .username {
-    margin-right: .5rem; /* 输入框和按钮之间的空隙 */
+    margin-right: .5rem;
+    padding: 0.5rem 1rem; /* Add more padding for the input for better visibility */
+    border: none; /* Remove border */
+    border-radius: 0.25rem; /* Rounded corners for the input field */
+    font-size: 1rem; /* Increase the font size for better visibility */
 }
 
-.start-quiz {
-    /* 按钮样式可能需要根据你的实际情况进行调整 */
+.start-quiz,
+.next {
+    padding: 0.5rem 1rem; /* Increase padding for a larger button */
+    border: none; /* Remove border */
+    background-color: #ffc107; /* Add a contrasting button color */
+    color: #212529; /* Dark text for the button */
+    border-radius: 0.25rem; /* Rounded corners for the button */
+    font-size: 1rem; /* Larger font size for the buttons */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    transition: background-color 0.2s ease-in-out; /* Smooth background color transition */
+}
+
+.start-quiz:hover,
+.next:hover {
+    background-color: #e0a800; /* Darken button color on hover for feedback */
 }
 
 @media (max-width: 768px) {
-    .quiz-start-section {
-        padding: 1.5rem 0; /* 对于小屏幕设备，减少内边距 */
+    .quiz-start-section,
+    .quiz-section {
+        padding: 1.5rem 0;
     }
 
     .username {
-        margin-bottom: 1rem; /* 在小屏幕设备上，输入框下方留出空间 */
-        margin-right: 0; /* 在小屏幕设备上，去除右边距 */
+        margin-bottom: 1rem;
+        margin-right: 0;
+        width: 100%; /* Full width for the input field */
     }
 
     .start-quiz {
-        width: 100%; /* 在小屏幕设备上，按钮宽度为100% */
+        width: 100%; /* Full width for the button */
     }
+}
+
+.quiz-question {
+    background-color: #fff; /* White background for the question area */
+    color: #212529; /* Dark text for readability */
+    padding: 1.5rem; /* Padding around the content */
+    border-radius: 0.5rem; /* Rounded corners for the quiz box */
+    margin-bottom: 1rem; /* Space between questions */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    font-size: 1.25rem; /* Increase font size */
+    font-weight: 500; /* Medium weight for the font */
+}
+
+.answer {
+    width: 100%; /* Full width for the answer input */
+    padding: 0.5rem 1rem;
+    margin-top: 1rem; /* Space between the question and the input field */
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.final-score {
+    font-size: 1.5rem; /* Larger font size for the final score */
+    font-weight: 700; /* Bold styling for the final score */
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: #28a745; /* A positive green background for the final score */
+    color: #fff;
+}
+
+
+
+/*map section css*/
+.map-section {
+    background-color: #f8f9fa; /* Light background for the map section */
+}
+
+#map {
+    width: 100%; /* Full width of the column */
+    height: 400px; /* Adjust height as needed */
+    /* Add more styles if necessary */
+}
+
+/* Styling for the buttons in the map section */
+.map-section .btn-primary {
+    width: 100%; /* Full width buttons */
+    margin-bottom: 10px; /* Spacing between buttons */
+    /* Add more styles if necessary */
 }

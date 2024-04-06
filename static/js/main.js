@@ -1,19 +1,4 @@
 
-function changeHeroContent() {
-  // 设置新的内容
-  var newTitle = "Join Our Community";
-  var newHeading = "Explore Our Events";
-  var newText = "Discover events for kids and family";
-  var newImageSrc = "/static/images/img_1.jpg"; //
-
-  // 更新内容
-  $('#hero-title').text(newTitle);
-  $('#hero-heading').text(newHeading);
-  $('#hero-text').text(newText);
-  $('#hero-image').attr('src', newImageSrc);
-}
-
-
 const quizData = {
   "handling": [
     { question: "Cane toads are invasive species for ...", answer: "Australia" },
@@ -59,11 +44,11 @@ const quizData = {
 
 // location quiz
 document.addEventListener('DOMContentLoaded', function() {
-    // 设置当前问题索引为 0
+    // Set current question index to 0
     let currentQuestionIndex = 0;
     const userAnswers = [];
 
-    // 绑定开始测试按钮的点击事件
+    // Bind the click event of the start test button
     document.querySelector('.start-quiz').addEventListener('click', function() {
         const username = document.querySelector('.username').value.trim();
         if (username.length > 0) {
@@ -75,11 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 绑定下一题按钮的点击事件
+    // Bind the click event of the next question button
     document.querySelector('.next').addEventListener('click', function() {
         const answerInput = document.querySelector('.answer');
         userAnswers[currentQuestionIndex] = answerInput.value.trim(); // save answer
-        currentQuestionIndex++; // 增加问题索引
+        currentQuestionIndex++; // Add question index
 
         if (currentQuestionIndex < quizData[quizType].length) {
             renderQuestion(quizType, currentQuestionIndex);
@@ -99,7 +84,7 @@ function renderQuestion(quizType, index) {
             <br>
         </div>
     `;
-    // 如果是最后一个问题，更改按钮文本
+    // If it's the last question, change the button text
     const nextButton = document.querySelector('.next');
     if (index === quizData[quizType].length - 1) {
         nextButton.textContent = 'Submit The Answer';
@@ -115,7 +100,7 @@ function showResults(quizType, userAnswers) {
             score++;
         }
     });
-    // 隐藏问题区域，显示结果
+    // Hide problem areas, show results
     document.querySelector('.quiz-section').style.display = 'none';
     const finalScoreElement = document.querySelector('.final-score');
     finalScoreElement.style.display = 'block';

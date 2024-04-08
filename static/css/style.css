@@ -1,24 +1,28 @@
 .navbar {
-  background-color: rgba(0, 0, 0, 0.8); /* Deep black background with transparency */
+  background-color: rgba(174, 252, 101, 0.8) !important; /* Deep black background with transparency */
 }
 
 .navbar-brand {
   font-family: 'Open Sans', sans-serif; /* font */
-  color: #fff; /* white text */
+  color: rgba(46, 22, 22, 0.8) !important; /* brown text */
+  font-weight: bold;
 }
 
-.navbar-brand .text-primary {
-  color: #007bff; /* blue part */
-}
 
-.nav-link {
-  color: #fff; /* white link */
-  transition: color 0.3s ease; /* transition effect */
+
+.nav-link{
+    color: rgba(46, 22, 22, 0.8) !important; ; /* brown color */
+    transition: color 0.3s ease; /* transition effect */
+    font-weight: bold;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #007bff; /* Color on mouseover or focus */
+  color: #007bff !important; /* Color on mouseover or focus */
+}
+
+.navbar-brand .text-primary {
+  color: red !important; /* red part */
 }
 
 @media (max-width: 991px) {
@@ -152,11 +156,12 @@
 /* Styles for the prevent toads spreading section */
 #prevent-toads-section
 {
-    background:linear-gradient(to right, #fbdcdc 0%, #c5e4f3 33%, #f7f7b6 66%, #fbdcdc 100%) ;
+    background:linear-gradient(to right, #eee7ba 0%, #b8f0a8 33%, #dcf1a2 66%, #eff9d2 100%);
 }
 
 .site-section {
   padding: 2rem 0; /* Adds vertical padding to each site-section */
+
 }
 
 /* Initialize counter */
@@ -217,7 +222,7 @@
 
 /* Modify background color */
 #kill-toads-section {
-  background-color: #6c757d;
+  background: #222e50 !important;
 }
 
 @media (max-width: 768px) {
@@ -326,8 +331,8 @@
 
 /* Card title colors and other styles */
 .card-title {
-  color: #fff; /* title color */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow to title text*/
+  color: #222e50; /* title color */
+  font-weight: bold;
 }
 
 
@@ -337,7 +342,7 @@
 /* Global Card Styles */
 .card-info
 {
-    background: linear-gradient(to right, #fbdcdc 0%, #c5e4f3 33%, #f7f7b6 66%, #fbdcdc 100%);
+    background: linear-gradient(to right, #eee7ba 0%, #b8f0a8 33%, #dcf1a2 66%, #eff9d2 100%);
 }
 .container {
   padding: 0 5px;
@@ -414,11 +419,12 @@
 
 /* Card 3 - Mobility */
 .card-flip3 .front {
-  background-color: RGB(226, 253, 226); /* A light pastel green */
+  background-color: RGB(241,225,254); /* A light pastel orange */
 }
 .card-flip3 .back {
-  background-color: RGB(212, 246, 212); /* A slightly different shade of light pastel green for the back */
+  background-color: RGB(241,225,254); /* A slightly different shade of light pastel green for the back */
 }
+
 
 
 /* Text styles for back content */
@@ -578,7 +584,7 @@
 /*tips css style */
 /* Tips Section Background */
 .tips-section {
-    background-color: #6c757d; /* A light grey-blue  */
+    background-color: #222e50; /* A light grey-blue  */
 }
 
 /* Tips Section Title */

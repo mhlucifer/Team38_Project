@@ -639,3 +639,40 @@
     font-size: 1rem; /* A standard size for body text */
     line-height: 1.5; /* Spacing  */
 }
+
+
+/*location  head map section*/
+.head-map-section {
+    background: linear-gradient(to right, #eee7ba 0%, #b8f0a8 33%, #dcf1a2 66%, #eff9d2 100%);
+    /* Adding padding to the top and bottom for the entire section */
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+.title-bold {
+    font-weight: bold;
+}
+
+
+.map-container {
+    height: 500px;
+    /* Adding padding inside the map container for top and bottom space */
+    padding-top: 10px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive  */
+@media (max-width: 991px) {
+    .map-container {
+        height: auto; /* Allows the map to resize in height on smaller devices */
+    }
+}
+
+@media (max-width: 767px) {
+    /* Stacking for smaller devices */
+    .description-text, .map-container {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}

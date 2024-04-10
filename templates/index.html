@@ -1,26 +1,24 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+
+<html>
 
 <head>
-    <title>InfoToad — Website</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- main CSS -->
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- Custom CSS -->
-    <style>
-        .lead {
-            padding: 30px; 
-            margin: 30px 0;
 
-            }
-        </style>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>index.html</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top site-navbar-target">
     <div class="container">
         <a class="navbar-brand" href="index.html">InfoToad<span class="text-primary">.</span></a>
@@ -47,57 +45,74 @@
     </div>
 </nav>
 
+<div class="carousel-container">
+<div class="container">
+    <div class="slide">
+        <div class="item" style="background-image: url(/static/images/toad1.jpg);">
+            <div class="content">
+                <div class="name">History</div>
+                <div class="des">History</div>
+                <a href="/">
+                <button>See More</button>
+                </a>
+            </div>
+        </div>
 
+        <div class="item" style="background-image: url(/static/images/toad2.jpg);">
+            <div class="content">
+                <div class="name">Location</div>
+                <div class="des">Location</div>
+                <a href="/location">
+                <button>See More</button>
+                </a>
+            </div>
+        </div>
 
-<div class="pt-5">
-    <div id="toadCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#toadCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#toadCarousel" data-slide-to="1"></li>
-            <li data-target="#toadCarousel" data-slide-to="2"></li>
-        </ul>
+        <div class="item" style="background-image: url(/static/images/toad3.jpg);">
+            <div class="content">
+                <div class="name">Behavior</div>
+                <div class="des">Behavior</div>
+                <a href="/behaviour">
+                <button>See More</button>
+                </a>
+            </div>
+        </div>
 
+        <div class="item" style="background-image: url(/static/images/toad4.jpg);">
+            <div class="content">
+                <div class="name">handling</div>
+                <div class="des">handling</div>
+                <a href="/handle">
+                <button>See More</button>
+                </a>
+            </div>
+        </div>
 
-
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-    <div class="carousel-item active">
-        <img src="/static/images/toad1.jpg" class="d-block w-100" alt="Toad Image">
-        <div class="carousel-caption">
-            <h1 class="text-red"> Safely Interacting with Cane Toads</h1>
-            <p class="lead">Discover safe and responsible ways to handle encounters with cane toads. Learn about proper techniques to avoid harming yourself or the environment while managing cane toad interactions. Whether you're a homeowner, wildlife enthusiast, or conservationist, understanding the best practices for cane toad handling is essential for coexisting with these amphibians.</p>
-            <a href="/handle" class="btn btn-primary">Learn More</a>
+        <div class="item" style="background-image: url(/static/images/toad8.jpg);">
+            <div class="content">
+                <div class="name">Impact</div>
+                <div class="des">Impact</div>
+                <a href="/">
+                <button>See More</button>
+                </a>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg);">
+            <div class="content">
+                <div class="name">FAQ</div>
+                <div class="des">FAQ</div>
+                <a href="/">
+                <button>See More</button>
+                </a>
+            </div>
         </div>
     </div>
-    <div class="carousel-item">
-        <img src="/static/images/toad2.jpg" class="d-block w-100" alt="Toad Image">
-        <div class="carousel-caption">
-            <h1 class="text-red">Discover Cane Toad Behaviour</h1>
-            <p class="lead">Delve into the fascinating world of cane toad behavior and biology. Explore their unique characteristics, mating rituals, and daily habits that contribute to their ecological impact in various habitats. Understanding cane toad behavior not only enhances your knowledge but also aids in developing effective management strategies.</p>
-            <a href="/behaviour" class="btn btn-primary">Learn More</a>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <img src="/static/images/toad4.jpg" class="d-block w-100" alt="Toad Image">
-        <div class="carousel-caption">
-            <h1 class="text-red">Discover Cane Toad Location</h1>
-            <p class="lead">Uncover the geographical distribution and habitats favored by cane toads across different regions. Explore interactive maps, data visualizations, and informative resources detailing where cane toads are commonly found and their potential spread. Stay informed about local sightings and contribute to ongoing monitoring efforts with up-to-date location insights.</p>
-            <a href="/location" class="btn btn-primary">Learn More</a>
-        </div>
+    <div class="button">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
     </div>
 </div>
-<!-- Left and right controls -->
-<a class="carousel-control-prev" href="#toadCarousel" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-</a>
-<a class="carousel-control-next" href="#toadCarousel" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-</a>
-
-    </div>
 </div>
-
 
 <!-- about us -->
 <footer class="site-footer">
@@ -106,8 +121,6 @@
             <div class="col-lg-4">
                 <h2 class="footer-heading mb-3">About Us</h2>
                 <p class="mb-11">Build by Monash University Students- TerraTitans,IE Team-38 </p>
-
-
             </div>
             <div class="col-lg-8 ml-auto">
                 <div class="row">
@@ -122,22 +135,16 @@
                             <li><a href="/behaviour">Behavior</a></li>
                             <li><a href="/handle">Handing</a></li>
                         </ul>
-
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
 </footer>
 
-
-<!-- Bootstrap and main JavaScript -->
+</body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="/static/js/main.js"></script>
-</body>
-
+<script src="/static/js/index.js"></script>
 </html>

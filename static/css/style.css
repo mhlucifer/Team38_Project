@@ -1,5 +1,8 @@
+/*navigation part*/
 .navbar {
   background-color: rgba(174, 252, 101, 0.8) !important; /* Deep black background with transparency */
+    padding-top: 5px; /* 增加顶部内边距 */
+  padding-bottom: 5px; /* 增加底部内边距 */
 }
 
 .navbar-brand {
@@ -33,88 +36,9 @@
 
 
 
-/*Carousel image*/
-/* Adjusted media queries ensure styling on devices smaller than 768px width */
-@media (max-width: 768px) {
-  .carousel-caption {
-    top: 40%; /* May need to adjust position */
-    transform: translateY(-40%);
-    font-size: 14px; /* Reduce font size to fit screen size */
-  }
 
-  .carousel-caption h1 {
-    font-size: 1.5rem; /* Title size on mobile devices */
-  }
 
-  .carousel-caption p {
-    font-size: 0.8rem; /* Paragraph text size on mobile devices */
-  }
 
-  .carousel-caption .btn {
-    padding: 5px 10px; /* Reduce button size*/
-    font-size: 0.8rem; /* Button font size on mobile devices */
-  }
-}
-
-.carousel-item {
-  height: 100vh; /* Set the height of the carousel item to the viewport height */
-  min-height: 300px; /* Set a minimum height */
-  overflow: hidden; /* Hide overflow */
-}
-
-.carousel-item img {
-  width: 100vw; /* viewport width */
-  min-width: 100%; /* Make sure the image is at least the width of the container */
-  height: 100vh; /* viewport height */
-  object-fit: cover; /* Covers the entire element area, the image will be cropped to fit */
-  object-position: center; /* Image center */
-}
-
-/* Adjust title and button positions */
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 15%;
-  right: 15%;
-  background: rgba(0, 0, 0, 0.5); /* Add a background to text*/
-  padding: 20px;
-}
-
-/* Responsive Adjustments */
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 5%; /* Reduce margins on mobile screens */
-  right: 5%; /* Reduce margins on mobile screens */
-  background: rgba(0, 0, 0, 0.5); /* Add a background to text*/
-  padding: 10px;
-  text-align: center; /* Center the text */
-}
-
-/* Footer section code */
-.site-footer {
-  padding: 4em 0;
-  background: #343a40; }
-  @media (min-width: 768px) {
-    .site-footer {
-      padding: 8em 0; } }
-  .site-footer .border-top {
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important; }
-  .site-footer p {
-    color: #fff; }
-  .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5 {
-    color: #fff; }
-  .site-footer a {
-    color: rgba(255, 255, 255, 0.8); }
-    .site-footer a:hover {
-      color: white; }
-  .site-footer ul li {
-    margin-bottom: 10px; }
-  .site-footer .footer-heading {
-    font-size: 18px;
-    color: #fd4d40; }
 
 /* CSS for hero images on all pages except index */
 .full-screen-cover {

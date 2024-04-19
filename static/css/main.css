@@ -1,0 +1,646 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --top-nav-height: 60px; /* Top navigation bar height */
+    --nav-width: 150px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: calc(100vw - var(--nav-width));
+    display: flex;
+    flex-direction: column; /* Ensure content flows top to bottom */
+    align-items: stretch; /* Align children to stretch full width */
+    margin-left: var(--nav-width); /* Keep consistent with your navigation width */
+}
+
+section {
+    width: 100%; /* Fill the width of the container */
+    min-height: 100vh; /* Minimum height, but allow automatic expansion based on content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px; /* Add some padding */
+    box-sizing: border-box;
+    overflow: hidden; /* Hide overflow content */
+}
+
+
+/* Side navigation bar style */
+.side-nav {
+    position: fixed;
+    top: var(--top-nav-height);
+    left: 0;
+    width: var(--nav-width); /* Set the width of the navigation bar, for example 200px */
+    height: 100vh; /* Set the height of the navigation bar so that it fills the entire screen */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    background: white; /* Set the background color of the navigation bar */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* drawerbox */
+.drawerbox {
+    height: 15.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffc700;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+
+.drawerbox a {
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.drawerbox a:hover {
+    background-color: #777;
+}
+
+
+.drawerbox a.active {
+    background-color: #007F73;
+    color: #ffffff;
+}
+
+
+section,
+#footer {
+    position: relative;
+    color: rgba(255, 255, 255, .8);
+    font-size: 10vh;
+    font-family: 'modern_no._20regular',
+    serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer {
+    background-color: #c0b5aa;
+    height: 50vh;
+    color: #fff;
+    font-size: 20vh;
+}
+
+.img {
+    width: calc(100vw - var(--nav-width));
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    user-select: none;
+
+}
+
+
+#img-one {
+    background-size: cover;
+}
+
+#img-two {
+    padding: 0px 0;
+    position: relative;
+}
+
+#img-three {
+    padding: 0px 0;
+    position: relative;
+}
+
+.content-one {
+    background: url(/) no-repeat fixed center;
+    background-size: cover;
+}
+
+.content-two {
+    background: url(/) no-repeat fixed center;
+    background-size: cover;
+}
+
+.content-three {
+    background: url(/static/images/toad6.jpg) no-repeat fixed center;
+    background-size: cover;
+}
+
+
+.content-four {
+    background-size: cover;
+    overflow: visible;
+}
+
+.content-five {
+    background: url(/static/images/toad8.jpg) no-repeat fixed center;
+    background-size: cover;
+}
+
+
+.content-six {
+    background: url(/static/images/toad9.jpg) no-repeat fixed center;
+    background-size: cover;
+}
+
+/* Navigation bar styles */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007F73; /* Light blue background */
+    padding: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Makes the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    height: var(--top-nav-height);
+    right: 0;
+    z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.nav-container #nav {
+    position: relative;
+    border: none;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allows nav to take up as much space as possible */
+    justify-content: flex-end; /* Aligns the nav items to the right */
+}
+
+.nav-container #nav-icon {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Pushes the rest of the nav items to the right */
+}
+
+.nav-container #nav li a {
+    position: relative;
+    padding: 5px 20px; /* Reduced padding for a narrower look */
+    font-size: 14px; /* Smaller font size */
+    color: white;
+    text-decoration: none;
+    z-index: 3;
+}
+
+.nav-container .slide1,
+.nav-container .slide2 {
+    position: absolute;
+    display: inline-block;
+    height: 30px; /* Reduced height for a narrower look */
+    border-radius: 10em;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
+    top: -3px; /* Adjust to align with the top of the nav items */
+}
+
+.nav-container .slide1 {
+    background-color: #ffc700;
+    z-index: 2;
+}
+
+.nav-container .slide2 {
+    opacity: 0;
+    background-color: #4CCD99;
+    z-index: 1;
+    box-shadow: 0 0 20px #ffffffaa inset;
+}
+
+.squeeze {
+    transform: scale(0.9);
+}
+
+
+/* main page sytle */
+#img-one {
+    background: #adebeb; /* Replace with the actual color code from your background */
+    text-align: center; /* Center the text */
+    position: relative; /* Needed for absolute positioning inside */
+}
+
+.img-container {
+    position: relative; /* Context for absolute positioning */
+    max-width: 1200px; /* Max width of the content */
+    margin: 0 auto; /* Center the container */
+}
+
+.main-title {
+    font-size: 72px; /* Large text size for the main title */
+    color: #00695c; /* Green text color */
+    margin: 20px 0; /* Space above and below */
+    font-weight: bold; /* Bold text */
+}
+
+.sub-title {
+    font-size: 36px; /* Medium text size for the sub-title */
+    color: #00796b; /* Slightly different green text color */
+    margin: 10px 0; /* Space above and below */
+}
+
+.slogan {
+    font-size: 24px; /* Smaller text size for the slogan */
+    color: #00897b; /* Another shade of green */
+    margin: 10px 0 30px; /* Space above and below, more at the bottom */
+}
+
+.button-container {
+    display: inline-block; /* Align buttons next to each other */
+}
+
+.button-container button {
+    padding: 10px 25px; /* Padding inside the buttons */
+    margin: 0 10px; /* Space between the buttons */
+    background-color: #ffa726; /* Orange background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Larger text inside the buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.button-container button:hover {
+    background-color: #fb8c00; /* Darker orange on hover */
+}
+
+.main-title, .sub-title, .slogan {
+    /* Remove the text-shadow property from these classes */
+    font-family: 'YourFontFamily', sans-serif; /* Use your chosen font family, sans-serif is a fallback */
+    text-shadow: none; /* This removes the shadow effect */
+}
+
+/* Add media queries below for responsiveness */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 48px; /* Smaller font size for mobile */
+    }
+
+    .sub-title {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .slogan {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
+    .button-container button {
+        padding: 8px 20px; /* Smaller padding for mobile */
+        font-size: 16px; /* Smaller font size for buttons on mobile */
+    }
+}
+
+
+/* history page */
+.shell {
+    width: 100%;
+    position: relative;
+    transition: 0.3s ease;
+    padding: 80px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: visible;
+}
+
+.shell:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 99, 99, 0.8);
+    content: "";
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.title {
+    color: #fff;
+    font-size: 46px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+
+}
+
+.content-title {
+    font-weight: normal;
+    font-size: 66px;
+    transition: 0.4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: blue;
+}
+
+.content-desc {
+    margin: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 25px;
+    list-style: inside;
+}
+
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.item {
+    opacity: 0.3;
+    filter: blur(2px);
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+}
+
+.item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+    font: 900 20px '';
+    letter-spacing: 5px;
+}
+
+.item:nth-child(even) {
+    align-self: flex-end;
+}
+
+.item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 15px;
+}
+
+.item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+.item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+}
+
+.item--active .content-title {
+    margin: -50px 0 20px 0;
+}
+
+.img {
+    max-width: 100%;
+
+
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+}
+
+
+.content-list {
+    list-style-type: disc;
+    padding-left: -10px;
+    margin: 0;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 25px;
+}
+
+.content-list li {
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+    .item {
+        align-self: baseline !important;
+        width: 100%;
+        padding: 0 30px 150px 80px;
+    }
+
+    .item:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+    }
+
+    .item:last-child {
+        padding-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline:before {
+        left: 40px;
+    }
+}
+
+
+/* behavior page */
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5053fc;
+    z-index: -1; /* Ensures it stays behind the content */
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+}
+
+.iconfont {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 27%;
+    z-index: 999;
+    font: 900 80px '';
+    color: #fff;
+}
+
+#up-btn {
+    top: 1%;
+    transform: rotate(180deg);
+}
+
+#down-btn {
+    bottom: 1%;
+}
+
+#content {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: 15%;
+    overflow: hidden;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    transition: transform .8s ease-in-out;
+}
+
+.card-time {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+}
+
+.card-passage {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#clock {
+    height: 130%;
+    /* 纵横比为1:1 */
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    right: -28%;
+    top: -15%;
+    border-radius: 50%;
+    background-color: white;
+    border: #ff9214 30px solid;
+}
+
+@media (max-width: 1000px) {
+    #clock {
+        right: -90%;
+    }
+}
+
+#clock-table {
+    width: 96%;
+    height: 96%;
+    border-radius: 50%;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    transition: transform .8s ease-in-out;
+}
+
+.invisible-table {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    position: absolute;
+}
+
+.clock-thick {
+    width: 6%;
+    height: 6px;
+    background-color: #5053fc;
+    position: absolute;
+    top: calc(50% - 3px);
+    left: 0px;
+}
+
+.clock-thick span {
+    font-size: 50px;
+    position: absolute;
+    left: 140%;
+    top: calc(50% - 30px);
+    color: #5053fc;
+}
+
+.clock-scale {
+    width: 4%;
+    height: 2px;
+    background-color: #5053fc;
+    position: absolute;
+    top: calc(50% - .5px);
+    left: 0px;
+} 
+
+

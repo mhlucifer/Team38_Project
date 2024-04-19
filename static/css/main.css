@@ -91,8 +91,7 @@ section,
     position: relative;
     color: rgba(255, 255, 255, .8);
     font-size: 10vh;
-    font-family: 'modern_no._20regular',
-    serif;
+    font-family: 'Century Gothic',sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,6 +195,13 @@ section,
     margin-right: auto; /* Pushes the rest of the nav items to the right */
 }
 
+.nav-container .nav-title {
+    font-size: 20px; 
+    padding-left:10px;
+    color:white;
+    font-weight: bold; 
+}
+
 .nav-container #nav li a {
     position: relative;
     padding: 5px 20px; /* Reduced padding for a narrower look */
@@ -286,7 +292,7 @@ section,
 
 .main-title, .sub-title, .slogan {
     /* Remove the text-shadow property from these classes */
-    font-family: 'YourFontFamily', sans-serif; /* Use your chosen font family, sans-serif is a fallback */
+    font-family: 'Century Gothic',sans-serif; /* Use your chosen font family, sans-serif is a fallback */
     text-shadow: none; /* This removes the shadow effect */
 }
 

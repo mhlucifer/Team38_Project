@@ -286,7 +286,7 @@ section,
 
 .main-title, .sub-title, .slogan {
     /* Remove the text-shadow property from these classes */
-    font-family: 'YourFontFamily', sans-serif; /* Use your chosen font family, sans-serif is a fallback */
+    font-family: 'YourFontFamily', cambria; /* Use your chosen font family, sans-serif is a fallback */
     text-shadow: none; /* This removes the shadow effect */
 }
 

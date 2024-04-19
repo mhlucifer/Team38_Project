@@ -33,6 +33,11 @@ def login_page1():
     return render_template('login.html')
 
 
+@app.route('/main')
+def main_page1():
+    return render_template('main.html')
+
+
 @app.route('/login-password', methods=['POST'])
 def login_page():
     password = request.form['password']

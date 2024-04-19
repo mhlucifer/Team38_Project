@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <title>3D Model Viewer</title>
+</head>
+
+<body>
+
+  <nav class="side-nav">
+    <div class="drawerbox">
+      <a href="#img-one" class="drawer-btn" onclick="toggleDrawer(1)">
+        Main Page
+        <span class="drawer-head">1</span>
+      </a>
+    </div>
+    <div class="drawerbox">
+      <a href="#img-two" class="drawer-btn" onclick="toggleDrawer(2)">
+        History
+        <span class="drawer-head">2</span>
+      </a>
+    </div>
+    <div class="drawerbox">
+      <a href="#img-three" class="drawer-btn" onclick="toggleDrawer(3)">
+        Behavior
+        <span class="drawer-head">3</span>
+      </a>
+    </div>
+    <div class="drawerbox">
+      <a href="#img-four" class="drawer-btn" onclick="toggleDrawer(4)">
+        Location
+        <span class="drawer-head">4</span>
+      </a>
+    </div>
+    <div class="drawerbox">
+      <a href="#img-five" class="drawer-btn" onclick="toggleDrawer(5)">
+        Impact
+        <span class="drawer-head">5</span>
+      </a>
+    </div>
+    <div class="drawerbox">
+      <a href="#img-six" class="drawer-btn" onclick="toggleDrawer(6)">
+        Handling
+        <span class="drawer-head">5</span>
+      </a>
+    </div>
+  </nav>
+
+
+  <div class="nav-container">
+    <div id="nav-icon">
+      <!-- Insert your icon here -->
+      <img src="/static/images/frog-icon.png" style="width: 40px; height: 40px;" alt="InfoToad" />
+      <div>InvaToad</div>
+    </div>
+    <ul id="nav">
+      <div id="icon-space"><!-- Icon goes here --></div>
+      <li class="slide1"></li>
+      <li class="slide2"></li>
+      <li><a href="#">Info</a></li>
+      <li><a href="#">Map</a></li>
+      <li><a href="#">Identifier</a></li>
+      <li><a href="#">Games</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <section id="img-one" class="img">
+      <div class="img-container">
+        <h2 class="sub-title">Power your</h2>
+        <h1 class="main-title">InvaToad</h1>
+        <h2 class="sub-title">Power your home.</h2>
+        <p class="slogan">Tap into nature</p>
+        <div class="button-container">
+          <button onclick="location.href='#img-two'">Learn and make a difference on the invasion of cane toads</button>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="img-two" class="content-four">
+      <div class="shell" id="shell">
+        <div class="header">
+          <h2 class="title">Cane Toad Timeline</h2>
+          <h3 class="subtitle">History</h3>
+        </div>
+        <div class="timeline">
+          <div class="item" data-text="Background">
+            <div class="content">
+              <img src="/static/images/history_2.jpg" alt="" class="img">
+              <h2 class="content-title">1900s</h2>
+              <p class="content-desc">
+              <ul class="content-list">
+                <li>Sugar cane commercially grown in Queensland since the 1860s.</li>
+                <li>Losses caused by white grub attacks became a serious problem in the 1880s.</li>
+                <li>Queensland government established the Queensland Bureau of Sugar Experiment Stations (BSES) in 1900
+                  to address the issue.</li>
+                <li>Entomologists studied cane beetles and investigated solutions for around 25 years, including various
+                  control measures.</li>
+              </ul>
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="How it happened">
+            <div class="content">
+              <img src="/static/images/history_1.jpg" alt="" class="img">
+              <h2 class="content-title">1930s</h2>
+              <p class="content-desc">
+              <ul class="content-list">
+                <li>Government entomologist Reginald Mungomery imported cane toads from Hawaii, believing they could
+                  control beetle pests.</li>
+                <li>In June 1935, Mungomery brought 102 toads to Australia and released them in Queensland</li>
+                <li>Despite initial concerns raised by entomologist Walter Froggatt, toad releases continued due to
+                  pressure from BSES and cane growers</li>
+
+              </ul>
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="Risk Assessment">
+            <div class="content">
+              <img src="/static/images/history_3.jpg" alt="" class="img">
+              <h2 class="content-title">1930s</h2>
+              <p class="content-desc">
+              <ul class="content-list">
+              <li>Froggatt warned about the potential pest status of cane toads but was ignored.</li>
+              <li>No pre-release testing was conducted to assess the toads' impact on native Australian species.</li>
+              <li>BSES and government officials overlooked the risks, and bans on further releases were lifted.</li>
+              </ul>
+              </p>
+            </div>
+          </div>
+
+          <div class="item" data-text="Spread Across Australia">
+            <div class="content">
+              <img src="/static/images/history_4.jpg" alt="" class="img">
+              <h2 class="content-title">1960s</h2>
+              <p class="content-desc">
+                <ul class="content-list">
+                  <li>Cane toads rapidly multiplied and spread across Queensland, Northern Territory, New South Wales, and Western Australia.</li>
+                  <li>Cane Toads had colonized most of Queensland's east coast.</li>
+                  <li>They reached the Northern Territory/Western Australian border by 2009, and by 2023, they were sighted as far south as Bankstown, Sydney.</li>
+              </ul>
+              </p>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item" data-text="Current Status And Conclusion">
+            <div class="content">
+              <img src="/static/images/history_5.jpg" alt="" class="img">
+              <h2 class="content-title">2000s</h2>
+              <p class="content-desc">
+                <ul class="content-list">
+                  <li>Despite efforts to control their spread, cane toads remain a significant pest in Australia.</li>
+                  <li>Lessons learned from the introduction of cane toads have influenced modern quarantine laws and risk assessment procedures.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="img-three" class="content-two">
+      <!-- Behavior page -->
+      <div class="main">
+        <div class="background-image"></div>
+        <img src="/static/icon/arrow.svg" class = "iconfont icon-arrow-up-bold " id="up-btn" onclick="slideToPrev()"></img>
+        <img src="/static/icon/arrow.svg" class = "iconfont icon-arrow-down-bold"  id="down-btn" onclick="slideToNext()"></img>
+        <div id="content">
+            <div class="card">
+                <div class="card-time">
+                  Daytime Preference
+                </div>
+                <div class="card-title">
+                  Cane Toad Behavior
+                </div>
+                <div class="card-passage">
+                  <br>•	Cane toads are nocturnal animals. This means that they are most active during the night because of the cooler temperature and the higher moisture levels
+                  <br>•	Being nocturnal also helps the cane toads avoid predators and reduces their risk of dehydration in hot and dry conditions during the day                  
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-time">
+                Mating Behaviour
+                </div>
+                <div class="card-title">
+                  Cane Toad Behavior
+                </div>
+                <div class="card-passage">
+                  <br>•	Cane toads exhibit various behaviours to attract its mates for breeding
+                  <br>•	Male cane toads produce unique mating calls to attract the females. These calls vary in frequency, duration and intensity. These calls depend on the individual’s size, health and environmental conditions
+                  <br>•	Female cane toads are attracted to males with loud and intense calls indicating their health and size              
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-time">
+                  Mobility
+                </div>
+                <div class="card-title">
+                  Cane Toad Behavior
+                </div>
+                <div class="card-passage">
+                  <br>•	Cane toads do not have the athletic ability such as frogs to jump long distances. 
+                  <br>•	Because of this, cane toads typically stay close to the ground and bound only short distances.
+                  <br>•	This limited mobility is a plays a huge part in the cane toads choosing a suitable habitat to live in                  
+                </div>
+            </div>
+        </div>
+
+        <div id="clock">
+            <div id="clock-center"></div>
+            <div id="clock-pointer"></div>
+            <div id="clock-table"></div>
+        </div>
+    </div>
+    </section>
+
+    <section id="img-four" class="content-three">
+      <!-- Location page -->
+    </section>
+
+    <section id="img-five" class="content-five">
+      <!-- Handling page -->
+    </section>
+
+    <section id="img-six" class="content-six">
+      <!-- Handling page -->
+    </section>
+    <section id="footer">FOOTER
+      <!-- about us page -->
+    </section>
+  </div>
+
+
+  <!-- Your existing jQuery and main.js script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+
+</html>

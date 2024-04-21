@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 #Firstly the data was examined 
 
 response = requests.get('https://api.ala.org.au/occurrences/occurrences/search?q=taxa%3A%22cane%20toad%22&qualityProfile=re-usable&qc=-_nest_parent_%3A*&limit=100')
@@ -38,6 +39,9 @@ for page in range(1, no_of_pages + 1):
         Month.append(result.get('month', None))
         Latitude.append(result.get('decimalLatitude', None))
         Longitude.append(result.get('decimalLongitude', None))
+
+
+df= pd.DataFrame ()
 
 
 

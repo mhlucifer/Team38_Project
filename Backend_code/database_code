@@ -1,0 +1,36 @@
+import requests
+#Firstly the data was examined 
+
+response = requests.get('https://api.ala.org.au/occurrences/occurrences/search?q=taxa%3A%22cane%20toad%22&qualityProfile=re-usable&qc=-_nest_parent_%3A*&limit=100')
+data=response.json()
+
+
+#get the keys
+# print(data.keys())
+
+
+#Gives the number of records in the API
+total_records=data.get('totalRecords')
+print(total_records)
+
+
+#Initially, the limit was found to be 10
+limit=10
+#this is the number of pages that is needed
+no_of_pages= (total_records+limit-1)//limit
+
+#Initialise lists 
+state=[]
+Year=[]
+Month=[]
+Day=[]
+
+for page in range(1, no_of_pages + 1):
+    response = requests.get(f'https://api.ala.org.au/occurrences/occurrences/search?q=taxa%3A%22cane%20toad%22&qualityProfile=re-usable&qc=-_nest_parent_%3A*&limit={limit}&offset={(page - 1) * limit}')
+    data = response.json()
+    results = data.get('occurrences', [])
+    for result in results:
+        state.append(result['stateProvince'])
+
+print(state)
+

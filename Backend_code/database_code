@@ -1,5 +1,10 @@
 import requests
 import pandas as pd
+import mysql.connector
+from mysql.connector import errorcode
+
+import pandas as pd
+from sqlalchemy import create_engine
 #Firstly the data was examined 
 
 response = requests.get('https://api.ala.org.au/occurrences/occurrences/search?q=taxa%3A%22cane%20toad%22&qualityProfile=re-usable&qc=-_nest_parent_%3A*&limit=100')
@@ -40,23 +45,16 @@ for page in range(1, no_of_pages + 1):
         Latitude.append(result.get('decimalLatitude', None))
         Longitude.append(result.get('decimalLongitude', None))
 
-
+#Make a df based on values from the API call
 df= pd.DataFrame ({'RecordID':RecordID,'State': State, 'Year': Year,'Month':Month, 'Latitude': Latitude,'Longitude': Longitude  })
-
-print(df)
+#Check if there are any null values 
 null_values = df.isnull().sum()
-
 # Print the result
 print("Null values in each column:")
 print(null_values)
-
+#Get rid of rows with null values 
 df = df.dropna()
-
-
-import mysql.connector
-from mysql.connector import errorcode
-
-
+#make a connection to the db 
 config = {
   'host':'db-infotoad.mysql.database.azure.com',
   'user':'infotoad38admin',
@@ -68,17 +66,9 @@ config = {
 
 conn = mysql.connector.connect(**config)
 
-
-
-conn = mysql.connector.connect(**config)
-import pandas as pd
-from sqlalchemy import create_engine
 mycursor=conn.cursor()
 mycursor.execute("CREATE TABLE sighting_data (ID INT AUTO_INCREMENT PRIMARY KEY, RECORDID VARCHAR(255), STATE VARCHAR(255), Year INT, Month INT,Latitude DOUBLE, Longitude DOUBLE)")
-
-
 engine = create_engine("mysql+mysqlconnector://infotoad38admin:cO52LFKBwNYrmXVJvbdM@db-infotoad.mysql.database.azure.com/dbtoad")
-
 df.to_sql('sighting_data', con=engine, if_exists='append', index=False)
 
 

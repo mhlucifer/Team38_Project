@@ -15,7 +15,7 @@ total_records=data.get('totalRecords')
 
 
 #Initially, the limit was found to be 10
-limit=100
+limit=10
 #this is the number of pages that is needed
 no_of_pages= (total_records+limit-1)//limit
 
@@ -41,15 +41,44 @@ for page in range(1, no_of_pages + 1):
         Longitude.append(result.get('decimalLongitude', None))
 
 
-df= pd.DataFrame ()
+df= pd.DataFrame ({'RecordID':RecordID,'State': State, 'Year': Year,'Month':Month, 'Latitude': Latitude,'Longitude': Longitude  })
+
+print(df)
+null_values = df.isnull().sum()
+
+# Print the result
+print("Null values in each column:")
+print(null_values)
+
+df = df.dropna()
+
+
+import mysql.connector
+from mysql.connector import errorcode
+
+
+config = {
+  'host':'db-infotoad.mysql.database.azure.com',
+  'user':'infotoad38admin',
+  'password':'cO52LFKBwNYrmXVJvbdM',
+  'database':'dbtoad',
+  'client_flags': [mysql.connector.ClientFlag.SSL],
+  'ssl_ca': '/Users/pavneetheer/Downloads/DigiCertGlobalRootCA.crt.pem'
+}
+
+conn = mysql.connector.connect(**config)
 
 
 
+conn = mysql.connector.connect(**config)
+import pandas as pd
+from sqlalchemy import create_engine
+mycursor=conn.cursor()
+mycursor.execute("CREATE TABLE sighting_data (ID INT AUTO_INCREMENT PRIMARY KEY, RECORDID VARCHAR(255), STATE VARCHAR(255), Year INT, Month INT,Latitude DOUBLE, Longitude DOUBLE)")
 
 
+engine = create_engine("mysql+mysqlconnector://infotoad38admin:cO52LFKBwNYrmXVJvbdM@db-infotoad.mysql.database.azure.com/dbtoad")
 
-
-
-
+df.to_sql('sighting_data', con=engine, if_exists='append', index=False)
 
 

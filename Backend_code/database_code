@@ -4,33 +4,48 @@ import requests
 response = requests.get('https://api.ala.org.au/occurrences/occurrences/search?q=taxa%3A%22cane%20toad%22&qualityProfile=re-usable&qc=-_nest_parent_%3A*&limit=100')
 data=response.json()
 
-
-#get the keys
-# print(data.keys())
+# get the keys
+print(data.keys())
 
 
 #Gives the number of records in the API
 total_records=data.get('totalRecords')
-print(total_records)
+# print("Total number of records are :" total_records)
 
 
 #Initially, the limit was found to be 10
-limit=10
+limit=100
 #this is the number of pages that is needed
 no_of_pages= (total_records+limit-1)//limit
 
-#Initialise lists 
-state=[]
+# #Initialise lists 
+RecordID=[]
+State=[]
 Year=[]
 Month=[]
-Day=[]
+Latitude=[]
+Longitude=[]
 
 for page in range(1, no_of_pages + 1):
+
     response = requests.get(f'https://api.ala.org.au/occurrences/occurrences/search?q=taxa%3A%22cane%20toad%22&qualityProfile=re-usable&qc=-_nest_parent_%3A*&limit={limit}&offset={(page - 1) * limit}')
     data = response.json()
     results = data.get('occurrences', [])
     for result in results:
-        state.append(result['stateProvince'])
+        RecordID.append(result.get('uuid', None))
+        State.append(result.get('stateProvince', None))
+        Year.append(result.get('year', None))
+        Month.append(result.get('month', None))
+        Latitude.append(result.get('decimalLatitude', None))
+        Longitude.append(result.get('decimalLongitude', None))
 
-print(state)
+
+
+
+
+
+
+
+
+
 

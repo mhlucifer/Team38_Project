@@ -10,9 +10,12 @@ state_counts_df = state_counts.reset_index(name='Count')
 state_counts_df = state_counts.reset_index()
 state_counts_df.columns = ['State', 'Count']
 
+#This centers the map 
 center=folium.Map(location=[25.2744,133.7751], zoom_start=2)
+#loading the geojson file 
 geo_file= 'static/files/states.geojson'
 
+#Generating the map using folium 
 folium.Choropleth(
     geo_data=geo_file, 
     data=state_counts_df,

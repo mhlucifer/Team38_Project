@@ -62,5 +62,11 @@ def identifier():
     return render_template('identifier.html')
 
 
+@app.route('/test_your_knowlege')
+def test_your_knowledge():
+    return render_template('test_your_knowlege.html')
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)  

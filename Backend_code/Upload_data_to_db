@@ -67,6 +67,8 @@ config = {
 conn = mysql.connector.connect(**config)
 
 mycursor=conn.cursor()
+
+
 mycursor.execute("CREATE TABLE sighting_data (ID INT AUTO_INCREMENT PRIMARY KEY, RECORDID VARCHAR(255), STATE VARCHAR(255), Year INT, Month INT,Latitude DOUBLE, Longitude DOUBLE)")
 engine = create_engine("mysql+mysqlconnector://infotoad38admin:cO52LFKBwNYrmXVJvbdM@db-infotoad.mysql.database.azure.com/dbtoad")
 df.to_sql('sighting_data', con=engine, if_exists='append', index=False)

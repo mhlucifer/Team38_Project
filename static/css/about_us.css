@@ -1,0 +1,229 @@
+/* Navigation bar styles */
+body {
+    margin: 0;
+    padding-top: 60px; 
+    font-family: salsa;
+}
+
+.navbar {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #065247; /* Darker shade based on image */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed; /* Makes navbar fixed at the top */
+    top: 0; /* Aligns navbar to the top */
+    width: 100%; /* Ensures navbar stretches across the full viewport width */
+    z-index: 1000; /* Ensures navbar stays on top of other content */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 10px;
+}
+
+.frog-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-items .nav-item{
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar-items .dropbtn
+{
+    background: none;
+    color: #ffffff;
+    padding: 0;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.nav-item.active {
+    font-weight: bold;
+    text-decoration: underline solid red;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.arrow-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0; /* Keep the drop-down button aligned to the left */
+    top: 100%; /* Set the top distance to 100% to place the menu below the button */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Styling for the main header */
+.main-header {
+    background-image: url('/static/images/hero_image_about_us.png');
+    color: #fff;
+    text-align: center;
+    padding: 100px 0; 
+    font-family: Salsa;
+    background-size: cover;
+    
+}
+
+
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a8d5a0; /* This sets the background color to green */
+
+    width: 100%; /* Full width */
+}
+
+.impact-area {
+    text-align: center; /* Centering the title */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Maximum width of the content area */
+    margin: auto; /* Centering the content area */
+}
+
+.impact-title {
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.impact-body {
+    display: flex;
+    justify-content: space-between; /* Spaces out the child elements */
+    align-items: flex-start; /* Aligns the items to the top */
+}
+
+.image-box {
+    flex: 0 1 auto; /* Only grows and shrinks as needed */
+    width: 40%; /* Half of the container by default */
+    padding: 10px;
+}
+
+.image-box img {
+    width: 100%; /* Makes the image responsive within the box */
+    height: auto;
+}
+
+.description-box {
+    flex: 1; /* Takes the remaining space */
+    padding: 10px;
+    margin-left: 20px; /* Space from the image to the description */
+}
+
+.description-box p{
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .impact-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-box,
+    .description-box {
+        width: 100%; /* Full width on smaller screens */
+        margin-left: 0; /* Remove margin for the stack on smaller screens */
+    }
+}
+
+
+
+  
+  
+
+
+
+/* Footer Section */
+.footer-section {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align children to the left */
+    padding: 1rem 2rem;
+    background-color: #F4C194; /* Change to match the exact color */
+    color: black; 
+  }
+  
+  .footer-links a {
+    display: block; /* Make each link a block to stack them vertically */
+    text-decoration: none;
+    color: black; 
+    margin-bottom: 0.5rem; /* Add some space between the links */
+  }
+  
+  .footer-copy {
+    align-self: stretch; /* Stretch to take the full width of the footer */
+    text-align: right; /* Align text to the right */
+   
+    border-top: 1px solid white; /* Add a border on top */
+  }
+  
+  .footer-copy p {
+    margin: 0; /* Remove default margin */
+    text-align: center;
+  }
+  
+  
+  /* Additional responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .footer-section {
+      flex-direction: column; /* Stack the elements on smaller screens */
+      text-align: center;
+    }
+  
+    .footer-links {
+      margin-bottom: 1rem; /* Add some space between the links and copyright text */
+      flex-direction: column; /* Stack the links */
+      align-items: center; /* Center the links */
+    }
+  }

@@ -1,31 +1,32 @@
 #Import necessary libraries 
 
 import pandas as pd
-import json
 import folium 
 
-df = pd.read_excel("static/files/all_uses_data.xlsx")
+#Read the csv file 
+df = pd.read_csv("static/files/Suburbs_data.csv")
+#count the number of occurences by state 
 state_counts = df.groupby('State').size()
+#Put the counts in a df 
 state_counts_df = state_counts.reset_index(name='Count')
-state_counts_df = state_counts.reset_index()
 state_counts_df.columns = ['State', 'Count']
 
 #This centers the map 
-center=folium.Map(location=[25.2744,133.7751], zoom_start=2)
+map_center=folium.Map(location=[-25.2744,133.7751], zoom_start=5)
 #loading the geojson file 
-geo_file= 'static/files/states.geojson'
+file1= 'static/files/states.geojson'
 
 #Generating the map using folium 
 folium.Choropleth(
-    geo_data=geo_file, 
+    geo_data=file1, 
     data=state_counts_df,
     columns=['State', 'Count'],
     key_on='feature.properties.STATE_NAME',
-    fill_color='Reds',
     legend_name='Cane toad distribution by State',
+    fill_color='Reds',
     highlight=True
 
-).add_to(center)
+).add_to(map_center)
 
 # Save map
-center.save("map.html")
+map_center.save("map.html")

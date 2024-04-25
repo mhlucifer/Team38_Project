@@ -1,7 +1,5 @@
-import requests
-import pandas as pd
+
 import mysql.connector
-from mysql.connector import errorcode
 import folium
 #Set the connection 
 def year_searcher(Year):

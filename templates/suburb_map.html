@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dc7990aa1819cf03e60976f87ad4b713 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dc7990aa1819cf03e60976f87ad4b713" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dc7990aa1819cf03e60976f87ad4b713 = L.map(
+                "map_dc7990aa1819cf03e60976f87ad4b713",
+                {
+                    center: [-25.2744, 133.7751],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5b4af5cf07405ccc420617a00432e89b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_5b4af5cf07405ccc420617a00432e89b.addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+            var circle_marker_492e16e9bcd45df4e3f65332d158e4d6 = L.circleMarker(
+                [-18.698333, 146.517778],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+        var popup_9c0a28a4a145ebbaf1bcd81af801df65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d12465f48ed32655ffa2933a5c67a07d = $(`<div id="html_d12465f48ed32655ffa2933a5c67a07d" style="width: 100.0%; height: 100.0%;">Year: 1957   Occurrences: 1</div>`)[0];
+                popup_9c0a28a4a145ebbaf1bcd81af801df65.setContent(html_d12465f48ed32655ffa2933a5c67a07d);
+            
+        
+
+        circle_marker_492e16e9bcd45df4e3f65332d158e4d6.bindPopup(popup_9c0a28a4a145ebbaf1bcd81af801df65)
+        ;
+
+        
+    
+    
+            tile_layer_5b4af5cf07405ccc420617a00432e89b.addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+            var circle_marker_a0507be51e49d5aa71304d6ec8e7f607 = L.circleMarker(
+                [-18.723333, 146.584444],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+        var popup_3d5510e343fb5d927a59cf0aa488cd2e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_88746f242a4a84ff8ecf9df7d5ea3117 = $(`<div id="html_88746f242a4a84ff8ecf9df7d5ea3117" style="width: 100.0%; height: 100.0%;">Year: 1964   Occurrences: 1</div>`)[0];
+                popup_3d5510e343fb5d927a59cf0aa488cd2e.setContent(html_88746f242a4a84ff8ecf9df7d5ea3117);
+            
+        
+
+        circle_marker_a0507be51e49d5aa71304d6ec8e7f607.bindPopup(popup_3d5510e343fb5d927a59cf0aa488cd2e)
+        ;
+
+        
+    
+    
+            tile_layer_5b4af5cf07405ccc420617a00432e89b.addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+            var circle_marker_90f96f070a69b9a9c9dfed9816a14152 = L.circleMarker(
+                [-18.723333, 146.584444],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+        var popup_ba10cef21f449f0ab94b27b374434964 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f6b9cc4bdcad2f89d7a09b44bfd7f14 = $(`<div id="html_1f6b9cc4bdcad2f89d7a09b44bfd7f14" style="width: 100.0%; height: 100.0%;">Year: 1969   Occurrences: 1</div>`)[0];
+                popup_ba10cef21f449f0ab94b27b374434964.setContent(html_1f6b9cc4bdcad2f89d7a09b44bfd7f14);
+            
+        
+
+        circle_marker_90f96f070a69b9a9c9dfed9816a14152.bindPopup(popup_ba10cef21f449f0ab94b27b374434964)
+        ;
+
+        
+    
+    
+            tile_layer_5b4af5cf07405ccc420617a00432e89b.addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+            var circle_marker_27f9a3be3e32c4b9a58d3cf371b0ece6 = L.circleMarker(
+                [-18.592159, 146.493462],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+        var popup_eda7866021eb29e30400002c16651351 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_49a170ca69426486017fc1074905a295 = $(`<div id="html_49a170ca69426486017fc1074905a295" style="width: 100.0%; height: 100.0%;">Year: 2001   Occurrences: 1</div>`)[0];
+                popup_eda7866021eb29e30400002c16651351.setContent(html_49a170ca69426486017fc1074905a295);
+            
+        
+
+        circle_marker_27f9a3be3e32c4b9a58d3cf371b0ece6.bindPopup(popup_eda7866021eb29e30400002c16651351)
+        ;
+
+        
+    
+    
+            tile_layer_5b4af5cf07405ccc420617a00432e89b.addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+            var circle_marker_046b60ce42d860a2b5b70735d25f2d58 = L.circleMarker(
+                [-18.61324, 146.4852],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+        var popup_ab08fd58665888d15ae673811d0a90fd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8cf26505e177dea2da1f23d1daee98c5 = $(`<div id="html_8cf26505e177dea2da1f23d1daee98c5" style="width: 100.0%; height: 100.0%;">Year: 2012   Occurrences: 1</div>`)[0];
+                popup_ab08fd58665888d15ae673811d0a90fd.setContent(html_8cf26505e177dea2da1f23d1daee98c5);
+            
+        
+
+        circle_marker_046b60ce42d860a2b5b70735d25f2d58.bindPopup(popup_ab08fd58665888d15ae673811d0a90fd)
+        ;
+
+        
+    
+    
+            tile_layer_5b4af5cf07405ccc420617a00432e89b.addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+            var circle_marker_cb60b9c88491bef255ec14b5f62a4e4a = L.circleMarker(
+                [-18.61213, 146.4945],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+        var popup_1eb9b979ebedbde7d80ac749faa246a5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_37620b0648f5fd130caf2faeffc7b174 = $(`<div id="html_37620b0648f5fd130caf2faeffc7b174" style="width: 100.0%; height: 100.0%;">Year: 2012   Occurrences: 1</div>`)[0];
+                popup_1eb9b979ebedbde7d80ac749faa246a5.setContent(html_37620b0648f5fd130caf2faeffc7b174);
+            
+        
+
+        circle_marker_cb60b9c88491bef255ec14b5f62a4e4a.bindPopup(popup_1eb9b979ebedbde7d80ac749faa246a5)
+        ;
+
+        
+    
+    
+            tile_layer_5b4af5cf07405ccc420617a00432e89b.addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+            var circle_marker_c1eba3daa3a869297b26516b7d8edc6c = L.circleMarker(
+                [-18.61354, 146.4921],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_dc7990aa1819cf03e60976f87ad4b713);
+        
+    
+        var popup_a199585af0660f9dbd6297451a3fb2a9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a6735cddc82482a38bc1105299de637 = $(`<div id="html_5a6735cddc82482a38bc1105299de637" style="width: 100.0%; height: 100.0%;">Year: 2012   Occurrences: 1</div>`)[0];
+                popup_a199585af0660f9dbd6297451a3fb2a9.setContent(html_5a6735cddc82482a38bc1105299de637);
+            
+        
+
+        circle_marker_c1eba3daa3a869297b26516b7d8edc6c.bindPopup(popup_a199585af0660f9dbd6297451a3fb2a9)
+        ;
+
+        
+    
+</script>
+</html>

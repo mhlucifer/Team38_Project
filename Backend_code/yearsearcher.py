@@ -24,6 +24,8 @@ def year_searcher(Year):
 
   results = cursor.fetchall()
   total_results=len(results)
+  if total_results == 0:
+    print("No results found")
   #Center of the map 
   mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=6)
 
@@ -50,4 +52,4 @@ def year_searcher(Year):
     # Return the filename
   return filename
 
-year_searcher(2024)
+year_searcher(2023)

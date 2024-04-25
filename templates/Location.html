@@ -6,182 +6,54 @@
     <title>location-page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!--  main CSS -->
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/location.css">
 </head>
-
-<div data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top site-navbar-target">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">InfoToad<span class="text-primary">.</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/location">Location</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/behaviour">Behavior</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/handle">Handling</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
-    <div class="full-screen-cover" style="background-image: url('/static/images/toad12.jpg');">
-        <div class="content-overlay">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-md-5">
-                        <span class="text-cursive h5 text-white">Welcome To Our Website</span>
-                        <h1 class="mb-3 font-weight-bold text-white">Location</h1>
-                        <p><a href="/index" class="text-white">Home</a> <span class="mx-3">/</span>
-                            <strong class="text-white">About</strong></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="navbar">
+    <div class="navbar-logo">
+        <img src="/static/images/frog-icon.png" class="frog-icon" alt="Frog Icon">
+        <div class="logo">INVATOAD</div>
     </div>
-
-
-   <!-- Map Section -->
-<section class="head-map-section">
-    <div class="container">
-        <div class="row">
-            <!-- Left Side: Title and Description -->
-            <div class="col-lg-4">
-                <h2 class="title-bold">Toad Distribution Count</h2>
-                <p class="description-text">This map shows the distribution of toads across Australia. It provides a visual representation of their population density and spread in various regions.</p>
-            </div>
-            <!-- Map Area -->
-            <div class="col-lg-8">
-                <!-- Embed map -->
-                <div id="map" class="map-container">
-                <iframe id="map" class="map-container" src="{{ url_for('static', filename='cane_toad_map.html') }}" frameborder="0" style="width: 100%; height: 500px;"></iframe>
-                </div>
+    <div class="navbar-items">
+        <a href="/test" class="nav-item active">Home</a>
+        <div class="nav-item dropdown">
+            <button class="dropbtn">Information<img src="/static/icon/arrow.svg" class="arrow-icon"></button>
+            <div class="dropdown-content">
+                <a href="/history">History</a>
+                <a href="#">Behavior</a>
             </div>
         </div>
+        <a href="/location" class="nav-item">Cane Toad Locator</a>
+        <a href="/identifier" class="nav-item">Cane Toad Identifier</a>
+        <a href="#" class="nav-item">Handling</a>
+        <a href="#" class="nav-item">Test your knowledge</a>
+        <a href="/about_us" class="nav-item">About US</a>
     </div>
+</div>
+
+
+<!-- Suburban research area -->
+<section>
+    <h2>Search by suburb</h2>
+    <input type="text" id="suburbInput" placeholder="Please enter suburb name">
+    <button onclick="loadMap('suburb')">Search</button>
+    <iframe id="suburbMapFrame" width="100%" height="500px"></iframe>
+</section>
+
+<!-- year research area -->
+<section>
+    <h2>Search by year</h2>
+    <input type="number" id="yearInput" placeholder="Please enter year">
+    <button onclick="loadMap('year')">Search</button>
+    <iframe id="yearMapFrame" width="100%" height="500px"></iframe>
 </section>
 
 
-    <section class="tips-section py-5">
-        <div class="container">
-            <h2 class="section-title mb-4 text-center">Small Tips</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Card for Habitat Preferences -->
-                    <div class="card1">
-                        <div class="card-header">
-                            <h3 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                        data-target="#collapseHabitat" aria-expanded="false"
-                                        aria-controls="collapseHabitat">
-                                    Habitat Preferences(Click for details)
-                                </button>
-                            </h3>
-                        </div>
-                        <div id="collapseHabitat" class="collapse" aria-labelledby="headingHabitat">
-                            <div class="card-body">
-                                <ul>
-                                    <li>Cane Toads prefer open, large areas with access to water sources for hydration
-                                        and reproduction.
-                                    </li>
-                                    <li>Commonly found in habitats such as grasslands, open woodlands, and urban
-                                        areas.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <!-- Card for Common Sightings -->
-                    <div class="card2">
-                        <div class="card-header">
-                            <h3 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
-                                        data-target="#collapseSightings" aria-expanded="false"
-                                        aria-controls="collapseSightings">
-                                    Common Sightings(Click for details)
-                                </button>
-                            </h3>
-                        </div>
-                        <div id="collapseSightings" class="collapse" aria-labelledby="headingSightings">
-                            <div class="card-body">
-                                <ul>
-                                    <li>Regularly Seen at Moreton Bay in Queensland and New South Wales.</li>
-                                    <li>Cane Toads have been reported in isolated parts of Victoria and Melbourne’s
-                                        urban areas.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    <div class="site-section bg-info">
-        <div class="container">
-            <div class="row mb-5" id="start-section">
-                <div class="col-12 text-center">
-                    <h2 class="section-title mb-3">location Quiz</h2>
-                    <div>
-                        <input type="text" class="username" placeholder="Input your name"/>
-                        <button class="start-quiz">Start Quiz</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-5 quiz-section" style="display: none;">
-                <div class="col-12 text-center">
-                    <h2 class="section-title mb-3">Small Quiz</h2>
-                    <div class="quiz">
-                        <!-- js quiz -->
-                    </div>
-                    <br>
-                    <button class="next">next Question</button>
-                </div>
-            </div>
-            <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <div class="final-score" style="display: none;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="/static/js/main.js"></script>
-    <script>const quizType = 'location';</script>
-    </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="/static/js/location.js"></script>
+</body>
 </div>
 
 </html>
-
-
-
-
-
-
-
-
-
-

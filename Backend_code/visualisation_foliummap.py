@@ -18,12 +18,19 @@ file1= 'static/files/states.geojson'
 
 #Generating the map using folium 
 folium.Choropleth(
+    #Load the Geojson file 
     geo_data=file1, 
+    #Data to be used is the count data from the state_counts_df 
     data=state_counts_df,
+    #This chooses the STAte to be associated with the features property and the count is what the map should be made with
     columns=['State', 'Count'],
+    #What to use as the key to match with State from above
     key_on='feature.properties.STATE_NAME',
+    #Naming the map
     legend_name='Cane toad distribution by State',
+    #Colours to choose 
     fill_color='Reds',
+    #Highlight when hovering over 
     highlight=True
 
 ).add_to(map_center)

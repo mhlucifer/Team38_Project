@@ -1,0 +1,303 @@
+/* Navigation bar styles */
+body {
+    margin: 0;
+    padding-top: 60px; 
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    background-color: #065247; /* Darker shade based on image */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed; /* Makes navbar fixed at the top */
+    top: 0; /* Aligns navbar to the top */
+    width: 100%; /* Ensures navbar stretches across the full viewport width */
+    z-index: 1000; /* Ensures navbar stays on top of other content */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 10px;
+}
+
+.frog-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-items .nav-item{
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar-items .dropbtn
+{
+    background: none;
+    color: #ffffff;
+    padding: 0;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.nav-item.active {
+    font-weight: bold;
+    text-decoration: underline solid red;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.arrow-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0; /* 保持与下拉按钮左对齐 */
+    top: 100%; /* 设置顶部距离为 100% 以将菜单放在按钮下方 */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/* history page */
+
+
+
+
+
+.shell {
+    width: 100%;
+    position: relative;
+    transition: 0.3s ease;
+    padding: 80px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: visible;
+}
+
+.shell:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 99, 99, 0.8);
+    content: "";
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.title {
+    color: #fff;
+    font-size: 46px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+
+}
+
+.content-title {
+    font-weight: normal;
+    font-size: 66px;
+    transition: 0.4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.content-desc {
+    margin: 0;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 25px;
+    list-style: inside;
+}
+
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.item {
+    opacity: 0.3;
+    filter: blur(2px);
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+}
+
+.item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+    font: 900 20px '';
+    letter-spacing: 5px;
+}
+
+.item:nth-child(even) {
+    align-self: flex-end;
+}
+
+.item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 15px;
+}
+
+.item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+.item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+}
+
+.item--active .content-title {
+    margin: -50px 0 20px 0;
+}
+
+.img {
+    max-width: 100%;
+
+
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+}
+
+
+.content-list {
+    list-style-type: disc;
+    padding-left: -10px;
+    margin: 0;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 25px;
+}
+
+.content-list li {
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+    .item {
+        align-self: baseline !important;
+        width: 100%;
+        padding: 0 30px 150px 80px;
+    }
+
+    .item:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+    }
+
+    .item:last-child {
+        padding-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline:before {
+        left: 40px;
+    }
+}

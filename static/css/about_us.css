@@ -117,6 +117,8 @@ body {
     padding: 100px 0; 
     font-family: Salsa;
     background-size: cover;
+    text-shadow: 2px 2px 4px black; /* Add text shadow for header */
+    
     
 }
 

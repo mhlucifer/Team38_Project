@@ -37,9 +37,9 @@ def login_page():
         return jsonify({"success": False, "message": "Invalid password,Please try again"}), 401
 
 
-@app.route('/test')
-def main_page1():
-    return render_template('test.html')
+@app.route('/main')
+def main1_page():
+    return render_template('main.html')
 
 
 @app.route('/take_action')

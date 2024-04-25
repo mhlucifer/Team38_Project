@@ -44,10 +44,11 @@ def suburb_searcher(suburb):
     text = f"Year: {Year} \n Occurrences: {total[occurence]}"
     popup = folium.Popup(text, parse_html=True)
     #Markers are created based on location and longitude and a pop is created for the particular location
-    folium.CircleMarker(location=[Latitude, Longitude],radius=2, color='Red',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
+    folium.CircleMarker(location=[Latitude, Longitude],radius=8, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
     filename = "suburb_map.html"
     mymap.save(filename)
-    
   return filename
 
+
+suburb_searcher('palm island')
 

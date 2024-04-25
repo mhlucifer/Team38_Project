@@ -43,11 +43,11 @@ def year_searcher(Year):
     folium.Marker(location = top_Aus, popup='Count of cane toads in' f"{Year}" 'was'  f"{total_results}",icon=folium.Icon(color='red', icon='info-sign')).add_to(mymap)
 
     #Markers are created based on location and longitude and a pop is created for the particular location
-    folium.CircleMarker(location=[Latitude, Longitude],radius=10, color='Red',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
+    folium.CircleMarker(location=[Latitude, Longitude],radius=10, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
     filename = "year_map.html"
     mymap.save(filename)
     
     # Return the filename
-    return filename
+  return filename
 
-year_searcher(1980)
+year_searcher(2024)

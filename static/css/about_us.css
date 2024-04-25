@@ -184,6 +184,28 @@ body {
     }
 }
 
+/* Global styles */
+body {
+    font-family: 'Open Sans', sans-serif; /* Fallback font */
+}
+
+.main-header {
+    text-align: center; /* Center align the main heading */
+}
+
+/* Styles for specific elements */
+.impact-title {
+    font-family: 'Salsa', cursive; /* Salsa font for the main heading */
+}
+
+.description-box {
+    text-align: justify; /* Justify text in the description box */
+}
+
+.dropbtn {
+    font-family: 'Salsa', cursive; /* Salsa font for the button text */
+}
+
 
 
   

@@ -13,7 +13,11 @@ def year_searcher(Year):
   'client_flags': [mysql.connector.ClientFlag.SSL],
   'ssl_ca': '/static/api/DigiCertGlobalRootCA.crt.pem'
   }
-  conn = mysql.connector.connect(**config)
+  try:
+    conn = mysql.connector.connect(**config)
+    print('Connection successful!')
+  except mysql.connector.Error as err:
+    print(f"Error: {err}")
   cursor=conn.cursor()
 
   Query= """ SELECT Latitude, Longitude, Year, Suburb 

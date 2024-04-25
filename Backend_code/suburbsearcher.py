@@ -3,40 +3,38 @@ import pandas as pd
 import mysql.connector
 from mysql.connector import errorcode
 import folium
+
 #Set the connection 
-config = {
+
+
+def suburb_searcher(suburb):
+  Suburb=suburb.title()
+  config = {
   'host':'db-infotoad.mysql.database.azure.com',
   'user':'infotoad38admin',
-  'password':'cO52LFKBwNYrmXVJvbdM',
+  'password':'tohviv-rixdik-9dircU',
   'database':'dbtoad',
   'client_flags': [mysql.connector.ClientFlag.SSL],
   'ssl_ca': '/Users/pavneetheer/Downloads/DigiCertGlobalRootCA.crt.pem'
-}
+  }
+  conn = mysql.connector.connect(**config)
+  cursor=conn.cursor()
+  Query= """ SELECT Latitude, Longitude, Year
+  FROM data where 
+  Suburb = %s;
+  """
+  cursor.execute(Query, (Suburb,))
+  results = cursor.fetchall()
+  print(results)
 
-conn = mysql.connector.connect(**config)
+  #Center of the map 
+  mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=6)
 
+  #Make a dictionary 
+  total={}
+  #Go over the results 
 
-cursor=conn.cursor()
-suburb= input("Enter your suburb")
-Suburb=suburb.title()
-
-Query= """ SELECT Latitude, Longitude, Year
-FROM data where 
-Suburb = %s;
-"""
-cursor.execute(Query, (Suburb,))
-
-results = cursor.fetchall()
-
-
-#Center of the map 
-mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=6)
-
-#Make a dictionary 
-total={}
-#Go over the results 
-
-for result in results:
+  for result in results:
     #The following is the result
     Latitude, Longitude, Year = result
     occurence= f"{Latitude}_{Longitude}_{Year}"
@@ -47,6 +45,9 @@ for result in results:
     popup = folium.Popup(text, parse_html=True)
     #Markers are created based on location and longitude and a pop is created for the particular location
     folium.CircleMarker(location=[Latitude, Longitude],radius=2, color='Red',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
+    filename = "suburb_map.html"
+    mymap.save(filename)
+    
+  return filename
 
-# Save the map to an HTML file
-mymap.save("suburb_map.html")
+

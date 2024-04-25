@@ -40,7 +40,6 @@ df = df.rename(columns=new_names)
 suburbs = gpd.read_file('/Users/pavneetheer/Downloads/SAL_2021_AUST_GDA94_SHP/SAL_2021_AUST_GDA94.shp')
 df['Suburb'] = None
 
-n=0
 for index, row in df.iterrows():
     lat = row["Latitude"]
     lng = row["Longitude"]
@@ -49,17 +48,15 @@ for index, row in df.iterrows():
         polygon = row['geometry']
         if point.within(polygon):
             df.at[index, "Suburb"] = row['SAL_NAME21']
-            n=n+1
-            print(n)
 
-print("done")
-
+#Save the df to a csv file so it can be easily accessed later on
 df.to_csv("Suburbs_data.csv")
-
+#Reset the index 
 df.reset_index(drop=True, inplace=True)
-
+#One column was left to rename, rename State
 df = df.rename(columns={'stateProvince': 'State'})
 
+#configuration to connect to the db 
 config = {
   'host':'db-infotoad.mysql.database.azure.com',
   'user':'infotoad38admin',
@@ -69,6 +66,7 @@ config = {
   'ssl_ca': '/Users/pavneetheer/Downloads/DigiCertGlobalRootCA.crt.pem'
 }
 
+#make the connection 
 conn = mysql.connector.connect(**config)
 mycursor=conn.cursor()
 #Query for creating a table 

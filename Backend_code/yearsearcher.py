@@ -11,7 +11,7 @@ def year_searcher(Year):
   'password':'tohviv-rixdik-9dircU',
   'database':'dbtoad',
   'client_flags': [mysql.connector.ClientFlag.SSL],
-  'ssl_ca': '/Users/pavneetheer/Downloads/DigiCertGlobalRootCA.crt.pem'
+  'ssl_ca': '/static/api/DigiCertGlobalRootCA.crt.pem'
   }
   conn = mysql.connector.connect(**config)
   cursor=conn.cursor()
@@ -45,9 +45,9 @@ def year_searcher(Year):
     #Markers are created based on location and longitude and a pop is created for the particular location
     folium.CircleMarker(location=[Latitude, Longitude],radius=10, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
     filename = "year_map.html"
-    mymap.save(filename)
+    mymap.save('templates/' + filename)
     
     # Return the filename
   return filename
 
-year_searcher(2024)
+#year_searcher(2024)

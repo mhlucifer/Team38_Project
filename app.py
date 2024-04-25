@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, jsonify
-from backend_code.suburbsearcher import  suburb_searcher
-from backend_code.yearsearcher import year_searcher
+from Backend_code.suburbsearcher import  suburb_searcher
+from Backend_code.yearsearcher import year_searcher
 app = Flask(__name__) 
+
+
+
 
 
 @app.route('/index')
@@ -68,17 +71,24 @@ def test_your_knowledge():
     return render_template('test_your_knowlege.html')
 
 
-
 @app.route('/generate_map', methods=['POST'])
 def generate_map():
     map_type = request.args.get('type')
     value = request.args.get('value')
-    # Call different functions to generate maps based on types
-    if map_type == 'suburb':
-        suburb_searcher(value)
-    elif map_type == 'year':
-        year_searcher(value)
-    return 'Map generated successfully'
+    try:
+        if map_type == 'suburb':
+            filename = suburb_searcher(value)
+        elif map_type == 'year':
+            filename = year_searcher(value)
+        if filename:
+            return render_template(filename)
+        else:
+            # If no file is generated, set the error message
+            return jsonify({'error': 'No data found for the provided input'}), 404
+    except Exception as e:
+        # Catch other exceptions and return error information
+        return jsonify({'error': str(e)}), 500
+
 
 
 if __name__ == '__main__':

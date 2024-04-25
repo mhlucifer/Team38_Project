@@ -1,5 +1,5 @@
 function loadMap(type) {
-    // 获取用户输入
+    // Get user input
     let input;
     if (type === 'year') {
         input = document.getElementById('yearInput').value;
@@ -10,22 +10,33 @@ function loadMap(type) {
         return;
     }
 
-    // 构造请求地址
+    // Construct request address
     let apiUrl = `/generate_map?type=${type}&value=${input}`;
     
-    // 发起请求，让后端开始生成地图
+    // Initiate a request to let the backend start generating the map
     fetch(apiUrl, { method: 'POST' })
     .then(response => {
         if(response.ok) {
-            // 使用时间戳来避免缓存问题
-            let timestamp = new Date().getTime();
-            let iframeId = type === 'year' ? 'yearMapFrame' : 'suburbMapFrame';
-            let mapHtml = type === 'year' ? 'year_map.html' : 'suburb_map.html';
-            let iframeSrc = `/static/maps/${mapHtml}?timestamp=${timestamp}`;
-            document.getElementById(iframeId).src = iframeSrc;
+            return response.text();
         } else {
-            console.error('Error when generating the map.');
+            return response.json(); // If the response is not ok, assume it returns an error message in JSON format
         }
     })
-    .catch(error => console.error('Error:', error));
+    .then(data => {
+        if (typeof data === 'string') {
+            // Load the map normally
+            let iframeId = type === 'year' ? 'yearMapFrame' : 'suburbMapFrame';
+            let iframe = document.getElementById(iframeId);
+            iframe.contentDocument.open();
+            iframe.contentDocument.write(data);
+            iframe.contentDocument.close();
+        } else {
+            // Error handling, display error information
+            alert(data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while generating the map.');
+    });
 }

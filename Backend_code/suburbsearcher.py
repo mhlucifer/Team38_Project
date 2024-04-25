@@ -15,7 +15,7 @@ def suburb_searcher(suburb):
   'password':'tohviv-rixdik-9dircU',
   'database':'dbtoad',
   'client_flags': [mysql.connector.ClientFlag.SSL],
-  'ssl_ca': '/Users/pavneetheer/Downloads/DigiCertGlobalRootCA.crt.pem'
+  'ssl_ca': '/static/api/DigiCertGlobalRootCA.crt.pem'
   }
   conn = mysql.connector.connect(**config)
   cursor=conn.cursor()
@@ -46,9 +46,9 @@ def suburb_searcher(suburb):
     #Markers are created based on location and longitude and a pop is created for the particular location
     folium.CircleMarker(location=[Latitude, Longitude],radius=8, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
     filename = "suburb_map.html"
-    mymap.save(filename)
+    mymap.save('templates/' + filename)
   return filename
 
 
-suburb_searcher('palm island')
+#suburb_searcher('palm island')
 

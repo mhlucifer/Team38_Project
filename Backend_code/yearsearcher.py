@@ -48,8 +48,8 @@ def year_searcher(Year):
     folium.CircleMarker(location=[Latitude, Longitude],radius=10, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
     filename = "year_map.html"
     mymap.save('templates/' + filename)
-    
+
     # Return the filename
   return filename
 
-#year_searcher(2024)
+#year_searcher(2023)

@@ -34,3 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       preview.style.display = "block";
     }
   }
+
+  document.getElementById('submitBtn').addEventListener('click', function() {
+    alert('This feature is currently under development and not yet available.');
+  });

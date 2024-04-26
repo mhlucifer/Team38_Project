@@ -23,3 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('action-button').addEventListener('click', function() {
     window.location.href = '/take_action';
 });
+
+document.getElementById('explore-locator').addEventListener('click', function() {
+    window.location.href = '/location';
+  });
+  document.getElementById('identify-tools').addEventListener('click', function() {
+    window.location.href = '/identifier';
+  });
+
+
+  document.getElementById('identify-tools').addEventListener('click', function() {
+    window.location.href = '/identifier';
+  });
+
+   document.getElementById('learn-more-button').addEventListener('click', function() {
+    window.location.href = '/history';
+  });

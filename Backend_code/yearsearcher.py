@@ -27,7 +27,7 @@ def year_searcher(Year):
   results = cursor.fetchall()
   total_results=len(results)
   #Center of the map 
-  mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=6)
+  mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=2)
 
   total={}
 

@@ -47,6 +47,5 @@ def suburb_searcher(suburb):
   return filename
 
 
-if __name__ == "main":
-  suburb_searcher('palm island')
+  #suburb_searcher('palm island')
 

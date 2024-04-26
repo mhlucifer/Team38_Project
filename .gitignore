@@ -1,6 +1,5 @@
 test*
 /env
 .idea
-JUNK*
-junk*
-
+/my_new_env
+/myenv

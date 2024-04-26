@@ -2,11 +2,11 @@
 body {
     margin: 0;
     padding-top: 60px; 
-    font-family: salsa;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navbar {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Salsa;
     background-color: #065247; /* Darker shade based on image */
     display: flex;
     justify-content: space-between;
@@ -45,6 +45,7 @@ body {
     padding: 0 1rem;
     display: flex;
     align-items: center;
+    padding-left: 10px; 
 }
 
 
@@ -60,8 +61,11 @@ body {
 
 
 .nav-item.active {
-    font-weight: bold;
-    text-decoration: underline solid red;
+    text-decoration: underline; /* Underline for active page */
+    text-decoration-color: #a8d5a0; /* Change underline color */
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px; /* Adjust space between text and underline */
+    text-decoration-skip-ink: none; /* Ensure underline is not cut through descenders */
 }
 
 .dropdown {
@@ -75,6 +79,10 @@ body {
 
 }
 
+.nav-text {
+    color: white;
+    padding: 0 0.5rem; /* Adjust padding as needed */
+}
 .dropdown-content {
     display: none;
     position: absolute;
@@ -109,6 +117,8 @@ body {
     padding: 100px 0; 
     font-family: Salsa;
     background-size: cover;
+    text-shadow: 2px 2px 4px black; /* Add text shadow for header */
+    
     
 }
 
@@ -176,6 +186,28 @@ body {
     }
 }
 
+/* Global styles */
+body {
+    font-family: 'Open Sans', sans-serif; /* Fallback font */
+}
+
+.main-header {
+    text-align: center; /* Center align the main heading */
+}
+
+/* Styles for specific elements */
+.impact-title {
+    font-family: 'Salsa', cursive; /* Salsa font for the main heading */
+}
+
+.description-box {
+    text-align: justify; /* Justify text in the description box */
+}
+
+.dropbtn {
+    font-family: 'Salsa', cursive; /* Salsa font for the button text */
+}
+
 
 
   
@@ -185,7 +217,7 @@ body {
 
 /* Footer Section */
 .footer-section {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Salsa;
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align children to the left */

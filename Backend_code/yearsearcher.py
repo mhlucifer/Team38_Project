@@ -1,7 +1,5 @@
-import requests
-import pandas as pd
+
 import mysql.connector
-from mysql.connector import errorcode
 import folium
 #Set the connection 
 def year_searcher(Year):
@@ -11,9 +9,13 @@ def year_searcher(Year):
   'password':'tohviv-rixdik-9dircU',
   'database':'dbtoad',
   'client_flags': [mysql.connector.ClientFlag.SSL],
-  'ssl_ca': '/Users/pavneetheer/Downloads/DigiCertGlobalRootCA.crt.pem'
+  'ssl_ca': '/static/api/DigiCertGlobalRootCA.crt.pem'
   }
-  conn = mysql.connector.connect(**config)
+  try:
+    conn = mysql.connector.connect(**config)
+    print('Connection successful!')
+  except mysql.connector.Error as err:
+    print(f"Error: {err}")
   cursor=conn.cursor()
 
   Query= """ SELECT Latitude, Longitude, Year, Suburb 
@@ -24,10 +26,8 @@ def year_searcher(Year):
 
   results = cursor.fetchall()
   total_results=len(results)
-  if total_results == 0:
-    print("No results found")
   #Center of the map 
-  mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=6)
+  mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=2)
 
   total={}
 
@@ -47,9 +47,9 @@ def year_searcher(Year):
     #Markers are created based on location and longitude and a pop is created for the particular location
     folium.CircleMarker(location=[Latitude, Longitude],radius=10, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
     filename = "year_map.html"
-    mymap.save(filename)
-    
+    mymap.save('templates/' + filename)
+
     # Return the filename
   return filename
 
-year_searcher(2023)
+#year_searcher(2023)

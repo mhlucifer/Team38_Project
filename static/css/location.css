@@ -6,7 +6,8 @@ body {
 }
 
 .navbar {
-    background-color: #065247; /* Darker shade based on image */
+    font-family: Salsa; /* Darker shade based on image */
+    background-color: #065247;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,6 +45,7 @@ body {
     padding: 0 1rem;
     display: flex;
     align-items: center;
+    padding-left: 10px; 
 }
 
 
@@ -59,8 +61,11 @@ body {
 
 
 .nav-item.active {
-    font-weight: bold;
-    text-decoration: underline solid red;
+    text-decoration: underline; /* Underline for active page */
+    text-decoration-color: #a8d5a0; /* Change underline color */
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px; /* Adjust space between text and underline */
+    text-decoration-skip-ink: none; /* Ensure underline is not cut through descenders */
 }
 
 .dropdown {
@@ -68,10 +73,14 @@ body {
 }
 
 .arrow-icon {
-    width: 15px;
-    height: 15px;
     margin-left: 5px;
 
+}
+
+.nav-text {
+    font-family: Salsa;
+    color: white;
+    padding: 0 0.5rem; /* Adjust padding as needed */
 }
 
 .dropdown-content {
@@ -99,4 +108,153 @@ body {
     display: block;
 }
 
+/* Add specific styles for the hero image */
+.header-section {
+    position: relative;
+    background-image: url("/static/images/locationbg.jpg");
+    background-size: cover;
+    background-position: center; /* Center the background image horizontally and vertically */
+    z-index: 0;
+    height: 300px; /* Adjust height as needed */
+  }
+  
+  .header-section::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(46, 24, 13, 0.6);
+    z-index: -1;
+  }
+  
+  .header {
+    text-align: center;
+    color: white;
+    padding: 4rem 0;
+    text-shadow: 2px 2px 4px black;
+  }
+  
+  .header h1 {
+    font-family: 'Salsa', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
 
+/* CSS for the first section */
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #7AA4A0; /* Default background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.706);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* CSS for the second section */
+section:nth-of-type(2) {
+    background-color: #065247; /* Different background color */
+}
+section:nth-of-type(2) h2 {
+    color: #FFF; /* Text color for the second section's heading */
+}
+
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+iframe {
+    border: none;
+    margin-top: 10px;
+    width: 90%;
+    max-width: 600px;
+    height: 300px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 768px) {
+    input[type="text"],
+    input[type="number"],
+    iframe {
+        width: 90%;
+    }
+}
+
+
+/* Footer Section */
+.footer-section {
+    font-family: Salsa;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align children to the left */
+    padding: 1rem 2rem;
+    background-color: #F4C194; /* Change to match the exact color */
+    color: black; 
+  }
+  
+  .footer-links a {
+    display: block; /* Make each link a block to stack them vertically */
+    text-decoration: none;
+    color: black; 
+    margin-bottom: 0.5rem; /* Add some space between the links */
+  }
+  
+  .footer-copy {
+    align-self: stretch; /* Stretch to take the full width of the footer */
+    text-align: right; /* Align text to the right */
+   
+    border-top: 1px solid white; /* Add a border on top */
+  }
+  
+  .footer-copy p {
+    margin: 0; /* Remove default margin */
+    text-align: center;
+  }
+  
+  
+  /* Additional responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .footer-section {
+      flex-direction: column; /* Stack the elements on smaller screens */
+      text-align: center;
+    }
+  
+    .footer-links {
+      margin-bottom: 1rem; /* Add some space between the links and copyright text */
+      flex-direction: column; /* Stack the links */
+      align-items: center; /* Center the links */
+    }
+  }

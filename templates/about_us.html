@@ -8,8 +8,33 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Salsa" />
   <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
   <link rel="stylesheet" href="/static/css/about_us.css">
-  <title>about_us</title>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif; /* Fallback font */
+    }
+
+    .main-header {
+        text-align: center; /* Center align the main heading */
+    }
+      
+    .impact-title {
+        font-family: 'Salsa', cursive; /* Salsa font for the main heading */
+    }
+
+    .description-box {
+      text-align: justify; /* Justify text in the description box */
+    }
+
+    .dropbtn {
+        font-family: 'Salsa', cursive; /* Salsa font for the button text */
+    }
+  </style>
+  
+  <title>About us: InvaToad</title>
 </head>
+
+
+
 <body>
 
     <div class="navbar">
@@ -18,25 +43,28 @@
             <div class="logo">INVATOAD</div>
         </div>
         <div class="navbar-items">
-            <a href="/test" class="nav-item active">Home</a>
+            <a href="/main" class="nav-item">Home</a>
             <div class="nav-item dropdown">
-                <button class="dropbtn">Information<img src="/static/icon/arrow.svg" class="arrow-icon"></button>
+                <div class="dropdown-container">
+                    <span class="nav-text">Information</span>
+                    <button class="dropbtn">▼</button>
+                </div>
                 <div class="dropdown-content">
                     <a href="/history">History</a>
                     <a href="#">Behavior</a>
                 </div>
             </div>
-            <a href="#" class="nav-item">Cane Toad Locator</a>
+            <a href="/location" class="nav-item">Cane Toad Locator</a>
             <a href="/identifier" class="nav-item">Cane Toad Identifier</a>
             <a href="#" class="nav-item">Handling</a>
             <a href="#" class="nav-item">Test your knowledge</a>
-            <a href="/about_us" class="nav-item">About US</a>
+            <a href="/about_us" class="nav-item active">About us</a>
         </div>
     </div>
 
     <!-- Section for the page title -->
 <header class="main-header">
-    <h1>about us main line</h1>
+    <h1>Empowering Innovation: Discover Our Visionary Journey.</h1>
 </header>
 
 <!-- Section for content -->
@@ -63,7 +91,7 @@
     <!-- Footer Section -->
 <footer class="footer-section">
     <div class="footer-links">
-      <a href="#">About US</a>
+      <a href="//about_us">About us</a>
       <a href="#">Terms of Use</a>
       <a href="#">Data Privacy Policy</a>
       <a href="#">Resources</a>

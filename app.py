@@ -4,7 +4,6 @@ from Backend_code.suburbsearcher import suburb_searcher
 app = Flask(__name__) 
 
 
-
 @app.route('/index')
 def index_page():
     return render_template('index.html')
@@ -87,5 +86,6 @@ def generate_map():
         # Catch other exceptions and return error information
         return jsonify({'error': str(e)}), 500
 
+
 if __name__ == '__main__':
-    app.run(debug=True)  
+    app.run(host='0.0.0.0', port=5000)

@@ -1,11 +1,4 @@
-
-
-
-
-
-
-    <!DOCTYPE html>
-    <!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Salsa" />
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-    <link rel="stylesheet" href="/static/css/location.css">
+    <link rel="stylesheet" href="/static/css/behaviour.css">
 </head>
 
 <body>
@@ -29,17 +22,17 @@
             <a href="/main" class="nav-item">Home</a>
             <div class="nav-item dropdown">
                 <div class="dropdown-container">
-                    <span class="nav-text">Information</span>
+                    <span class="nav-text" class="nav-item active">Information</span>
                     <button class="dropbtn">▼</button>
                 </div>
                 <div class="dropdown-content">
                     <a href="/history">History</a>
-                    <a href="/behaviour"class="nav-item active">Behaviour</a>
+                    <a href="/behaviour">Behaviour</a>
                 </div>
             </div>
             <a href="/location" class="nav-item">Cane Toad Locator</a>
             <a href="/identifier" class="nav-item">Cane Toad Identifier</a>
-            <a href="#" class="nav-item">Handling</a>
+            <a href="/handle" class="nav-item">Handling</a>
             <a href="#" class="nav-item">Test your knowledge</a>
             <a href="/about_us" class="nav-item">About us</a>
         </div>
@@ -48,26 +41,61 @@
     
       <div class="header-section">
         <div class="header">
-          <h1>Your Page Heading</h1>
+          <h1>Behaviour</h1>
         </div>
       </div>
+
+
+
+
     
-      <div class="container">
-        <div class="content">
-          <div class="card">
-            <h3>Card 1</h3>
-            <p>Card content here</p>
-          </div>
-          <div class="card">
-            <h3>Card 2</h3>
-            <p>Card content here</p>
-          </div>
-          <div class="card">
-            <h3>Card 3</h3>
-            <p>Card content here</p>
-          </div>
+      <section id="img-three" class="content-two">
+      <!-- Behavior page -->
+      <div class="main">
+        <div class="background-image"></div>
+        <img src="/static/icon/arrow.svg" class = "iconfont icon-arrow-up-bold " id="up-btn" onclick="slideToPrev()"></img>
+        <img src="/static/icon/arrow.svg" class = "iconfont icon-arrow-down-bold"  id="down-btn" onclick="slideToNext()"></img>
+        <div id="content">
+            <div class="card">
+                <div class="card-time">
+                  Daytime Preference
+                </div>
+                
+                <div class="card-passage">
+                  <br>•	Cane toads are nocturnal animals. This means that they are most active during the night because of the cooler temperature and the higher moisture levels
+                  <br>•	Being nocturnal also helps the cane toads avoid predators and reduces their risk of dehydration in hot and dry conditions during the day                  
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-time">
+                Mating Behaviour
+                </div>
+                <div class="card-passage">
+                  <br>•	Cane toads exhibit various behaviours to attract its mates for breeding
+                  <br>•	Male cane toads produce unique mating calls to attract the females. These calls vary in frequency, duration and intensity. These calls depend on the individual’s size, health and environmental conditions
+                  <br>•	Female cane toads are attracted to males with loud and intense calls indicating their health and size              
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-time">
+                  Mobility
+                </div>
+
+                <div class="card-passage">
+                  <br>•	Cane toads do not have the athletic ability such as frogs to jump long distances. 
+                  <br>•	Because of this, cane toads typically stay close to the ground and bound only short distances.
+                  <br>•	This limited mobility is a plays a huge part in the cane toads choosing a suitable habitat to live in                  
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div id="clock">
+            <div id="clock-center"></div>
+            <div id="clock-pointer"></div>
+            <div id="clock-table"></div>
+        </div>
+    </div>
+    </section>
     
     <!-- Footer Section -->
     <footer class="footer-section">
@@ -85,6 +113,7 @@
     </body>
     
     </html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/static/js/behaviour.js"></script>
     
-
 

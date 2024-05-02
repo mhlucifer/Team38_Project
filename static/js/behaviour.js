@@ -2,7 +2,6 @@ let offset = 0;
 const maxOffset = 2;
 const minOffset = 0;
 
-git
 const slides = Array.from(document.querySelectorAll(".card"));
 
 const clock = document.querySelector("#clock-table");

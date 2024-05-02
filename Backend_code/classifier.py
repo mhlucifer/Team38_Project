@@ -48,10 +48,4 @@ if __name__ == "__main__":
     img_path = "data/canetoad/1.jpg"
 
     # Predict image
-    prediction = predict_image(img_path)
-
-    # Print prediction
-    if prediction[0][0] > 0.5:
-        print("Cane toad")
-    else:
-        print("Not cane toad") 
+    print(predict_image(img_path))

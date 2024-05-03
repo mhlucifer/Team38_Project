@@ -7,6 +7,7 @@ def suburb_searcher2(suburb):
         next(reader)  
     
         results = []
+        #Change the suburb to title 
         Suburb=suburb.title()
     
         for row in reader:

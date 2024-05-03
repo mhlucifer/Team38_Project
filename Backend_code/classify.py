@@ -22,16 +22,16 @@ def load_image(img_path):
     return img
 
 # Predict whether image is cane toad or not, extracting confidence level
-def predict_image(img_path, debug=False):
+def main(img_path, debug=False):
     """
     Predict whether image is cane toad or not, extracting confidence level
     :param img_path: path to image
-    :return: prediction
+    :return: JSON string of prediction label and confidence level
     """
     # Load model
     if debug:
         print("loading model...")
-    model = tf.keras.models.load_model('ct-1.keras')
+    model = tf.keras.models.load_model('ct-1v2.keras')
 
     # Load image
     if debug:
@@ -61,11 +61,11 @@ def decode_prediction(prediction):
     decoded_pred = {"is_canetoad": is_canetoad, "confidence": prediction}
     return decoded_pred
 
-# Main function
-if __name__ == "__main__":
-    # Instantiate local variables
-    img_path = # Change to img path you want to test
+# Example use: call main function with img path as input
+# if __name__ == "__main__":
+#     # Instantiate local variables
+#     img_path = # Change to img path you want to test
 
-    # Predict image
-    pred = predict_image(img_path, debug=True)
-    print(pred)
+#     # Predict image
+#     pred = main(img_path, debug=True)
+#     print(pred)

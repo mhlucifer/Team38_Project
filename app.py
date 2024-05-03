@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 from Backend_code.yearsearcher import year_searcher
-from Backend_code.suburbsearcher import suburb_searcher
-from datetime import datetime
+#from Backend_code.suburbsearcher import suburb_searcher
+from Backend_code.csv_code import suburb_searcher2
 import os
+from datetime import datetime
+
+
+
 app = Flask(__name__) 
 
 
@@ -70,8 +74,7 @@ def test_your_knowledge():
     return render_template('test_your_knowlege.html')
 
 
-from datetime import datetime
-import os
+
 
 # Globally store the last file name
 last_generated_file = None
@@ -84,7 +87,7 @@ def generate_map():
     value = request.args.get('value')
     try:
         if map_type == 'suburb':
-            filename = suburb_searcher(value)
+            filename = suburb_searcher2(value)
         elif map_type == 'year':
             filename = year_searcher(value)
 

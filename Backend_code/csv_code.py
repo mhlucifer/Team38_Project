@@ -11,7 +11,6 @@ def suburb_searcher2(suburb):
     
         for row in reader:
             if row[9] == Suburb: 
-                print("Found matching suburb:", row[9])  
                 Latitude, Longitude, Year = float(row[5]), float(row[6]), int(row[1])
                 results.append((Latitude, Longitude, Year))
 

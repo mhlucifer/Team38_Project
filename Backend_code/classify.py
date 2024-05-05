@@ -2,7 +2,7 @@ import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0' # Disable OneDNN
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing import image # type: ignore
 
 # Load and preprocess image
 def load_image(img_path):
@@ -22,7 +22,7 @@ def load_image(img_path):
     return img
 
 # Predict whether image is cane toad or not, extracting confidence level
-def main(img_path, debug=False):
+def classify(img_path, debug=False):
     """
     Predict whether image is cane toad or not, extracting confidence level
     :param img_path: path to image

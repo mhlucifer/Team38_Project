@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 
+
 # Load and preprocess image
 def load_image(img_path):
     """
@@ -20,6 +21,7 @@ def load_image(img_path):
     img = np.expand_dims(img, axis=0) # Add batch dimension
     img = tf.keras.applications.xception.preprocess_input(img) # Preprocess image for Xception model
     return img
+
 
 # Predict whether image is cane toad or not, extracting confidence level
 def main(img_path, debug=False):
@@ -61,11 +63,11 @@ def decode_prediction(prediction):
     decoded_pred = {"is_canetoad": is_canetoad, "confidence": prediction}
     return decoded_pred
 
-# Example use: call main function with img path as input
-# if __name__ == "__main__":
-#     # Instantiate local variables
-#     img_path = # Change to img path you want to test
 
-#     # Predict image
-#     pred = main(img_path, debug=True)
-#     print(pred)
+#Example use: call main function with img path as input
+if __name__ == "__main__":
+    # Instantiate local variables
+    img_path = "../static/images/handling.png"   # Change to img path you want to test
+    # Predict image
+    pred = main(img_path, debug=True)
+    print(pred)

@@ -69,5 +69,5 @@ if __name__ == "__main__":
     # Instantiate local variables
     img_path = "../static/images/handling.png"   # Change to img path you want to test
     # Predict image
-    pred = main(img_path, debug=True)
+    pred = classify(img_path, debug=True)
     print(pred)

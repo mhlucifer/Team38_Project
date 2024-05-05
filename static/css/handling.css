@@ -121,6 +121,88 @@ body {
 
 
 
+
+
+.content-section {
+    padding: 20px;
+    background-color: #f0f0f0; /* Adjust the background color as needed */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px; /* Ensures the title is separate from content */
+    color: #333; /* Dark text for readability */
+    font-family: Arial, sans-serif;
+}
+
+.shell {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.guide-image img {
+    width: 300px;
+    height: auto;
+    display: block;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 320px); /* Adjust width as per the image width */
+}
+
+.carousel-inner {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Ensures smooth scrolling */
+    width: 100%; /* Make sure it's wide enough */
+    flex-wrap: nowrap; /* Prevents items from wrapping */
+}
+
+.carousel-item {
+    flex: 0 0 50%; /* Adjust width to show only two items at a time */
+    margin-right: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between; /* Spread arrows far apart */
+    width: 100%; /* Controls span the full width of the carousel */
+}
+
+.button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; /* Adjusted margin for better spacing */
+}
+
+.button img {
+    width: 100%;
+    height: auto;
+    transform: rotate(270deg); /* Reset rotation for default right arrow */
+}
+
+.prev img {
+    transform: rotate(90deg); /* Left arrow */
+}
+
+
+
+
+
+
 /* Base styling for all content sections */
 .content-section {
     display: flex;

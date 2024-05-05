@@ -25,7 +25,7 @@ def suburb_searcher(suburb):
   print(results)
 
   #Center of the map 
-  mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=6)
+  mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=2)
 
   #Make a dictionary 
   total={}

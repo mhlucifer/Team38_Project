@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 
+
 # Load and preprocess image
 def load_image(img_path):
     """
@@ -21,6 +22,14 @@ def load_image(img_path):
     img = tf.keras.applications.xception.preprocess_input(img) # Preprocess image for Xception model
     return img
 
+
+def load_model():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(current_dir, 'ct-1v2.keras')
+    model = tf.keras.models.load_model(model_path)
+    return model
+
+
 # Predict whether image is cane toad or not, extracting confidence level
 def main(img_path, debug=False):
     """
@@ -31,8 +40,7 @@ def main(img_path, debug=False):
     # Load model
     if debug:
         print("loading model...")
-    model = tf.keras.models.load_model('ct-1v2.keras')
-
+    model = load_model()
     # Load image
     if debug:
         print("loading image...")
@@ -58,14 +66,17 @@ def decode_prediction(prediction):
     :return: JSON string 
     """
     is_canetoad = prediction > 0.5
-    decoded_pred = {"is_canetoad": is_canetoad, "confidence": prediction}
+    decoded_pred = {
+        "is_canetoad": bool(is_canetoad),  # Ensure it is a native Python boolean
+        "confidence": float(prediction)  # Convert numpy.float32 to native Python float
+    }
     return decoded_pred
 
-# Example use: call main function with img path as input
+
+# #Example use: call main function with img path as input
 # if __name__ == "__main__":
 #     # Instantiate local variables
-#     img_path = # Change to img path you want to test
-
+#     img_path = "../static/uploads/handling.png"   # Change to img path you want to test
 #     # Predict image
 #     pred = main(img_path, debug=True)
 #     print(pred)

@@ -45,31 +45,43 @@
     <h1>Handling</h1>
 </header>
 
-<h1>Individual Users Step by Step Guide</h1>
+
 <section class="content-section guide">
     <!-- Title within the content section but on its own line -->
-    
+    <h1>Individual Users Step by Step Guide</h1>
     <div class="shell">
         <div class="guide-image">
             <img src="/static/images/handling_image.png" alt="Handling Toad Safely">
         </div>
         <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">Step 1: Always wear gloves, thick rubber or gardening, when handling toads.</div>
-                    <div class="carousel-item">Step 2: Pick the toad up firmly, preferably with your hand over its back, place it in a plastic bag or plastic container and secure. Label clearly.</div>
-                    <div class="carousel-item">Step 3: Now place into your refrigerator (at 4°C) and leave for 12 hours. This does not kill the toad but does anaesthetise it. This length of time is essential and the toad must not be moving when placed in the freezer.</div>
-                    <div class="carousel-item">Step 4: Next, place the container with the toad into the freezer (-20°C) for at least 24 hours. This last step will painlessly kill the toad.</div>
-                    <div class="carousel-item">Step 5: Finally, dispose of the body in your wheelie bin. Alternatively, you can bury the body, but this must be deep enough so it will not easily be dug up by dogs or native animals.</div>
+            <div class="carousel-inner" id="carouselInner">
+                <div class="carousel-item">
+                    <h2>Step 1</h2>
+                    <p>Always wear gloves, thick rubber or gardening, when handling toads.</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Step 2</h2>
+                    <p>Pick the toad up firmly, preferably with your hand over its back, place it in a plastic bag or plastic container and secure. Label clearly.</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Step 3</h2>
+                    <p>Now place into your refrigerator (at 4°C) and leave for 12 hours. This does not kill the toad but does anaesthetise it. This length of time is essential and the toad must not be moving when placed in the freezer.</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Step 4</h2>
+                    <p>Next, place the container with the toad into the freezer (-20°C) for at least 24 hours. This last step will painlessly kill the toad.</p>
+                </div>
+                <div class="carousel-item">
+                    <h2>Step 5</h2>
+                    <p>Finally, dispose of the body in your wheelie bin. Alternatively, you can bury the body, but this must be deep enough so it will not easily be dug up by dogs or native animals.</p>
+                </div>
             </div>
             <div class="carousel-controls">
-                <div class="button prev"><img src="/static/icon/arrow.svg" alt="Previous"></div>
-                <div class="button next"><img src="/static/icon/arrow.svg" alt="Next"></div>
+                <div class="button prev" onclick="scrollCarousel(-1)"><img src="/static/icon/arrow.svg" alt="Previous"></div>
+                <div class="button next" onclick="scrollCarousel(1)"><img src="/static/icon/arrow.svg" alt="Next"></div>
             </div>
         </div>
-    </div>
 </section>
-
-
 
 
 
@@ -81,6 +93,9 @@
         </div>
         <div class="text-container">
             <h2>Reporting Tool</h2>
+            <input type="text" id="suburbInput" placeholder="Enter your suburb/postcode/state">
+            <button onclick="searchLocation()">Search</button>
+            <div id="messageBox"></div>
         </div>
     </div>
 </section>
@@ -102,7 +117,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="/static/js/handling.js"></script>\
+  <script src="/static/js/handling.js"></script>
 
 
 

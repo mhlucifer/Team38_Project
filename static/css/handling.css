@@ -123,75 +123,108 @@ body {
 
 
 
-.content-section {
-    padding: 20px;
-    background-color: #f0f0f0; /* Adjust the background color as needed */
+.content-section.guide {
+    padding: 40px;
+    background-color: #042237; /* Adjust the background color as needed */
     box-sizing: border-box;
     width: 100%;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 10px; /* Ensures the title is separate from content */
-    color: #333; /* Dark text for readability */
+    margin-bottom: 20px; /* Ensures the title is separate from content */
+    color: white; /* Dark text for readability */
     font-family: Arial, sans-serif;
 }
 
+/* Adjust the .shell class to better control the spacing between the left-side image and the carousel */
 .shell {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; /* Ensure all child elements align from the top */
     justify-content: space-between;
+    
+    gap: 20px; /* Use the gap property to uniformly set the spacing */
 }
 
+/* Adjust the size and margin of the left-side image */
 .guide-image img {
-    width: 300px;
-    height: auto;
-    display: block;
+    max-width: 400px; /* Adjust the maximum width of the image */
+    width: 100%; /* Make the image responsive to the container width */
+    margin-right: 20px; /* Ensure there is enough spacing between the image and the carousel */
 }
 
+/* Update the carousel container styles to better match design requirements */
 .carousel {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 320px); /* Adjust width as per the image width */
+    width: 640px; /* Set a fixed width for the carousel to balance it with the left-side image */
 }
 
 .carousel-inner {
     display: flex;
     overflow-x: auto;
-    scroll-behavior: smooth; /* Ensures smooth scrolling */
-    width: 100%; /* Make sure it's wide enough */
-    flex-wrap: nowrap; /* Prevents items from wrapping */
+    scroll-behavior: smooth;
+    width: 100%;
+    flex-wrap: nowrap;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer 10+ */
 }
 
+.carousel-inner::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Add larger spacing for carousel items and ensure the cards are square */
 .carousel-item {
-    flex: 0 0 50%; /* Adjust width to show only two items at a time */
-    margin-right: 20px;
-    padding: 20px;
+    flex: 0 0 270px; /* Keep card width consistent */
+    height: 300px; /* Keep card height consistent */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Align content from the top */
+    padding: 15px; /* Add padding */
     background: white;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-right: 20px; /* Maintain spacing between cards */
 }
 
-.carousel-controls {
-    display: flex;
-    justify-content: space-between; /* Spread arrows far apart */
-    width: 100%; /* Controls span the full width of the carousel */
+/* Add a title for each step */
+.carousel-item h2 {
+    margin-bottom: 10px; /* Add bottom margin */
+    font-weight: bold; /* Bold the font */
+    font-size: 16px; /* Adjust font size */
+    align-self: center; /* Center align the title */
 }
 
+.carousel-item p {
+    font-size: 14px; /* Adjust paragraph font size */
+    text-align: justify; /* Justify text alignment */
+}
+
+/* Adjust the style of the buttons */
 .button {
     cursor: pointer;
     width: 30px;
     height: 30px;
+    margin: 0 10px; /* Adjust spacing between buttons */
+}
+
+/* Remove the gray bar at the bottom of the carousel */
+.carousel-controls {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px; /* Adjusted margin for better spacing */
+    justify-content: space-between;
+    width: 100%; /* Control components to fill the container width */
+    background-color: transparent; /* Remove default background color */
+}
+
+/* Remove the gray bar above */
+.content {
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove shadow */
 }
 
 .button img {
     width: 100%;
     height: auto;
-    transform: rotate(270deg); /* Reset rotation for default right arrow */
+    transform: rotate(270deg); /* Right arrow */
 }
 
 .prev img {
@@ -203,14 +236,10 @@ h1 {
 
 
 
+
+
 /* Base styling for all content sections */
-.content-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    background-color: #ffffff; 
-}
+
 
 .content {
     border: 1px solid #ccc; 
@@ -227,22 +256,20 @@ h1 {
     width: 35%; 
     padding: 2rem; 
     text-align: center;
-    border-right: 1px solid #ccc; 
+    background-color: #7AA4A0;
 }
 
 .image-container img {
     width: 100%;
     max-width: 500px; 
     height: auto; 
-    border: 1px solid #000; 
 }
 
 /* Styling for the Guide section */
 .guide .text-container {
     width: 50%; 
     padding: 2rem; 
-    background-color: #042237; /* Dark blue */
-    color: white; 
+    background-color: #7AA4A0; /* Dark blue */
 }
 
 .guide .text-container h2 {
@@ -253,14 +280,49 @@ h1 {
 .report .text-container {
     width: 50%; 
     padding: 2rem; 
-    background-color: #123456; /* Different color for distinction */
-    color: white; 
+    background-color: #7AA4A0; /* Different color for distinction */
     align-items: center; /* vertical center */
     justify-content: center; /* Center horizontally */
 }
 
 .report .text-container h2 {
     margin-top: 0; 
+}
+
+.image-container {
+    width: 50%;
+    padding: 2rem;
+}
+
+
+
+input[type="text"] {
+    padding: 10px;
+    margin-right: 10px; 
+    border: 2px solid #ccc; 
+    border-radius: 4px; 
+    width: 300px; 
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #0056b3; 
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #003a70; 
+}
+
+.text-container {
+    width: 50%;
+    padding: 2rem;
+    background-color: #123456; 
+    color: white;
 }
 
 /* Responsive adjustments */
@@ -274,6 +336,10 @@ h1 {
         border-right: none; 
     }
 }
+
+
+
+
 
 
 

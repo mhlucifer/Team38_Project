@@ -39,11 +39,26 @@
   </div>
 
 <!-- Suburban research area -->
-<section>
-    <h2>Search by suburb</h2>
-    <input type="text" id="suburbInput" placeholder="Please enter suburb name">
-    <button onclick="loadMap('suburb')">Search</button>
-    <iframe id="suburbMapFrame" width="100%" height="500px"></iframe>
+<section class="container suburb-container">
+  <h2>Use this map to locate where Cane Toads have been found in your suburbs:</h2>
+  <div class="content">
+      <iframe id="suburbMapFrame"  frameborder="0"></iframe>
+      <div class="search-container">
+          <input type="text" id="suburbInput" placeholder="Enter your suburb">
+          <button onclick="loadMap('suburb')">Search</button>
+      </div>
+  </div>
+</section>
+
+<section class="container year-container">
+  <h2>Use this map to see the Cane Toads population over the years:</h2>
+  <div class="content">
+      <iframe id="yearMapFrame" frameborder="0"></iframe>
+      <div class="search-container">
+          <input type="text" id="yearInput" placeholder="Enter a year">
+          <button onclick="loadMap('year')">Search</button>
+      </div>
+  </div>
 </section>
 
 

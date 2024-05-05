@@ -1,15 +1,25 @@
+from werkzeug.utils import secure_filename
+
+import app
 from flask import Flask, render_template, request, jsonify
 from Backend_code.yearsearcher import year_searcher
 #from Backend_code.suburbsearcher import suburb_searcher
 from Backend_code.csv_code import suburb_searcher2
-from Backend_code.classify import classify
+from Backend_code.classify import main
 import os
 from datetime import datetime
 
 
+app = Flask(__name__)
 
-app = Flask(__name__) 
+app.config['UPLOAD_FOLDER'] = './static/uploads/'
+# 在应用启动时确保上传目录存在
+def create_folder(folder_path):
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
 
+
+create_folder(app.config['UPLOAD_FOLDER'])
 
 @app.route('/index')
 def index_page():
@@ -75,11 +85,23 @@ def test_your_knowledge():
     return render_template('test_your_knowlege.html')
 
 
-@app.route('/model_identifier')
+@app.route('/model_identifier', methods=['POST'])
 def model_identifier():
-    model_image = request.args.get('')
-    values = classify([model_image])
-    return values
+    if 'imageFile' not in request.files:
+        return jsonify({'error': 'No file part'})
+    file = request.files['imageFile']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'})
+    if file:
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+        result = main(file_path,debug=False)  # Make sure this function returns a dictionary or some data that can be converted to JSON
+        response = jsonify(result)
+        response.headers['Content-Type'] = 'application/json'
+        print(response)
+        return response
+
 
 # Globally store the last file name
 last_generated_file = None

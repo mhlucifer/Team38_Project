@@ -25,12 +25,12 @@
                 </div>
                 <div class="dropdown-content">
                     <a href="/history">History</a>
-                    <a href="#">Behavior</a>
+                    <a href="/behaviour">Behavior</a>
                 </div>
             </div>
             <a href="/location" class="nav-item">Cane Toad Locator</a>
             <a href="/identifier" class="nav-item active">Cane Toad Identifier</a>
-            <a href="#" class="nav-item">Handling</a>
+            <a href="/handle" class="nav-item">Handling</a>
             <a href="#" class="nav-item">Test your knowledge</a>
             <a href="/about_us" class="nav-item ">About us</a>
         </div>
@@ -48,12 +48,14 @@
 
   <div class="container">
     <h1>Please crop the image to 500px</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
     <div id="uploadBox" class="upload-box" onclick="document.getElementById('imageUpload').click();">
         <span id="uploadText">Upload image here</span>
-        <input type="file" id="imageUpload" accept="image/*" style="display: none;" onchange="showPreview(event);">
+        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
     </div>
     <img id="previewImage" src="#" alt="Image preview..." style="display: none;">
     <button id="submitBtn">Submit</button>
+  </form>
     <div id="result"></div>
     <div id="explanation">
       <h2>How to Use</h2>

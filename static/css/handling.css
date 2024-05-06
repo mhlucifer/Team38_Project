@@ -1,0 +1,357 @@
+/* Navigation bar styles */
+body {
+    margin: 0;
+    padding-top: 60px; 
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    background-color: #065247; /* Darker shade based on image */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed; /* Makes navbar fixed at the top */
+    top: 0; /* Aligns navbar to the top */
+    width: 100%; /* Ensures navbar stretches across the full viewport width */
+    z-index: 1000; /* Ensures navbar stays on top of other content */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 10px;
+}
+
+.frog-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-items .nav-item{
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; 
+    font-family: 'Salsa', cursive; /
+}
+
+
+.navbar-items .dropbtn
+{
+    background: none;
+    color: #ffffff;
+    padding: 0;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.nav-item.active {
+    text-decoration: underline; /* Underline for active page */
+    text-decoration-color: #a8d5a0; /* Change underline color */
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px; /* Adjust space between text and underline */
+    text-decoration-skip-ink: none; /* Ensure underline is not cut through descenders */
+}
+
+.dropdown {
+    position: relative;
+}
+
+.arrow-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0; /* Keep the drop-down button aligned to the left */
+    top: 100%; /* Set the top distance to 100% to place the menu below the button */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+/* Styling for the main header */
+.main-header {
+    background-image: url('/static/images/handling-hero.png');
+    color: #fff;
+    text-align: center;
+    padding: 100px 0; 
+    font-family: Salsa;
+    background-size: cover;
+    text-shadow: 2px 2px 4px black; /* Add text shadow for header */
+}
+
+
+
+
+
+
+
+.content-section.guide {
+    padding: 20px; /* Padding around the entire section */
+    background-color: #042237; /* Background color for the section */
+    box-sizing: border-box;
+    height: auto; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+}
+
+.guide-title {
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.shell {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Space between image and carousel */
+    align-items: flex-start; /* Align at the top */
+}
+
+.guide-image {
+    flex: 1; /* Flexibility in sizing */
+    max-width: 50%; /* Maximum width allocated */
+    text-align: center; /* Center the image */
+    padding-right: 20px; /* Padding to separate from carousel */
+}
+
+.guide-image img {
+    width: 80%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.carousel {
+    flex: 1;
+    max-width: 60%; /* Maximum width allocated */
+}
+
+.carousel-inner {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* No scrollbar for cleaner design */
+}
+
+.carousel-item {
+    min-width: 300px; /* Minimum width for each item */
+    margin-right: 100px; /* Space between items */
+    background: white;
+    padding: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    border-radius: 4px;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between; /* Space out previous and next buttons */
+    margin-top: 10px; /* Margin from the carousel items */
+}
+
+.button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.button img {
+    width: 30px; /* Size of the arrow icons */
+    height: auto;
+    transform: rotate(270deg); /* Right arrow */
+}
+
+.prev img {
+    transform: rotate(90deg); /* Left arrow */
+}
+
+
+
+
+
+
+
+/* Base styling for all content sections */
+.content {
+    border: 1px solid #ccc; 
+    max-width: 100%; 
+    width: 100%; 
+    margin: auto; 
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    width: 35%; 
+    padding: 2rem; 
+    text-align: center;
+    background-color: #7AA4A0;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 500px; 
+    height: auto; 
+}
+
+/* Styling for the Guide section */
+.guide .text-container {
+    width: 50%; 
+    padding: 2rem; 
+    background-color: #7AA4A0; /* Dark blue */
+}
+
+.guide .text-container h2 {
+    margin-top: 0; 
+}
+
+/* Styling for the Report section */
+.report .text-container {
+    width: 50%; 
+    padding: 2rem; 
+    background-color: #7AA4A0; /* Different color for distinction */
+    align-items: center; /* vertical center */
+    justify-content: center; /* Center horizontally */
+}
+
+.report .text-container h2 {
+    margin-top: 0; 
+}
+
+.image-container {
+    width: 50%;
+    padding: 2rem;
+}
+
+
+
+input[type="text"] {
+    padding: 10px;
+    margin-right: 10px; 
+    border: 2px solid #ccc; 
+    border-radius: 4px; 
+    width: 300px; 
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #F4DBC5;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+ 
+button:hover {
+    background-color: #EF6C00;
+}
+
+.text-container {
+    width: 50%;
+    padding: 2rem;
+    background-color: #123456; 
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; 
+    }
+
+    .image-container, .text-container {
+        width: 100%;
+        border-right: none; 
+    }
+}
+
+
+
+
+
+
+
+/* Footer Section */
+.footer-section {
+    font-family: Salsa;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align children to the left */
+    padding: 1rem 2rem;
+    background-color: #F4C194; /* Change to match the exact color */
+    color: black; 
+  }
+  
+  .footer-links a {
+    display: block; /* Make each link a block to stack them vertically */
+    text-decoration: none;
+    color: black; 
+    margin-bottom: 0.5rem; /* Add some space between the links */
+  }
+  
+  .footer-copy {
+    align-self: stretch; /* Stretch to take the full width of the footer */
+    text-align: right; /* Align text to the right */
+   
+    border-top: 1px solid white; /* Add a border on top */
+  }
+  
+  .footer-copy p {
+    margin: 0; /* Remove default margin */
+    text-align: center;
+  }
+  
+  
+  /* Additional responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .footer-section {
+      flex-direction: column; /* Stack the elements on smaller screens */
+      text-align: center;
+    }
+  
+    .footer-links {
+      margin-bottom: 1rem; /* Add some space between the links and copyright text */
+      flex-direction: column; /* Stack the links */
+      align-items: center; /* Center the links */
+    }
+  }

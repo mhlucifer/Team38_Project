@@ -1,40 +1,42 @@
-// When the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     var fileInput = document.getElementById('imageUpload');
-    var fileInputLabel = document.getElementById('fileInputLabel'); // Make sure to add this id to your custom label or button in HTML
-  
-    // When the custom button is clicked, trigger the file input click event
-    fileInputLabel.addEventListener('click', function() {
-      fileInput.click();
-    });
-  
-    // When a file is selected, change the label accordingly
-    fileInput.addEventListener('change', function(event) {
-      var fileName = event.target.files[0].name;
-      fileInputLabel.innerText = fileName; // Update the custom label/button text
-  
-      var reader = new FileReader();
-      reader.onload = function() {
-        var output = document.getElementById('previewImage');
-        output.src = reader.result;
-        output.style.display = 'block';
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    });
-  
-  });
-  
-  function showPreview(event) {
-    if (event.target.files.length > 0) {
-      var src = URL.createObjectURL(event.target.files[0]);
-      var preview = document.getElementById("previewImage");
-      var uploadText = document.getElementById("uploadText");
-      
-      preview.src = src;
-      preview.style.display = "block";
-    }
-  }
+    var submitBtn = document.getElementById('submitBtn');
+    var resultDiv = document.getElementById('result');
 
-  document.getElementById('submitBtn').addEventListener('click', function() {
-    alert('This feature is currently under development and not yet available.');
-  });
+    fileInput.addEventListener('change', function(event) {
+        var file = event.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var previewImage = document.getElementById('previewImage');
+                previewImage.src = e.target.result;
+                previewImage.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Submit button click event handler function
+    submitBtn.addEventListener('click', function(event) {
+        event.preventDefault();  //
+        var formData = new FormData();
+        formData.append('imageFile', fileInput.files[0]);
+        fetch('/model_identifier', {
+    method: 'POST',
+    body: formData,
+})
+.then(response => response.json())
+.then(data => {
+    if (data.error) {
+        resultDiv.innerHTML = 'Error: ' + data.error;
+    } else {
+        resultDiv.innerHTML = '<strong>Is it a Cane Toad?</strong>: ' + (data.is_canetoad ? 'Yes' : 'No') +
+                              '<br><strong>Confidence:</strong> ' + (data.confidence * 100).toFixed(2) + '%';
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+    resultDiv.innerHTML = 'An error occurred.';
+});
+    });
+});

@@ -111,7 +111,7 @@ body {
 /* Add specific styles for the hero image */
 .header-section {
     position: relative;
-    background-image: url("/static/images/locationbg.jpg");
+    background-image: url("/static/images/location_header.jpg");
     background-size: cover;
     background-position: center; /* Center the background image horizontally and vertically */
     z-index: 0;

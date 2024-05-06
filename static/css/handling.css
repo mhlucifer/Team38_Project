@@ -109,7 +109,7 @@ body {
 
 /* Styling for the main header */
 .main-header {
-    background-image: url('/static/images/handling-hero.png');
+    background-image: url('/static/images/handling_header.jpg');
     color: #fff;
     text-align: center;
     padding: 100px 0; 
@@ -149,7 +149,7 @@ body {
 
 .guide-image {
     flex: 1; /* Flexibility in sizing */
-    max-width: 50%; /* Maximum width allocated */
+    max-width: 30%; /* Maximum width allocated */
     text-align: center; /* Center the image */
     padding-right: 20px; /* Padding to separate from carousel */
 }

@@ -5,6 +5,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 
 
+
 # Load and preprocess image
 def load_image(img_path):
     """

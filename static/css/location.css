@@ -200,13 +200,16 @@ input[type="text"], button {
 
 button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.3s;
+    color: black;
+    background-color: #F4DBC5; /* Button color based on image */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none; /* Add this line to remove the border */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #EF6C00;
 }
 
 .suburb-container {

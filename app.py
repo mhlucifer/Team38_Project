@@ -13,7 +13,6 @@ from datetime import datetime
 app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
-# 在应用启动时确保上传目录存在
 def create_folder(folder_path):
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
@@ -96,7 +95,7 @@ def model_identifier():
         filename = secure_filename(file.filename)
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(file_path)
-        result = main(file_path,debug=False)  # Make sure this function returns a dictionary or some data that can be converted to JSON
+        result = main(file_path, debug=False)  # Make sure this function returns a dictionary or some data that can be converted to JSON
         response = jsonify(result)
         response.headers['Content-Type'] = 'application/json'
         print(response)

@@ -6,6 +6,7 @@ from tensorflow.keras.preprocessing import image # type: ignore
 
 
 
+
 # Load and preprocess image
 def load_image(img_path):
     """

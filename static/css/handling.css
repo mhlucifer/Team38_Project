@@ -123,106 +123,77 @@ body {
 
 
 
+
 .content-section.guide {
-    padding: 40px;
-    background-color: #042237; /* Adjust the background color as needed */
+    padding: 20px; /* Padding around the entire section */
+    background-color: #042237; /* Background color for the section */
     box-sizing: border-box;
+    height: auto; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+}
+
+.guide-title {
     width: 100%;
-}
-
-h1 {
+    color: white;
     text-align: center;
-    margin-bottom: 20px; /* Ensures the title is separate from content */
-    color: white; /* Dark text for readability */
-    font-family: Arial, sans-serif;
+    margin-bottom: 20px; /* Space below the title */
 }
 
-/* Adjust the .shell class to better control the spacing between the left-side image and the carousel */
 .shell {
     display: flex;
-    align-items: flex-start; /* Ensure all child elements align from the top */
-    justify-content: space-between;
-    
-    gap: 20px; /* Use the gap property to uniformly set the spacing */
+    width: 100%;
+    justify-content: space-between; /* Space between image and carousel */
+    align-items: flex-start; /* Align at the top */
 }
 
-/* Adjust the size and margin of the left-side image */
+.guide-image {
+    flex: 1; /* Flexibility in sizing */
+    max-width: 50%; /* Maximum width allocated */
+    text-align: center; /* Center the image */
+    padding-right: 20px; /* Padding to separate from carousel */
+}
+
 .guide-image img {
-    max-width: 400px; /* Adjust the maximum width of the image */
-    width: 100%; /* Make the image responsive to the container width */
-    margin-right: 20px; /* Ensure there is enough spacing between the image and the carousel */
+    width: 80%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
 }
 
-/* Update the carousel container styles to better match design requirements */
 .carousel {
-    width: 640px; /* Set a fixed width for the carousel to balance it with the left-side image */
+    flex: 1;
+    max-width: 60%; /* Maximum width allocated */
 }
 
 .carousel-inner {
     display: flex;
-    overflow-x: auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
     scroll-behavior: smooth;
-    width: 100%;
-    flex-wrap: nowrap;
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer 10+ */
+    scrollbar-width: none; /* No scrollbar for cleaner design */
 }
 
-.carousel-inner::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Opera */
-}
-
-/* Add larger spacing for carousel items and ensure the cards are square */
 .carousel-item {
-    flex: 0 0 270px; /* Keep card width consistent */
-    height: 300px; /* Keep card height consistent */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: flex-start; /* Align content from the top */
-    padding: 15px; /* Add padding */
+    min-width: 300px; /* Minimum width for each item */
+    margin-right: 100px; /* Space between items */
     background: white;
+    padding: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    margin-right: 20px; /* Maintain spacing between cards */
 }
 
-/* Add a title for each step */
-.carousel-item h2 {
-    margin-bottom: 10px; /* Add bottom margin */
-    font-weight: bold; /* Bold the font */
-    font-size: 16px; /* Adjust font size */
-    align-self: center; /* Center align the title */
-}
-
-.carousel-item p {
-    font-size: 14px; /* Adjust paragraph font size */
-    text-align: justify; /* Justify text alignment */
-}
-
-/* Adjust the style of the buttons */
-.button {
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    margin: 0 10px; /* Adjust spacing between buttons */
-}
-
-/* Remove the gray bar at the bottom of the carousel */
 .carousel-controls {
     display: flex;
-    justify-content: space-between;
-    width: 100%; /* Control components to fill the container width */
-    background-color: transparent; /* Remove default background color */
+    justify-content: space-between; /* Space out previous and next buttons */
+    margin-top: 10px; /* Margin from the carousel items */
 }
 
-/* Remove the gray bar above */
-.content {
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove shadow */
+.button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
 .button img {
-    width: 100%;
+    width: 30px; /* Size of the arrow icons */
     height: auto;
     transform: rotate(270deg); /* Right arrow */
 }
@@ -237,13 +208,10 @@ h1 {
 
 
 
-
 /* Base styling for all content sections */
-
-
 .content {
     border: 1px solid #ccc; 
-    max-width: 1400px; 
+    max-width: 100%; 
     width: 100%; 
     margin: auto; 
     display: flex;
@@ -307,15 +275,15 @@ input[type="text"] {
 button {
     padding: 12px 20px;
     border: none;
-    background-color: #0056b3; 
-    color: white;
+    background-color: #F4DBC5;
+    color: rgb(0, 0, 0);
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
+ 
 button:hover {
-    background-color: #003a70; 
+    background-color: #EF6C00;
 }
 
 .text-container {

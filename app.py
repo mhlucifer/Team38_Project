@@ -8,6 +8,7 @@ from Backend_code.csv_code import suburb_searcher2
 from Backend_code.classify import main
 import os
 from datetime import datetime
+from PIL import Image
 
 
 app = Flask(__name__)
@@ -92,6 +93,18 @@ def model_identifier():
     if file.filename == '':
         return jsonify({'error': 'No selected file'})
     if file:
+
+        # Check if the file is an image
+        if file.filename.split('.')[-1] not in ['jpg', 'png']:
+            # Try converting other image types to jpg
+            try:
+                img = Image.open(file)
+                img = img.convert('RGB')
+                file.filename = img.save(file.filename.split('.')[0] + '.jpg')
+            # If it fails, return an error
+            except Exception as e:
+                return jsonify({'error': 'Invalid file type. Please upload an image file'}), 400
+            
         filename = secure_filename(file.filename)
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(file_path)

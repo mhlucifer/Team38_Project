@@ -32,7 +32,7 @@ def load_model():
 
 
 # Predict whether image is cane toad or not, extracting confidence level
-def classify(img_path, debug=False):
+def main(img_path, debug=False):
     """
     Predict whether image is cane toad or not, extracting confidence level
     :param img_path: path to image

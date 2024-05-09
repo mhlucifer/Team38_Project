@@ -103,6 +103,7 @@ def model_identifier():
                 file.filename = img.save(file.filename.split('.')[0] + '.jpg')
             # If it fails, return an error
             except Exception as e:
+                clear_upload_folder()
                 return jsonify({'error': 'Invalid file type. Please ensure image file is as follow: .jpg, .jpeg, .png, .gif, .tiff, .bmp, .ppm'}), 400
             
         filename = secure_filename(file.filename)
@@ -111,9 +112,14 @@ def model_identifier():
         result = main(file_path, debug=False)  # Make sure this function returns a dictionary or some data that can be converted to JSON
         response = jsonify(result)
         response.headers['Content-Type'] = 'application/json'
+        clear_upload_folder()
         print(response)
         return response
-
+    
+def clear_upload_folder():
+    # Remove everything in static/uploads
+    for file in os.listdir(app.config['UPLOAD_FOLDER']):
+        os.remove(os.path.join(app.config['UPLOAD_FOLDER'], file))
 
 # Globally store the last file name
 last_generated_file = None

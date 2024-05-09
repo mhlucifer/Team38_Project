@@ -95,7 +95,7 @@ def model_identifier():
     if file:
 
         # Check if the file is an image
-        if file.filename.split('.')[-1] not in ['jpg', 'png']:
+        if file.filename.split('.')[-1] in ['jpg', 'png', '.jpeg', '.gif', '.tiff', '.bmp', '.ppm']:
             # Try converting other image types to jpg
             try:
                 img = Image.open(file)
@@ -104,7 +104,10 @@ def model_identifier():
             # If it fails, return an error
             except Exception as e:
                 clear_upload_folder()
-                return jsonify({'error': 'Invalid file type. Please ensure image file is as follow: .jpg, .jpeg, .png, .gif, .tiff, .bmp, .ppm'}), 400
+                return jsonify({'error': 'Invalid file type. Supported file types are: .jpg, .jpeg, .png, .gif, .tiff, .bmp, .ppm'}), 400
+        else:
+            clear_upload_folder()
+            return jsonify({'error': 'Invalid file type. Supported file types are: .jpg, .jpeg, .png, .gif, .tiff, .bmp, .ppm'}), 400
             
         filename = secure_filename(file.filename)
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)

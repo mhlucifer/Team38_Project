@@ -103,7 +103,7 @@ def model_identifier():
                 file.filename = img.save(file.filename.split('.')[0] + '.jpg')
             # If it fails, return an error
             except Exception as e:
-                return jsonify({'error': 'Invalid file type. Please upload an image file'}), 400
+                return jsonify({'error': 'Invalid file type. Please ensure image file is as follow: .jpg, .jpeg, .png, .gif, .tiff, .bmp, .ppm'}), 400
             
         filename = secure_filename(file.filename)
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)

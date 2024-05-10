@@ -94,6 +94,11 @@ def model_identifier():
         return jsonify({'error': 'No selected file'})
     if file:
 
+        # Check if the file is larger than 5MB
+        if int(request.headers['Content-Length']) > 5 * 1024 * 1024: # 5MB
+            clear_upload_folder()
+            return jsonify({'error': 'File size is too large. Maximum file size is 5MB'}), 400
+
         # Check if the file is an image
         if file.filename.split('.')[-1] in ['jpg', 'png', '.jpeg', '.gif', '.tiff', '.bmp', '.ppm']:
             # Try converting other image types to jpg

@@ -4,6 +4,7 @@ import regex as re
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
+
 #Read the file 
 df=pd.read_csv('/Users/pavneetheer/Downloads/records24-04-2024/records24-04-2024.csv')
 #This gives us the info about the file 

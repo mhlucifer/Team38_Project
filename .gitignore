@@ -5,3 +5,6 @@ test*
 /myenv
 junk*
 __pycache__
+
+badcode*
+

@@ -39,3 +39,7 @@ document.getElementById('explore-locator').addEventListener('click', function() 
    document.getElementById('learn-more-button').addEventListener('click', function() {
     window.location.href = '/history';
   });
+
+  document.getElementById('learn-handling').addEventListener('click', function() {
+    window.location.href = '/handle';
+  });

@@ -30,6 +30,10 @@ window.addEventListener('scroll', function () {
     }
 });
 
+
+
+
+
 (function ($) {
     $.fn.timeline = function () {
         var selectors = {

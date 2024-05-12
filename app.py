@@ -2,9 +2,9 @@ from werkzeug.utils import secure_filename
 
 import app
 from flask import Flask, render_template, request, jsonify
-from Backend_code.yearsearcher import year_searcher
+# from Backend_code.yearsearcher import year_searcher
 #from Backend_code.suburbsearcher import suburb_searcher
-from Backend_code.csv_code import suburb_searcher2
+# from Backend_code.csv_code import suburb_searcher2
 from Backend_code.classify import main
 import os
 from datetime import datetime

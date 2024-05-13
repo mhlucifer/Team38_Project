@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Behaviour</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Salsa" />
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="/static/css/test_your_knowledge.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="/static/images/frog-icon.png" class="frog-icon" alt="Frog Icon">
+            <div class="logo">INVATOAD</div>
+        </div>
+        <div class="navbar-items">
+            <a href="/main" class="nav-item">Home</a>
+            <div class="nav-item dropdown">
+                <div class="dropdown-container">
+                    <span class="nav-text" class="nav-item">Info Toad</span>
+                   
+                </div>
+                <div class="dropdown-content">
+                    <a href="/history">History</a>
+                    <a href="/behaviour">Behaviour</a>
+                </div>
+            </div>
+            <a href="/location" class="nav-item">Cane Toad Locator</a>
+            <a href="/identifier" class="nav-item">Cane Toad Identifier</a>
+            <a href="/handle" class="nav-item">Handling</a>
+            <a href="/test_your_knowledge" class="nav-item active">Test your knowledge</a>
+            <a href="/about_us" class="nav-item">About us</a>
+        </div>
+    </div>
+
+
+
+<!-- Section for the page title -->
+<header class="main-header">
+    <h1>Test your knowledge</h1>
+</header>
+
+
+
+<div id="quiz-container">
+    <h1 class = "cont-size" style="text-align: center; color:white;">Take a Quiz</h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+        <div class="quiz-box" onclick="loadQuiz('Behaviour')">Behaviour</div>
+        <div class="quiz-box" onclick="loadQuiz('Location')">Location</div>
+        <div class="quiz-box" onclick="loadQuiz('Handling')">Handling</div>
+        <div class="quiz-box" onclick="loadQuiz('Expert Quiz')">Expert Quiz</div>
+    </div>
+</div>
+
+   <!-- Footer Section -->
+   <footer class="footer-section">
+    <div class="footer-links">
+      <a href="/about_us">About us</a>
+      <a href="/terms">Terms of Use</a>
+      <a href="/terms">Data Privacy Policy</a>
+    </div>
+    <div class="footer-copy">
+      <p>InvaToad@Copyright</p>
+    </div>
+  </footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/static/js/test_your_knowledge.js"></script> 

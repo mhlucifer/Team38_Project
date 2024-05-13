@@ -1,9 +1,29 @@
+import mysql.connector
+import folium
 
 def suburb_searcher(suburb):
-  mymap = folium.Map(location=[-25.2744,133.7751], zoom_start=2)
+  Suburb=suburb.title()
+  config = {
+  'host':'20.163.171.202',
+  'user':'titansadmin',
+  'password':'tp38$2024terra',
+  'database':'toad_data',
 
+  }
+  conn = mysql.connector.connect(**config)
+  cursor=conn.cursor()
+  Query= """ SELECT Latitude, Longitude, Year
+  FROM canetoad_sightings where 
+  Suburb = %s;
+  """
+  cursor.execute(Query, (Suburb,))
+  results = cursor.fetchall()
+
+  initial_lat, initial_lon = results[0][0], results[0][1]
+  mymap = folium.Map(location=[initial_lat, initial_lon], zoom_start=6)
   #Make a dictionary 
   total={}
+  #Go over the results 
 
   for result in results:
     #The following is the result

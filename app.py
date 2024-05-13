@@ -1,15 +1,15 @@
 from werkzeug.utils import secure_filename
-
-import app
 from flask import Flask, render_template, request, jsonify
 from Backend_code.yearsearcher import year_searcher
-#from Backend_code.suburbsearcher import suburb_searcher
-from Backend_code.csv_code import suburb_searcher2
+from Backend_code.suburb_searcher import suburb_searcher
+# from Backend_code.csv_code import suburb_searcher2
 from Backend_code.classify import main
 import os
 from datetime import datetime
 from PIL import Image
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import text
+
 
 
 app = Flask(__name__)
@@ -18,11 +18,6 @@ app.config['UPLOAD_FOLDER'] = './static/uploads/'
 def create_folder(folder_path):
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
-
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://titansadmin:tp38$2024terra@20.163.171.202:3306/toad_data')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db=SQLAlchemy(app)
-
 
 create_folder(app.config['UPLOAD_FOLDER'])
 
@@ -146,7 +141,7 @@ def generate_map():
     value = request.args.get('value')
     try:
         if map_type == 'suburb':
-            filename = suburb_searcher2(value)
+            filename = suburb_searcher(value)
         elif map_type == 'year':
             filename = year_searcher(value)
 

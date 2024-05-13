@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3ba5e2171a2366cb5c90b3fb91006451 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3ba5e2171a2366cb5c90b3fb91006451" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3ba5e2171a2366cb5c90b3fb91006451 = L.map(
+                "map_3ba5e2171a2366cb5c90b3fb91006451",
+                {
+                    center: [-33.86709, 151.21758],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8bd9a59784e0542ce09eff9dc93be40d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_8bd9a59784e0542ce09eff9dc93be40d.addTo(map_3ba5e2171a2366cb5c90b3fb91006451);
+        
+    
+            var circle_marker_eaf38a366ed259e9a6be302e2ac0681a = L.circleMarker(
+                [-33.86709, 151.21758],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_3ba5e2171a2366cb5c90b3fb91006451);
+        
+    
+        var popup_57c0fc2dddd2ca9d076299e56924d824 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9898f2ba148213e798629cd851d1908 = $(`<div id="html_b9898f2ba148213e798629cd851d1908" style="width: 100.0%; height: 100.0%;">Year: 2018   Occurrences: 1</div>`)[0];
+                popup_57c0fc2dddd2ca9d076299e56924d824.setContent(html_b9898f2ba148213e798629cd851d1908);
+            
+        
+
+        circle_marker_eaf38a366ed259e9a6be302e2ac0681a.bindPopup(popup_57c0fc2dddd2ca9d076299e56924d824)
+        ;
+
+        
+    
+    
+            tile_layer_8bd9a59784e0542ce09eff9dc93be40d.addTo(map_3ba5e2171a2366cb5c90b3fb91006451);
+        
+    
+            var circle_marker_1fff2ba2a1dc0a4aa06a3d9617d94406 = L.circleMarker(
+                [-33.86709, 151.21758],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_3ba5e2171a2366cb5c90b3fb91006451);
+        
+    
+        var popup_8089268a237c8a0401113bf1f850d556 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_675adb438a7ea4b9f513d28e71d3b00d = $(`<div id="html_675adb438a7ea4b9f513d28e71d3b00d" style="width: 100.0%; height: 100.0%;">Year: 2018   Occurrences: 2</div>`)[0];
+                popup_8089268a237c8a0401113bf1f850d556.setContent(html_675adb438a7ea4b9f513d28e71d3b00d);
+            
+        
+
+        circle_marker_1fff2ba2a1dc0a4aa06a3d9617d94406.bindPopup(popup_8089268a237c8a0401113bf1f850d556)
+        ;
+
+        
+    
+    
+            tile_layer_8bd9a59784e0542ce09eff9dc93be40d.addTo(map_3ba5e2171a2366cb5c90b3fb91006451);
+        
+    
+            var circle_marker_6e1a661bc44dfff1b519a006c99bd314 = L.circleMarker(
+                [-33.86709, 151.21758],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_3ba5e2171a2366cb5c90b3fb91006451);
+        
+    
+        var popup_9ec35ace908d449bfe31573eb216f531 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a065677f17fb03fcd3441a88d1ddeffe = $(`<div id="html_a065677f17fb03fcd3441a88d1ddeffe" style="width: 100.0%; height: 100.0%;">Year: 2018   Occurrences: 3</div>`)[0];
+                popup_9ec35ace908d449bfe31573eb216f531.setContent(html_a065677f17fb03fcd3441a88d1ddeffe);
+            
+        
+
+        circle_marker_6e1a661bc44dfff1b519a006c99bd314.bindPopup(popup_9ec35ace908d449bfe31573eb216f531)
+        ;
+
+        
+    
+</script>
+</html>

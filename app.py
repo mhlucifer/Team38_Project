@@ -105,7 +105,9 @@ def model_identifier():
             try:
                 img = Image.open(file)
                 img = img.convert('RGB')
-                file.filename = img.save(file.filename.split('.')[0] + '.jpg')
+                new_filename = file.filename.split('.')[0] + '.jpg'
+                img.save(new_filename)
+                file.filename = new_filename
             # If it fails, return an error
             except Exception as e:
                 clear_upload_folder()

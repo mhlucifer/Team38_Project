@@ -2,9 +2,8 @@ from werkzeug.utils import secure_filename
 
 import app
 from flask import Flask, render_template, request, jsonify
-# from Backend_code.yearsearcher import year_searcher
-#from Backend_code.suburbsearcher import suburb_searcher
-# from Backend_code.csv_code import suburb_searcher2
+from Backend_code.year_searcher import year_searcher
+from Backend_code.suburb_searcher import suburb_searcher
 from Backend_code.classify import main
 import os
 from datetime import datetime
@@ -138,7 +137,7 @@ def generate_map():
     value = request.args.get('value')
     try:
         if map_type == 'suburb':
-            filename = suburb_searcher2(value)
+            filename = suburb_searcher(value)
         elif map_type == 'year':
             filename = year_searcher(value)
 

@@ -1,3 +1,7 @@
+import mysql.connector
+import folium
+
+
 def year_searcher(Year):
     config = {
         'host': '20.163.171.202',

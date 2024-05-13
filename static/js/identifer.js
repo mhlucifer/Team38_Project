@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (data.error) {
         resultDiv.innerHTML = 'Error: ' + data.error;
     } else {
-        resultDiv.innerHTML = '<strong>Is it a Cane Toad?</strong>: ' + (data.is_canetoad ? 'Yes' : 'No') +
-                              '<br><strong>Confidence:</strong> ' + (data.confidence * 100).toFixed(2) + '%';
+        resultDiv.innerHTML = '<strong>Is it a Cane Toad?</strong>: ' + (data.is_canetoad ? 'Yes' : 'No');
+                              //'<br><strong>Confidence:</strong> ' + (data.confidence * 100).toFixed(2) + '%'//;
     }
 })
 .catch(error => {

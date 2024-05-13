@@ -2,6 +2,7 @@
 import mysql.connector
 import folium
 def suburb_searcher(suburb):
+  #Change the suburb
   Suburb=suburb.title()
   config = {
   'host':'20.163.171.202',
@@ -11,7 +12,9 @@ def suburb_searcher(suburb):
 
   }
   conn = mysql.connector.connect(**config)
+
   cursor=conn.cursor()
+  #run the query
   Query= """ SELECT Latitude, Longitude, Year
   FROM canetoad_sightings where 
   combined_location = %s;
@@ -36,6 +39,7 @@ def suburb_searcher(suburb):
     popup = folium.Popup(text, parse_html=True)
     #Markers are created based on location and longitude and a pop is created for the particular location
     folium.CircleMarker(location=[Latitude, Longitude],radius=8, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
-    filename = "suburb_map.html"
-    mymap.save('templates/' + filename)
+  #save the filename
+  filename = "suburb_map.html"
+  mymap.save('templates/' + filename)
   return filename

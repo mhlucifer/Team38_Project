@@ -88,10 +88,11 @@ def test_your_knowledge():
 @app.route('/model_identifier', methods=['POST'])
 def model_identifier():
     if 'imageFile' not in request.files:
-        return jsonify({'error': 'No file part'})
+        return jsonify({'error': 'No file found in request'}), 400
     file = request.files['imageFile']
+    print(file.filename)
     if file.filename == '':
-        return jsonify({'error': 'No selected file'})
+        return jsonify({'error': 'No file selected'}), 400
     if file:
 
         # Check if the file is larger than 5MB
@@ -101,11 +102,11 @@ def model_identifier():
 
         # Check if the file is an image
         if file.filename.split('.')[-1] in ['jpg', 'png', '.jpeg', '.gif', '.tiff', '.bmp', '.ppm']:
-            # Try converting other image types to jpg
+            # Try converting other image types to jpeg
             try:
                 img = Image.open(file)
                 img = img.convert('RGB')
-                new_filename = file.filename.split('.')[0] + '.jpg'
+                new_filename = file.filename.split('.')[0] + '.jpeg'
                 img.save(new_filename)
                 file.filename = new_filename
             # If it fails, return an error

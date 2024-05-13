@@ -25,8 +25,9 @@ def load_image(img_path):
 
 
 def load_model():
+    model_name = 'few_shot_model.keras'
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    model_path = os.path.join(current_dir, 'ct-1v2.keras')
+    model_path = os.path.join(current_dir, model_name)
     model = tf.keras.models.load_model(model_path)
     return model
 
@@ -69,15 +70,15 @@ def decode_prediction(prediction):
     is_canetoad = prediction > 0.5
     decoded_pred = {
         "is_canetoad": bool(is_canetoad),  # Ensure it is a native Python boolean
-        "confidence": float(prediction)  # Convert numpy.float32 to native Python float
+        # "confidence": float(prediction)  # Convert numpy.float32 to native Python float
     }
     return decoded_pred
 
 
 # #Example use: call main function with img path as input
-# if __name__ == "__main__":
-#     # Instantiate local variables
-#     img_path = "../static/uploads/handling.png"   # Change to img path you want to test
-#     # Predict image
-#     pred = main(img_path, debug=True)
-#     print(pred)
+if __name__ == "__main__":
+    # Instantiate local variables
+    img_path = "./static/images/toad6.jpg"   # Change to img path you want to test
+    # Predict image
+    pred = main(img_path, debug=True)
+    print(pred)

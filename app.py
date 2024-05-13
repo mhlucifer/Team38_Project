@@ -87,6 +87,9 @@ def termsofuse():
     return render_template('terms.html')
 
 
+@app.errorhandler(404) 
+def not_found(e):   return render_template('404.html'), 404
+
 @app.route('/model_identifier', methods=['POST'])
 def model_identifier():
     if 'imageFile' not in request.files:

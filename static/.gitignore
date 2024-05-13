@@ -1,0 +1,7 @@
+test*
+/env
+.idea
+/my_new_env
+/myenv
+junk*
+__pycache__

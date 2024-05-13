@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import CSS file -->
+    <link rel="stylesheet" href="/static/css/login.css">
+    <!-- Import jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>Login</title>
+</head>
+<!-- Outermost box -->
+<div class="box">
+    <!-- Sliding box -->
+    <div class="pre-box">
+        <h1>WELCOME</h1>
+        <p>To InvaToad Website</p>
+        <div class="img-box">
+            <img src="/static/images/toad4.jpg" alt="">
+        </div>
+    </div>
+    <!-- Registration box -->
+    <div class="register-form">
+        <!-- Title box -->
+        <div class="title-box">
+        </div>
+        <!-- Input box -->
+        <div class="input-box">
+        </div>
+        <!-- Button box -->
+        <div class="btn-box">
+        </div>
+    </div>
+    <!-- Login box -->
+    <div class="login-form">
+        <!-- Title box -->
+        <div class="title-box">
+            <h1>Get Started!</h1>
+        </div>
+        <!-- Input box -->
+        <form action="/login-password" method="post" id="loginForm">
+            <div class="input-box">
+                <input type="password" name="password" placeholder="password">
+            </div>
+            <!-- Button box -->
+            <div class="btn-box">
+                <button type="submit">log in</button>
+            </div>
+        </form>
+    </div>
+</div>
+    <script>
+        const bubleCreate = () => {
+            // Get the body element
+            const body = document.body
+            // Create bubble element
+            const bubble = document.createElement('span')
+            // Set bubble radius
+            let r = Math.random() * 5 + 25 // Radius size from 25 to 30
+            // Set bubble width and height
+            bubble.style.width = r + 'px'
+            bubble.style.height = r + 'px'
+            // Set random starting point for bubble
+            bubble.style.left = Math.random() * innerWidth + 'px'
+            // Add bubble element to the body
+            body.append(bubble)
+            // Clear bubble after 4 seconds
+            setTimeout(() => {
+                bubble.remove()
+            }, 4000)
+        }
+        // Generate a bubble every 200ms
+        setInterval(() => {
+            bubleCreate()
+        }, 200);
+    </script>
+<script>
+    // Ensure the DOM is fully loaded before attaching event handlers
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById("loginForm").addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        // Use the fetch API to send a POST request to the server
+        const response = await fetch('/login-password', {
+            method: 'POST',
+            body: new FormData(this) // Use the form data
+        });
+
+        const data = await response.json(); // Parse the JSON response
+
+        if (!response.ok) { // Check if the HTTP response status indicates an error
+            alert(data.message); // Display the error message in an alert dialog
+        } else {
+            window.location.href = '/main'; // Redirect to the index page on success
+        }
+    });
+});
+    </script>
+</body>
+</html>

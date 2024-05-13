@@ -29,8 +29,14 @@ body {
     padding-left: 10px;
 }
 .logo-link {
-    text-decoration: none; /* Remove underline from the link */
-    color: white; /* Set link color */
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Display as flex container */
+    align-items: center; /* Center items vertically */
+}
+
+.logo-link:hover {
+    text-decoration: none; /* Remove underline on hover as well */
 }
 
 

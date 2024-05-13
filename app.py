@@ -102,7 +102,7 @@ def model_identifier():
 
         # Check if the file is an image
         if file.filename.split('.')[-1] in ['jpg', 'png', '.jpeg', '.gif', '.tiff', '.bmp', '.ppm']:
-            # Try converting other image types to jpeg
+            # Try converting other image types to jpeg - comment out for now
             try:
                 pass
                 # img = Image.open(file)

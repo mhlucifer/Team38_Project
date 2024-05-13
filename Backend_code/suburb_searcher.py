@@ -1,6 +1,7 @@
 
 import mysql.connector
 import folium
+import datetime
 def suburb_searcher(suburb):
   #Change the suburb
   Suburb=suburb.title()
@@ -40,6 +41,7 @@ def suburb_searcher(suburb):
     #Markers are created based on location and longitude and a pop is created for the particular location
     folium.CircleMarker(location=[Latitude, Longitude],radius=8, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
   #save the filename
-  filename = "suburb_map.html"
+  timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+  filename = f"suburb_map_{timestamp}.html"
   mymap.save('templates/' + filename)
   return filename

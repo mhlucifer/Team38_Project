@@ -1,0 +1,322 @@
+/* Navigation bar styles */
+body {
+    margin: 0;
+    padding-top: 70px; 
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+    font-family: Salsa;
+    background-color: #065247; /* Darker shade based on image */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed; /* Makes navbar fixed at the top */
+    top: 0; /* Aligns navbar to the top */
+    width: 100%; /* Ensures navbar stretches across the full viewport width */
+    z-index: 1000; /* Ensures navbar stays on top of other content */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: white;
+    padding-left: 10px;
+}
+.logo-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Set link color */
+}
+
+
+.frog-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.navbar-items .nav-item {
+    /* Other styles */
+    color: white;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    font-family: 'Salsa', cursive;
+    position: relative;
+    transition: transform 0.2s ease; /* Only transition transform on hover */
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.navbar-items .nav-item.active {
+    background-color: #02312ac6;
+    transform: scale(1.05);
+    border-radius: 20px;
+    padding: 0 1.5rem; /* Adjust padding */
+}
+
+.navbar-items .nav-item:hover {
+    transform: scale(1.2);
+}
+
+/* Exclude specific elements from having the hover effect */
+.navbar-items .nav-item.no-hover:hover {
+    transform: none !important; /* Prevent transform on hover */
+    border-radius: 10px;
+}
+
+
+.navbar-items .dropbtn
+{
+    background: none;
+    color: #ffffff;
+    padding: 0;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.dropdown {
+    position: relative;
+}
+
+.arrow-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block; /* 或其他适合的显示属性 */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #065247;
+    min-width: 160px; /* 调整为需要的宽度 */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    top: 100%; /* 从按钮下方开始显示 */
+    left: 0; /* 与父元素左对齐 */
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(138, 142, 137, 0.6);
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+/* Styling for the main header */
+.main-header {
+    background-image: url('/static/images/test_your_knowledge.png');
+    color: #FFFFFF;
+    text-align: center;
+    padding: 100px 0; 
+    font-family: Salsa;
+    background-size: cover;
+    text-shadow: 2px 2px 4px black; /* Add text shadow for header */
+}
+
+#quiz-container
+{
+    background-color: #042237;
+    margin-top:0px
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Slightly lighter overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-size
+{
+    margin: 0px;
+}
+
+
+.quiz-box {
+    background-color: #FFFFFF; /* A more vibrant blue */
+    margin: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    flex: 1 1 45%; /* Keeps the original width adjustments */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.quiz-box:hover {
+    background-color: #357ABD; /* A darker shade of blue for hover */
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+input[type="text"], button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border: 2px solid #ccc; /* Adding a border to input */
+    border-radius: 5px; /* Rounded corners for inputs */
+}
+
+button {
+    cursor: pointer;
+    background-color: #5cb85c; /* Bootstrap's 'success' green */
+    color: white;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4cae4c; /* A slightly darker green for hover */
+}
+
+.question-box {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.results-container {
+    background: white;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.incorrect-answer {
+    background: #fbe4e6; /* Lighter red for a softer look */
+    margin: 10px;
+    padding: 10px;
+    border-left: 5px solid #e74c3c; /* Bright red */
+    border-radius: 5px; /* Rounded corners for incorrect answers */
+}
+
+
+.question-container {
+    position: relative;  /* This is crucial for the close button positioning */
+    background: white;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    color: #333;
+    margin: auto; /* Center the container on the page */
+    overflow: hidden; /* Ensures no overflow of content */
+}
+
+.close-button {
+    position: absolute;
+    top: 100px;         /* Adjusted for better visibility */
+    right: 364px;       /* Adjusted for better visibility */
+    width: 40px;       /* Width of the button */
+    height: 40px;      /* Adjusted for better visibility */
+    z-index:100;
+    border-radius: 50%;/* Circle shape */
+    border: none;      /* No border */
+    background-color: #FF5B5B; /* Red background for visibility */
+    color: white;      /* White text color for the 'X' symbol */
+    font-size: 20px;   /* Font size adjusted for visibility */
+    display: flex;     /* To center the content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    cursor: pointer;   /* Pointer cursor on hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Shadow for depth */
+   
+}
+
+.close-button:hover {
+    background-color: #FF4040; /* Slightly darker on hover for feedback */
+}
+
+
+
+
+/* Footer Section */
+.footer-section {
+    font-family: Salsa;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align children to the left */
+    padding: 1rem 2rem;
+    background-color: #b2cee8; /* Change to match the exact color */
+    color: black; 
+  }
+  
+  .footer-links a {
+    display: block; /* Make each link a block to stack them vertically */
+    text-decoration: none;
+    color: black; 
+    margin-bottom: 0.5rem; /* Add some space between the links */
+  }
+  
+  .footer-copy {
+    align-self: stretch; /* Stretch to take the full width of the footer */
+    text-align: right; /* Align text to the right */
+    border-top: 1px solid white; /* Add a border on top */
+  }
+  
+  .footer-copy p {
+    margin: 10px; /* Remove default margin */
+    text-align: center;
+  }
+  
+  
+  /* Additional responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .footer-section {
+      flex-direction: column; /* Stack the elements on smaller screens */
+      text-align: center;
+    }
+  
+    .footer-links {
+      margin-bottom: 1rem; /* Add some space between the links and copyright text */
+      flex-direction: column; /* Stack the links */
+      align-items: center; /* Center the links */
+    }
+  }

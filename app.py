@@ -1,5 +1,4 @@
 from werkzeug.utils import secure_filename
-
 import app
 from flask import Flask, render_template, request, jsonify
 from Backend_code.year_searcher import year_searcher
@@ -82,6 +81,10 @@ def identifier():
 @app.route('/test_your_knowledge')
 def test_your_knowledge():
     return render_template('test_your_knowledge.html')
+
+@app.route('/terms')
+def termsofuse():
+    return render_template('terms.html')
 
 
 @app.route('/model_identifier', methods=['POST'])

@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Behaviour</title>
+    <title>InvaToad: Handling</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Salsa" />
@@ -35,7 +35,7 @@
             <a href="/location" class="nav-item">Cane Toad Locator</a>
             <a href="/identifier" class="nav-item">Cane Toad Identifier</a>
             <a href="/handle" class="nav-item active">Handling</a>
-            <a href="/test_your_knowledge" class="nav-item">Test your knowledge</a>
+            <a href="/test_your_knowledge" class="nav-item">Test Your Knowledge</a>
             <a href="/about_us" class="nav-item">About us</a>
         </div>
     </div>
@@ -43,47 +43,91 @@
 
 
     <!-- Section for the page title -->
-<header class="main-header">
-    <h1>Handling</h1>
-</header>
+    <div class="header-section">
+        <div class="header">
+          <h1>Cane Toad Handling</h1>
+        </div>
+      </div>
 
 
 <section class="content-section guide">
     <h1 class="guide-title">Individual Users Step by Step Guide</h1>
     <div class="shell">
-        <div class="guide-image">
-            <img src="/static/images/handling_image.png" alt="Handling Toad Safely">
-        </div>
         <div class="carousel">
             <div class="carousel-inner" id="carouselInner">
                 <div class="carousel-item">
-                    <h2>Step 1</h2>
-                    <p>Always wear gloves, thick rubber or gardening, when handling toads.</p>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="static/images/step1-image.png" alt="Step 1 Image">
+                        </div>
+                        <div class="step-info">
+                            <h2>Step 1</h2>
+                            <p>Always wear gloves, thick rubber or gardening, when handling toads.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                    <h2>Step 2</h2>
-                    <p>Pick the toad up firmly, preferably with your hand over its back, place it in a plastic bag or plastic container and secure. Label clearly.</p>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="static/images/step2-image.png" alt="Step 2 Image">
+                        </div>
+                        <div class="step-info">
+                            <h2>Step 2</h2>
+                            <p>Pick up the toad firmly, preferably with your hand supporting its back. </p>
+                            <p>Place it in a plastic bag or container, and secure it with ziplock/lid clearly. </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                    <h2>Step 3</h2>
-                    <p>Now place into your refrigerator (at 4°C) and leave for 12 hours. This does not kill the toad but does anaesthetise it. This length of time is essential and the toad must not be moving when placed in the freezer.</p>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="static/images/step3-image.png" alt="Step 3 Image">
+                        </div>
+                        <div class="step-info">
+                            <h2>Step 3</h2>
+                            <p>Now place into your refrigerator (at 4°C) and leave for 12 hours.</p>
+                            <p>This does not kill the toad but does anaesthetise it. </p>
+                            <p>This length of time is essential and the toad must not be moving when placed in the freezer.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                    <h2>Step 4</h2>
-                    <p>Next, place the container with the toad into the freezer (-20°C) for at least 24 hours. This last step will painlessly kill the toad.</p>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="static/images/step5-image.png" alt="Step 4 Image">
+                        </div>
+                        <div class="step-info">
+                            <h2>Step 4</h2>
+                            <p>Next, place the container with the toad into the freezer (-20°C) for at least 24 hours.</p> 
+                                <p>This last step will painlessly kill the toad.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                    <h2>Step 5</h2>
-                    <p>Finally, dispose of the body in your wheelie bin. Alternatively, you can bury the body, but this must be deep enough so it will not easily be dug up by dogs or native animals.</p>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="static/images/step4-image.png" alt="Step 5 Image">
+                        </div>
+                        <div class="step-info">
+                            <h2>Step 5</h2>
+                            <p>Finally, dispose of the body in your wheelie bin. </p>
+                            <p>Alternatively, you can bury the body, but this must be deep enough,</p>
+                            <p> so it will not easily be dug up by dogs or native animals.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="carousel-controls">
-                <div class="button prev" onclick="scrollCarousel(-1)"><img src="/static/icon/arrow.svg" alt="Previous"></div>
-                <div class="button next" onclick="scrollCarousel(1)"><img src="/static/icon/arrow.svg" alt="Next"></div>
+                <label for="slide1" onclick="changeSlide(1)">1</label>
+                <label for="slide2" onclick="changeSlide(2)">2</label>
+                <label for="slide3" onclick="changeSlide(3)">3</label>
+                <label for="slide4" onclick="changeSlide(4)">4</label>
+                <label for="slide5" onclick="changeSlide(5)">5</label>
             </div>
         </div>
     </div>
 </section>
+
 
 
 

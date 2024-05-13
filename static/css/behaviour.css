@@ -144,15 +144,13 @@ body {
 
 /* hero image part */
 
-.header-section
-{
-    position: relative; 
+.header-section {
+    position: relative;
     background-image: url("/static/images/hero_image_main_page.png");
     background-size: cover;
     z-index: 0;
-    
+    padding-bottom: 100px; /* Add padding to prevent overlap */
 }
-
 .header-section::before {
     content: '';
     display: block; 
@@ -171,9 +169,9 @@ body {
     text-align: center;
     color: white;
     padding: 4rem 0;
-    text-shadow: 2px 2px 4px black; /* Add text shadow for header */
+    text-shadow: 2px 2px 4px black;
+    z-index: 1; /* Ensure header is above clock */
 }
-
 .header h1 {
     font-family: Salsa;
     font-size: 2.5rem;
@@ -189,7 +187,7 @@ body {
 /* behavior page */
 .main {
     width: 100vw;
-    height: 70vh;
+    height: 60vh; /* Adjust as needed */
     display: flex;
     position: relative;
     background-color: #065247;
@@ -197,79 +195,102 @@ body {
 }
 
 .iconfont {
-    width: 50px;
-    height: 60px;
+    width: 30px; /* Reduce icon size */
+    height: 40px; /* Reduce icon height */
+    font-size: 36px; /* Reduce icon font size */
     position: absolute;
-    left: 27%;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    bottom: 5%; /* Adjust position */
     z-index: 999;
-    font: 900 80px '';
     color: #fff;
+    cursor: pointer;
+
 }
 
 #up-btn {
-    top: -3%;
+    top: 0%;
     transform: rotate(180deg);
+    
 }
 
 #down-btn {
-    bottom: -3%;
+    bottom: 0%;
+    
 }
 
 #content {
     width: 42%;
     height: 100%;
     position: absolute;
+    
     left: 15%;
-    overflow: hidden;
+    top: 50px; /* Adjust top position */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    display: flex; /* Add flex to arrange cards in a row */
+    flex-direction: column;
 }
-
 .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: white;
-    transition: transform .8s ease-in-out;
-    width: 120%; /* Adjust based on layout */
-    height: auto; /* Adjust height or keep it flexible */
-    margin: 10px auto; /* Center and provide spacing */
-    padding: 80px; /* Adjust padding */
-    box-sizing: border-box; /* Include padding and border in width and height */
+    transition: transform .8s ease-in-out, opacity 0.5s ease; /* Add opacity transition */
+    width: 80%; /* Adjust card width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 20px; /* Increased font size */
+    line-height: 1.4; /* Adjust line height for better readability */
+    opacity: 1; /* Ensure content is visible by default */
+    text-align: justify; /* Justify text */
 }
 
+
+.card.active {
+    display: flex; /* Ensure card is displayed when active */
+    opacity: 1; /* Ensure content is visible */
+    transform: scale(1); /* Adjust scale transform if needed */
+}
+
+/* Adjust card appearance when not active */
+.card:not(.active) {
+    display: none; /* Hide inactive cards */
+    opacity: 0; /* Hide content */
+}
 .card-time {
     font-weight: 700;
     font-size: 30px; /* Smaller font size */
 }
 
 .card-title {
-    font-weight: 400;
-    padding-bottom: 40px;
+    font-weight: 700;
+    padding-bottom: 20px; /* Reduce spacing */
     border-bottom: 1px solid white;
     margin-bottom: 10px;
-    font-size: 30px; /* Smaller font size */
-    font-weight: 700;
+    font-size: 24px; /* Smaller font size */
 }
-
 .card-passage {
-        font-size: 18px; /* Smaller font size */
+        font-size: 12 px; /* Smaller font size */
         font-weight: 300;
 
 }
 
 #clock {
-    height: 140%;
-    /* Aspect ratio is 1:1 */
-    aspect-ratio: 1 / 1;
+    height: 650px; /* Adjusted height */
+    width: 650px; /* Adjusted width */
     position: absolute;
-    right: -27%;
-    top: -30%;
+    right: -280px; /* Adjust right position */
     border-radius: 50%;
     background-color: white;
-    border: #ff9214 30px solid;
-    
+    border: #ff9214 15px solid; /* Adjust border size */
+    z-index: 80; /* Ensure clock is above other content */
+    bottom: 0px;
+    top: -50px;
 }
 
-@media(max-width:1000px) {
+@media(max-width:768px) {
     #clock {
         right: -90%;
     }
@@ -326,7 +347,7 @@ body {
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align children to the left */
     padding: 1rem 2rem;
-    background-color: #F4C194; /* Change to match the exact color */
+    background-color: #b2cee8; /* Change to match the exact color */
     color: black; 
   }
   
@@ -345,7 +366,7 @@ body {
   }
   
   .footer-copy p {
-    margin: 0; /* Remove default margin */
+    margin: 10px; /* Remove default margin */
     text-align: center;
   }
   
@@ -364,3 +385,30 @@ body {
     }
   }
 
+  @media (max-width: 768px) {
+    .header-section {
+        padding-bottom: 50px; /* Adjust padding for smaller screens */
+    }
+    
+}
+
+
+@media (max-width: 768px) {
+    /* Adjust card width for smaller screens */
+    .card {
+      width: 90%;
+      margin: 10px auto; /* Center horizontally */
+      padding: 15px; /* Adjust padding */
+      font-size: 16px; /* Adjust font size */
+    }
+  
+    /* Adjust clock size for smaller screens */
+    #clock {
+      height: 150px;
+      width: 150px;
+      border: #ff9214 10px solid;
+      right: 10px;
+      top: 10px;
+    }
+  }
+  

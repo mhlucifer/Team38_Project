@@ -139,7 +139,7 @@ body {
 /* Add specific styles for the hero image */
 .header-section {
     position: relative;
-    background-image: url("/static/images/location_header.jpg");
+    background-image: url("/static/images/locator.jpg");
     background-size: cover;
     background-position: center; /* Center the background image horizontally and vertically */
     z-index: 0;
@@ -154,7 +154,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(46, 24, 13, 0.6);
+    background-color: rgba(6, 47, 82, 0.534);
     z-index: -1;
   }
   
@@ -240,7 +240,7 @@ button:hover {
 }
 
 .suburb-container {
-    background-color: #065247; 
+    background-color: #042237; 
    
 }
 

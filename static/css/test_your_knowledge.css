@@ -146,20 +146,43 @@ body {
 
 
 /* Styling for the main header */
-.main-header {
-    background-image: url('/static/images/test_your_knowledge.png');
-    color: #FFFFFF;
-    text-align: center;
-    padding: 100px 0; 
-    font-family: Salsa;
+.header-section
+{
+    position: relative; 
+    background-image: url("/static/images/testyourknowledgeh.png");
     background-size: cover;
+    z-index: 0;
+    height: 300px;
+    
+}
+
+.header-section::before {
+    content: '';
+    display: block; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(6, 82, 71, 0.6); 
+    z-index: -1; 
+}
+
+
+
+.header {
+    text-align: center;
+    font-family: 'Salsa', cursive;
+    font-size: 1.5rem;
+    color: white;
+    padding: 5rem 0;
     text-shadow: 2px 2px 4px black; /* Add text shadow for header */
 }
 
 #quiz-container
 {
     background-color: #042237;
-    margin-top:20px;
+    padding: 20px;
     text-align: center;
 }
 

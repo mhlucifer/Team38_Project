@@ -138,10 +138,11 @@ body {
 .header-section {
   position: relative;
   background-image: url("/static/images/identifierbg.jpg");
-  background-size: cover;
+  background-size: center;
   background-position: center; /* Center the background image horizontally and vertically */
   z-index: 0;
   height: 300px; /* Adjust height as needed */
+  margin-top: 0;
 }
 
 .header-section::before {
@@ -179,29 +180,78 @@ body {
   border-radius: 8px;
   text-align: justify; /* Center-align text */
   font-family:  'Open Sans', sans-serif;
-}
-
-.container h1 {
-  font-family:  'Open Sans', sans-serif;
-  font-size: 1.5rem; /* Normal font size */
-}
-
-  
+}  
   
   #imageUpload {
     width: 100%;
     margin: 20px 0;
   }
-
+  
+  
   #previewImage {
-    max-width: 100%; 
-    max-height: 400px; 
+    max-width: 100%;
+    max-height: 400px;
     object-fit: contain;
-    width: auto; /* scale to the height */
-    height: auto; 
-    display: block; 
-    margin: 0 auto; 
+    display: none; /* Hidden until an image is uploaded */
+    margin: 0 auto;
   }
+  
+/* Center align the upload box contents */
+.container-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Make items stretch to equal height */
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.upload-container,
+.content-container {
+  flex: 1 1 calc(50% - 20px); /* 50% minus padding for equal width */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+  margin-bottom: 20px; /* Add margin between containers */
+}
+
+.upload-container {
+  border: 2px dashed #042237;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.content-container {
+  background-color: #042237;
+  border: 4px solid #c1d1d9;
+  border-radius: 8px;
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.info-section {
+  margin-bottom: 20px; /* Add margin at the bottom for spacing */
+}
+
+.info-section h2 {
+  font-size: 1.8rem; /* Adjust heading font size */
+  margin-bottom: 10px; /* Add margin below heading */
+}
+
+.info-section p {
+  margin-bottom: 12px; /* Add margin between paragraphs */
+  line-height: 1.6; /* Increase line height for better readability */
+}
+
+  
+  .container h1 {
+    font-family: 'Open Sans', sans-serif; /* Set font family for headings */
+    font-size: 1.5rem; /* Set font size for headings */
+  }
+  
   
   
   #submitBtn {
@@ -217,7 +267,7 @@ body {
   }
   
   #submitBtn:hover {
-    background-color: #4cae4c;
+    background-color: #EF6C00;
   }
   
   #result {
@@ -227,7 +277,7 @@ body {
 
 
   .upload-box {
-    border: 2px dashed #cc8f8f;
+    border: 2px solid #F4DBC5;
     border-radius: 5px;
     text-align: center;
     padding: 20px;
@@ -235,16 +285,9 @@ body {
   }
   
   .upload-box:hover {
-    background-color: #f7f0f0;
+    background-color: #f4c8c8;
   }
-  
-  #previewImage {
-    max-width: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    display: none; /* Hidden until an image is uploaded */
-    margin: 0 auto;
-  }
+
   
   
 
@@ -255,7 +298,7 @@ body {
   flex-direction: column; /* Stack elements vertically */
   align-items: flex-start; /* Align children to the left */
   padding: 1rem 2rem;
-  background-color: #F4C194; /* Change to match the exact color */
+  background-color: #b2cee8; /* Change to match the exact color */
   color: black; 
 }
 
@@ -269,12 +312,11 @@ body {
 .footer-copy {
   align-self: stretch; /* Stretch to take the full width of the footer */
   text-align: right; /* Align text to the right */
- 
   border-top: 1px solid white; /* Add a border on top */
 }
 
 .footer-copy p {
-  margin: 0; /* Remove default margin */
+  margin: 10px; /* Remove default margin */
   text-align: center;
 }
 

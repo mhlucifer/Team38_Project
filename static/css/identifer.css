@@ -143,9 +143,10 @@ body {
 /* Add specific styles for the hero image */
 .header-section {
   position: relative;
-  background-image: url("/static/images/handling_header.jpg");
+  background-image: url("/static/images/hero_image_about_us.png");
   background-size: center;
-  background-position: center; /* Center the background image horizontally and vertically */
+  background-position: center;
+  background-position-y: 30%; /* Center the background image horizontally and vertically */
   z-index: 0;
   height: 300px; /* Adjust height as needed */
   
@@ -159,7 +160,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+ 
   z-index: -1;
 }
 

@@ -145,7 +145,8 @@ body {
     position: relative;
     background-image: url("/static/images/handler-ai.png");
     background-size: cover;
-    background-position: center; /* Center the background image horizontally and vertically */
+    background-position:center left ; /* Center the background image horizontally and vertically */
+
     z-index: 0;
     height: 300px; /* Adjust height as needed */
   }
@@ -298,7 +299,10 @@ input[type="radio"] {
     display: none;
 }
 
-
+.carousel-controls label.active {
+    background-color: #EF6C00;
+    color: #fff;
+}
 
 
 /* Adjust transform calculation based on the number of slides */

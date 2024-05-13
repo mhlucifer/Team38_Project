@@ -157,9 +157,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #a8d5a0; /* This sets the background color to green */
+    background-color: #042237; /* This sets the background color to green */
     padding: 20px;
     width: 100%; /* Full width */
+    color: white;
     
 }
 
@@ -316,7 +317,7 @@ body {
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align children to the left */
     padding: 1rem 2rem;
-    background-color: #F4C194; /* Change to match the exact color */
+    background-color: #b2cee8; /* Change to match the exact color */
     color: black; 
   }
   
@@ -335,7 +336,7 @@ body {
   }
   
   .footer-copy p {
-    margin: 0; /* Remove default margin */
+    margin: 10px; /* Remove default margin */
     text-align: center;
   }
   

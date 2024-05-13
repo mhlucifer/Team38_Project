@@ -146,8 +146,10 @@ body {
 
 .header-section {
     position: relative;
-    background-image: url("/static/images/hero_image_main_page.png");
+    background-image: url("/static/images/behaviour.png");
     background-size: cover;
+    background-position: center;
+    background-position-y: 30%;
     z-index: 0;
     padding-bottom: 100px; /* Add padding to prevent overlap */
 }
@@ -159,7 +161,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(6, 82, 71, 0.6); 
+    background-color: rgba(21, 6, 2, 0.6); 
     z-index: -1; 
 }
 
@@ -167,15 +169,15 @@ body {
 
 .header {
     text-align: center;
+    font-family: 'Salsa', cursive;
+    font-size: 1.5rem;
     color: white;
-    padding: 4rem 0;
-    text-shadow: 2px 2px 4px black;
-    z-index: 1; /* Ensure header is above clock */
+    padding: 5rem 0;
+    text-shadow: 2px 2px 4px black; /* Add text shadow for header */
 }
 .header h1 {
     font-family: Salsa;
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px black; /* Add text shadow for h1 */
 }
 
@@ -190,7 +192,7 @@ body {
     height: 60vh; /* Adjust as needed */
     display: flex;
     position: relative;
-    background-color: #065247;
+    background-color: #042237;
     overflow: hidden;
 }
 
@@ -284,7 +286,7 @@ body {
     right: -280px; /* Adjust right position */
     border-radius: 50%;
     background-color: white;
-    border: #ff9214 15px solid; /* Adjust border size */
+    border: #EF6C00 15px solid; /* Adjust border size */
     z-index: 80; /* Ensure clock is above other content */
     bottom: 0px;
     top: -50px;
@@ -317,7 +319,7 @@ body {
 .clock-thick {
     width: 6%;
     height: 6px;
-    background-color: #5053fc;
+    background-color: #065247;
     position: absolute;
     top: calc(50% - 3px);
     left: 0px;
@@ -328,13 +330,13 @@ body {
     position: absolute;
     left: 140%;
     top: calc(50% - 30px);
-    color: #5053fc;
+    color: #065247;
 }
 
 .clock-scale {
     width: 4%;
     height: 2px;
-    background-color: #5053fc;
+    background-color: #065247;
     position: absolute;
     top: calc(50% - .5px);
     left: 0px;

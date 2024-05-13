@@ -151,6 +151,8 @@ body {
     position: relative; 
     background-image: url("/static/images/testyourknowledgeh.png");
     background-size: cover;
+    background-position:center;
+    background-position-y: 30%;
     z-index: 0;
     height: 300px;
     

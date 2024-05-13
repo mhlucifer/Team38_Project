@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9b9d6b077be211ccee02fa430f5c90ad {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9b9d6b077be211ccee02fa430f5c90ad" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9b9d6b077be211ccee02fa430f5c90ad = L.map(
+                "map_9b9d6b077be211ccee02fa430f5c90ad",
+                {
+                    center: [-25.2744, 133.7751],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d23ae8abe7235457ab664b7fdfdd39f7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d23ae8abe7235457ab664b7fdfdd39f7.addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+            var circle_marker_f4956567a9eb8483f7f52075aeb75090 = L.circleMarker(
+                [-26.998404, 153.138561],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_d5ba262762cc275a3d593c9eafe4e072 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2505949bbe647fe90c16f03c5ef4a9a6 = $(`<div id="html_2505949bbe647fe90c16f03c5ef4a9a6" style="width: 100.0%; height: 100.0%;">Suburb: Welsby   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_d5ba262762cc275a3d593c9eafe4e072.setContent(html_2505949bbe647fe90c16f03c5ef4a9a6);
+            
+        
+
+        circle_marker_f4956567a9eb8483f7f52075aeb75090.bindPopup(popup_d5ba262762cc275a3d593c9eafe4e072)
+        ;
+
+        
+    
+    
+            var circle_marker_e7f154a7f558fecf1a80bf7af621e31e = L.circleMarker(
+                [-24.181752, 151.834391],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_7d635c584f7c903de4cfc3456a22e6d5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9a3f482c8be13f41fd9c413fa852067 = $(`<div id="html_b9a3f482c8be13f41fd9c413fa852067" style="width: 100.0%; height: 100.0%;">Suburb: Eurimbula   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_7d635c584f7c903de4cfc3456a22e6d5.setContent(html_b9a3f482c8be13f41fd9c413fa852067);
+            
+        
+
+        circle_marker_e7f154a7f558fecf1a80bf7af621e31e.bindPopup(popup_7d635c584f7c903de4cfc3456a22e6d5)
+        ;
+
+        
+    
+    
+            var circle_marker_435d3b70fe9ae019489ddfc32f035db2 = L.circleMarker(
+                [-26.74841, 152.501068],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_dc3c2c19fcc87001e01e3adddd4e3ba9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_37d5033217afb095c45e37903bed3a53 = $(`<div id="html_37d5033217afb095c45e37903bed3a53" style="width: 100.0%; height: 100.0%;">Suburb: Jimna   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_dc3c2c19fcc87001e01e3adddd4e3ba9.setContent(html_37d5033217afb095c45e37903bed3a53);
+            
+        
+
+        circle_marker_435d3b70fe9ae019489ddfc32f035db2.bindPopup(popup_dc3c2c19fcc87001e01e3adddd4e3ba9)
+        ;
+
+        
+    
+    
+            var circle_marker_dcf6d24871c1c25aff807f3bc791b99d = L.circleMarker(
+                [-18.248333, 140.534444],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_728cc96f19ee9289f10daa1cfe11b258 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b1356d1bd58ef16d1452adbc1211820 = $(`<div id="html_7b1356d1bd58ef16d1452adbc1211820" style="width: 100.0%; height: 100.0%;">Suburb: Carpentaria   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_728cc96f19ee9289f10daa1cfe11b258.setContent(html_7b1356d1bd58ef16d1452adbc1211820);
+            
+        
+
+        circle_marker_dcf6d24871c1c25aff807f3bc791b99d.bindPopup(popup_728cc96f19ee9289f10daa1cfe11b258)
+        ;
+
+        
+    
+    
+            var circle_marker_bb3a3a28a24827e66c01937bcc15acd7 = L.circleMarker(
+                [-23.615088, 151.15218],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_8618121e97ae68a8fb07d7c789646dba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9dc6062da7bb8e27fbe218af9b661d64 = $(`<div id="html_9dc6062da7bb8e27fbe218af9b661d64" style="width: 100.0%; height: 100.0%;">Suburb: Curtis Island   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_8618121e97ae68a8fb07d7c789646dba.setContent(html_9dc6062da7bb8e27fbe218af9b661d64);
+            
+        
+
+        circle_marker_bb3a3a28a24827e66c01937bcc15acd7.bindPopup(popup_8618121e97ae68a8fb07d7c789646dba)
+        ;
+
+        
+    
+    
+            var circle_marker_56764555c7b551e50f7082fff046d835 = L.circleMarker(
+                [-27.940068, 153.184401],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_03fe34fb3d5005da882dcb8924f939a6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b810a8b1eb8a8a4a3422e5e3da8c8975 = $(`<div id="html_b810a8b1eb8a8a4a3422e5e3da8c8975" style="width: 100.0%; height: 100.0%;">Suburb: Tamborine Mountain   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_03fe34fb3d5005da882dcb8924f939a6.setContent(html_b810a8b1eb8a8a4a3422e5e3da8c8975);
+            
+        
+
+        circle_marker_56764555c7b551e50f7082fff046d835.bindPopup(popup_03fe34fb3d5005da882dcb8924f939a6)
+        ;
+
+        
+    
+    
+            var circle_marker_3260daa2e142095433e92391ce0486d2 = L.circleMarker(
+                [-26.848333, 152.267778],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_14d5dae99beacedbabf9453f50118919 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_216c562b5b19e02264a6a8173ecc1ae0 = $(`<div id="html_216c562b5b19e02264a6a8173ecc1ae0" style="width: 100.0%; height: 100.0%;">Suburb: Linville   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_14d5dae99beacedbabf9453f50118919.setContent(html_216c562b5b19e02264a6a8173ecc1ae0);
+            
+        
+
+        circle_marker_3260daa2e142095433e92391ce0486d2.bindPopup(popup_14d5dae99beacedbabf9453f50118919)
+        ;
+
+        
+    
+    
+            var circle_marker_f45fb4bb826ee70ae93e15b1305f5d1e = L.circleMarker(
+                [-20.848333, 144.201111],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_269e0fe187984630aeedde0ce4b8e053 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_482fbf490002352737b199ab489962ea = $(`<div id="html_482fbf490002352737b199ab489962ea" style="width: 100.0%; height: 100.0%;">Suburb: Hughenden   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_269e0fe187984630aeedde0ce4b8e053.setContent(html_482fbf490002352737b199ab489962ea);
+            
+        
+
+        circle_marker_f45fb4bb826ee70ae93e15b1305f5d1e.bindPopup(popup_269e0fe187984630aeedde0ce4b8e053)
+        ;
+
+        
+    
+    
+            var circle_marker_b358bb38a10c94cbfdd11fc5552827de = L.circleMarker(
+                [-24.565, 149.401111],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_545bdaa5b01ea407178be31dd6586512 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d507a27766ce5a7b3a9df2aed0c4f64b = $(`<div id="html_d507a27766ce5a7b3a9df2aed0c4f64b" style="width: 100.0%; height: 100.0%;">Suburb: Bauhinia   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_545bdaa5b01ea407178be31dd6586512.setContent(html_d507a27766ce5a7b3a9df2aed0c4f64b);
+            
+        
+
+        circle_marker_b358bb38a10c94cbfdd11fc5552827de.bindPopup(popup_545bdaa5b01ea407178be31dd6586512)
+        ;
+
+        
+    
+    
+            var circle_marker_d07e08e16dc8e8b9e1ea5c40877b0576 = L.circleMarker(
+                [-17.275555, 145.674593],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_8fb5274e871f7b469708e78ad44e12e3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4dd7bd4c6a1c0588a5e61678c9da6ec3 = $(`<div id="html_4dd7bd4c6a1c0588a5e61678c9da6ec3" style="width: 100.0%; height: 100.0%;">Suburb: Gadgarra   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_8fb5274e871f7b469708e78ad44e12e3.setContent(html_4dd7bd4c6a1c0588a5e61678c9da6ec3);
+            
+        
+
+        circle_marker_d07e08e16dc8e8b9e1ea5c40877b0576.bindPopup(popup_8fb5274e871f7b469708e78ad44e12e3)
+        ;
+
+        
+    
+    
+            var circle_marker_1ac85246f169410fd3fea8e37d7e1f2c = L.circleMarker(
+                [-17.285564, 145.684869],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_e507e0dd380f8220f7505555581c852a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_371844b6315259a2460a6c42c039c73b = $(`<div id="html_371844b6315259a2460a6c42c039c73b" style="width: 100.0%; height: 100.0%;">Suburb: Gadgarra   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_e507e0dd380f8220f7505555581c852a.setContent(html_371844b6315259a2460a6c42c039c73b);
+            
+        
+
+        circle_marker_1ac85246f169410fd3fea8e37d7e1f2c.bindPopup(popup_e507e0dd380f8220f7505555581c852a)
+        ;
+
+        
+    
+    
+            var circle_marker_ddb46da6c6c4b8512fa52815c8a75037 = L.circleMarker(
+                [-20.240108, 148.534418],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_131413da32bd99117a1a2c8c9c686f7b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e593650d4a1887e2aa1dc0813cec66e6 = $(`<div id="html_e593650d4a1887e2aa1dc0813cec66e6" style="width: 100.0%; height: 100.0%;">Suburb: Cape Gloucester   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_131413da32bd99117a1a2c8c9c686f7b.setContent(html_e593650d4a1887e2aa1dc0813cec66e6);
+            
+        
+
+        circle_marker_ddb46da6c6c4b8512fa52815c8a75037.bindPopup(popup_131413da32bd99117a1a2c8c9c686f7b)
+        ;
+
+        
+    
+    
+            var circle_marker_0017c8823058a51cae12d041e9511a9c = L.circleMarker(
+                [-24.531667, 149.551111],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_495358e4cc40c9ab8e6fdf86d994ef72 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e8a488161edfbe4d78721761399e7c9 = $(`<div id="html_2e8a488161edfbe4d78721761399e7c9" style="width: 100.0%; height: 100.0%;">Suburb: Oombabeer   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_495358e4cc40c9ab8e6fdf86d994ef72.setContent(html_2e8a488161edfbe4d78721761399e7c9);
+            
+        
+
+        circle_marker_0017c8823058a51cae12d041e9511a9c.bindPopup(popup_495358e4cc40c9ab8e6fdf86d994ef72)
+        ;
+
+        
+    
+    
+            var circle_marker_915cf0ad38e0983a683fd07e808f5e06 = L.circleMarker(
+                [-20.731667, 139.484444],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_1bc35d04bafdcdeafdfb25e47f62b28b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f82bb0ae6d40668340cc878442a58ea = $(`<div id="html_0f82bb0ae6d40668340cc878442a58ea" style="width: 100.0%; height: 100.0%;">Suburb: Mount Isa   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_1bc35d04bafdcdeafdfb25e47f62b28b.setContent(html_0f82bb0ae6d40668340cc878442a58ea);
+            
+        
+
+        circle_marker_915cf0ad38e0983a683fd07e808f5e06.bindPopup(popup_1bc35d04bafdcdeafdfb25e47f62b28b)
+        ;
+
+        
+    
+    
+            var circle_marker_3281132596be75135a3c792cd7857cae = L.circleMarker(
+                [-21.065105, 148.584423],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_d2d542a4db82feb1a1d46660c3a91e22 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_357ec80b69a65e04d2b5f7bb9700ad6d = $(`<div id="html_357ec80b69a65e04d2b5f7bb9700ad6d" style="width: 100.0%; height: 100.0%;">Suburb: Finch Hatton   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_d2d542a4db82feb1a1d46660c3a91e22.setContent(html_357ec80b69a65e04d2b5f7bb9700ad6d);
+            
+        
+
+        circle_marker_3281132596be75135a3c792cd7857cae.bindPopup(popup_d2d542a4db82feb1a1d46660c3a91e22)
+        ;
+
+        
+    
+    
+            var circle_marker_c32ebec0fbeb1bfa1481be8f1cefb6dc = L.circleMarker(
+                [-15.34431, 144.455277],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_c5d0ebaf9e597030de261d0b89621d3d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4b07a93f469aeaf1c1f81c57f0b49cec = $(`<div id="html_4b07a93f469aeaf1c1f81c57f0b49cec" style="width: 100.0%; height: 100.0%;">Suburb: Lakefield   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_c5d0ebaf9e597030de261d0b89621d3d.setContent(html_4b07a93f469aeaf1c1f81c57f0b49cec);
+            
+        
+
+        circle_marker_c32ebec0fbeb1bfa1481be8f1cefb6dc.bindPopup(popup_c5d0ebaf9e597030de261d0b89621d3d)
+        ;
+
+        
+    
+    
+            var circle_marker_3e4fd0ffe7c3bb8bd331c490e7bd1dba = L.circleMarker(
+                [-21.069272, 148.638589],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_20ed7eca7f2ccd24a5935000920f71de = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a2fbd14e5a7e50ef4d712a79d71d0242 = $(`<div id="html_a2fbd14e5a7e50ef4d712a79d71d0242" style="width: 100.0%; height: 100.0%;">Suburb: Finch Hatton   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_20ed7eca7f2ccd24a5935000920f71de.setContent(html_a2fbd14e5a7e50ef4d712a79d71d0242);
+            
+        
+
+        circle_marker_3e4fd0ffe7c3bb8bd331c490e7bd1dba.bindPopup(popup_20ed7eca7f2ccd24a5935000920f71de)
+        ;
+
+        
+    
+    
+            var circle_marker_8ad922f0efe409e48083d4fe86e0aa87 = L.circleMarker(
+                [-23.665088, 151.201068],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_106c302df7080e07b9c482a6200a655d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6981388b93ca2d702fcb33e5a161d6b6 = $(`<div id="html_6981388b93ca2d702fcb33e5a161d6b6" style="width: 100.0%; height: 100.0%;">Suburb: Curtis Island   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_106c302df7080e07b9c482a6200a655d.setContent(html_6981388b93ca2d702fcb33e5a161d6b6);
+            
+        
+
+        circle_marker_8ad922f0efe409e48083d4fe86e0aa87.bindPopup(popup_106c302df7080e07b9c482a6200a655d)
+        ;
+
+        
+    
+    
+            var circle_marker_937d9856436d49296ab8a0c2a20a0bc4 = L.circleMarker(
+                [-24.52342, 151.496899],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_e07de210f399f3267fed7a1b7bdec9d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_54797ae3211e5e18fef7e992429fa404 = $(`<div id="html_54797ae3211e5e18fef7e992429fa404" style="width: 100.0%; height: 100.0%;">Suburb: Gindoran   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_e07de210f399f3267fed7a1b7bdec9d4.setContent(html_54797ae3211e5e18fef7e992429fa404);
+            
+        
+
+        circle_marker_937d9856436d49296ab8a0c2a20a0bc4.bindPopup(popup_e07de210f399f3267fed7a1b7bdec9d4)
+        ;
+
+        
+    
+    
+            var circle_marker_490b9ac432d764efade1e7570e201ae2 = L.circleMarker(
+                [-28.227567, 153.263569],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_f060fa79f4ba8df3233be2a012b61aaf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5322caef8c9fe7510332162853d4f252 = $(`<div id="html_5322caef8c9fe7510332162853d4f252" style="width: 100.0%; height: 100.0%;">Suburb: Springbrook   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_f060fa79f4ba8df3233be2a012b61aaf.setContent(html_5322caef8c9fe7510332162853d4f252);
+            
+        
+
+        circle_marker_490b9ac432d764efade1e7570e201ae2.bindPopup(popup_f060fa79f4ba8df3233be2a012b61aaf)
+        ;
+
+        
+    
+    
+            var circle_marker_ffef2f00ea63d057873262314b4c6858 = L.circleMarker(
+                [-24.581667, 151.542778],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_b36e6db736eb60a9a6b80d129172a7eb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f5c1522a32a1a068a6109731280a4747 = $(`<div id="html_f5c1522a32a1a068a6109731280a4747" style="width: 100.0%; height: 100.0%;">Suburb: Gindoran   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_b36e6db736eb60a9a6b80d129172a7eb.setContent(html_f5c1522a32a1a068a6109731280a4747);
+            
+        
+
+        circle_marker_ffef2f00ea63d057873262314b4c6858.bindPopup(popup_b36e6db736eb60a9a6b80d129172a7eb)
+        ;
+
+        
+    
+    
+            var circle_marker_dafdef60b93a86ad7afa8784fee6a580 = L.circleMarker(
+                [-24.531753, 151.471899],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_cd0881b91c064311a9a0653fbd12b31e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5800a3a21a6404f89e116aab72112ef0 = $(`<div id="html_5800a3a21a6404f89e116aab72112ef0" style="width: 100.0%; height: 100.0%;">Suburb: Gindoran   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_cd0881b91c064311a9a0653fbd12b31e.setContent(html_5800a3a21a6404f89e116aab72112ef0);
+            
+        
+
+        circle_marker_dafdef60b93a86ad7afa8784fee6a580.bindPopup(popup_cd0881b91c064311a9a0653fbd12b31e)
+        ;
+
+        
+    
+    
+            var circle_marker_de0f9b0f65064bc752d81d45a3c19329 = L.circleMarker(
+                [-23.556755, 151.155236],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_e1137d56541f9d7294a9162f93f82278 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8720205a3eafa206986ab62804afd445 = $(`<div id="html_8720205a3eafa206986ab62804afd445" style="width: 100.0%; height: 100.0%;">Suburb: Curtis Island   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_e1137d56541f9d7294a9162f93f82278.setContent(html_8720205a3eafa206986ab62804afd445);
+            
+        
+
+        circle_marker_de0f9b0f65064bc752d81d45a3c19329.bindPopup(popup_e1137d56541f9d7294a9162f93f82278)
+        ;
+
+        
+    
+    
+            var circle_marker_a45a4b40313e4af5322fe079bcaee346 = L.circleMarker(
+                [-15.348333, 144.451111],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_c9788a35f6f9949d93a2b387995e554b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_53925146f74bea8dedb3b73e8f3534bc = $(`<div id="html_53925146f74bea8dedb3b73e8f3534bc" style="width: 100.0%; height: 100.0%;">Suburb: Lakefield   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_c9788a35f6f9949d93a2b387995e554b.setContent(html_53925146f74bea8dedb3b73e8f3534bc);
+            
+        
+
+        circle_marker_a45a4b40313e4af5322fe079bcaee346.bindPopup(popup_c9788a35f6f9949d93a2b387995e554b)
+        ;
+
+        
+    
+    
+            var circle_marker_8cc109e7076a572da2b277e1151aab8d = L.circleMarker(
+                [-20.34844, 148.726083],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_0946f1d9593ac0e09657e3adffa06971 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_48a0f9ae51c829363bf3315334b9c315 = $(`<div id="html_48a0f9ae51c829363bf3315334b9c315" style="width: 100.0%; height: 100.0%;">Suburb: Cape Conway   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_0946f1d9593ac0e09657e3adffa06971.setContent(html_48a0f9ae51c829363bf3315334b9c315);
+            
+        
+
+        circle_marker_8cc109e7076a572da2b277e1151aab8d.bindPopup(popup_0946f1d9593ac0e09657e3adffa06971)
+        ;
+
+        
+    
+    
+            var circle_marker_b0a5aa5d5c248248ba6bb178a2141a10 = L.circleMarker(
+                [-24.552587, 151.488566],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_ef1e2b3de29f509965d46c493de94708 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4e1cd2223515fa61f3fddac2021304eb = $(`<div id="html_4e1cd2223515fa61f3fddac2021304eb" style="width: 100.0%; height: 100.0%;">Suburb: Gindoran   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_ef1e2b3de29f509965d46c493de94708.setContent(html_4e1cd2223515fa61f3fddac2021304eb);
+            
+        
+
+        circle_marker_b0a5aa5d5c248248ba6bb178a2141a10.bindPopup(popup_ef1e2b3de29f509965d46c493de94708)
+        ;
+
+        
+    
+    
+            var circle_marker_5ae20eaa58a414940bec4d3802326c49 = L.circleMarker(
+                [-24.648333, 149.567778],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_6f3f4362f902a406482dc53363deee10 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d3eb2274d74bdcd540821fb1d1b9d144 = $(`<div id="html_d3eb2274d74bdcd540821fb1d1b9d144" style="width: 100.0%; height: 100.0%;">Suburb: Rhydding   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_6f3f4362f902a406482dc53363deee10.setContent(html_d3eb2274d74bdcd540821fb1d1b9d144);
+            
+        
+
+        circle_marker_5ae20eaa58a414940bec4d3802326c49.bindPopup(popup_6f3f4362f902a406482dc53363deee10)
+        ;
+
+        
+    
+    
+            var circle_marker_9b3e3964de9dbfffc994cb396f6723a8 = L.circleMarker(
+                [-22.215, 146.901111],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_8ce729f94ce1feffdc6bcfd2d668e58e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f43e6bdd59d3d69a3eeef558d72bc929 = $(`<div id="html_f43e6bdd59d3d69a3eeef558d72bc929" style="width: 100.0%; height: 100.0%;">Suburb: Frankfield   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_8ce729f94ce1feffdc6bcfd2d668e58e.setContent(html_f43e6bdd59d3d69a3eeef558d72bc929);
+            
+        
+
+        circle_marker_9b3e3964de9dbfffc994cb396f6723a8.bindPopup(popup_8ce729f94ce1feffdc6bcfd2d668e58e)
+        ;
+
+        
+    
+    
+            var circle_marker_6fa27cf5497e7776c1c12b99cd356397 = L.circleMarker(
+                [-13.948333, 143.201111],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_74524ff42e0394e06d2349cb3a5d1bb3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_55863265097da31bdcb6ff293ce6a925 = $(`<div id="html_55863265097da31bdcb6ff293ce6a925" style="width: 100.0%; height: 100.0%;">Suburb: Coen   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_74524ff42e0394e06d2349cb3a5d1bb3.setContent(html_55863265097da31bdcb6ff293ce6a925);
+            
+        
+
+        circle_marker_6fa27cf5497e7776c1c12b99cd356397.bindPopup(popup_74524ff42e0394e06d2349cb3a5d1bb3)
+        ;
+
+        
+    
+    
+            var circle_marker_b0b266edd3e0d996b849c1fb6ada290a = L.circleMarker(
+                [-24.315085, 151.942724],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_106d3cb3845973620dcab9da3aa247d3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dd917501edd907feb9071364a50d541d = $(`<div id="html_dd917501edd907feb9071364a50d541d" style="width: 100.0%; height: 100.0%;">Suburb: Deepwater   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_106d3cb3845973620dcab9da3aa247d3.setContent(html_dd917501edd907feb9071364a50d541d);
+            
+        
+
+        circle_marker_b0b266edd3e0d996b849c1fb6ada290a.bindPopup(popup_106d3cb3845973620dcab9da3aa247d3)
+        ;
+
+        
+    
+    
+            var circle_marker_dbef90dad8d1722e99fcd8944d53358e = L.circleMarker(
+                [-23.631755, 150.984405],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_284ba5eebc76cb8e7375b64abcb6d52f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_14eea12a43aee73a658d86220d628b07 = $(`<div id="html_14eea12a43aee73a658d86220d628b07" style="width: 100.0%; height: 100.0%;">Suburb: The Narrows   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_284ba5eebc76cb8e7375b64abcb6d52f.setContent(html_14eea12a43aee73a658d86220d628b07);
+            
+        
+
+        circle_marker_dbef90dad8d1722e99fcd8944d53358e.bindPopup(popup_284ba5eebc76cb8e7375b64abcb6d52f)
+        ;
+
+        
+    
+    
+            var circle_marker_06c2c1d929f9c1bea2aa2aae156ce77b = L.circleMarker(
+                [-21.390105, 148.559424],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_cfe42bc8898888ee88d68e902bc6669c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_65bfc68f87592ac2e0945b87482d3577 = $(`<div id="html_65bfc68f87592ac2e0945b87482d3577" style="width: 100.0%; height: 100.0%;">Suburb: Mount Britton   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_cfe42bc8898888ee88d68e902bc6669c.setContent(html_65bfc68f87592ac2e0945b87482d3577);
+            
+        
+
+        circle_marker_06c2c1d929f9c1bea2aa2aae156ce77b.bindPopup(popup_cfe42bc8898888ee88d68e902bc6669c)
+        ;
+
+        
+    
+    
+            var circle_marker_4a741477f940af2bcbfe6b873d098d11 = L.circleMarker(
+                [-25.248408, 153.167711],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_809ad41bfbadc4e5c2bf27a08f61d861 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f85c8963e79b20821231b34a4c473a92 = $(`<div id="html_f85c8963e79b20821231b34a4c473a92" style="width: 100.0%; height: 100.0%;">Suburb: Fraser Island   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_809ad41bfbadc4e5c2bf27a08f61d861.setContent(html_f85c8963e79b20821231b34a4c473a92);
+            
+        
+
+        circle_marker_4a741477f940af2bcbfe6b873d098d11.bindPopup(popup_809ad41bfbadc4e5c2bf27a08f61d861)
+        ;
+
+        
+    
+    
+            var circle_marker_015cd9c10694440ead5094c0c97ebfd4 = L.circleMarker(
+                [-24.516, 151.483],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_c964a10a14adfea43d7bdc673ceb3b21 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c7d106f53210232cfc8354a1b6b26ff0 = $(`<div id="html_c7d106f53210232cfc8354a1b6b26ff0" style="width: 100.0%; height: 100.0%;">Suburb: Gindoran   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_c964a10a14adfea43d7bdc673ceb3b21.setContent(html_c7d106f53210232cfc8354a1b6b26ff0);
+            
+        
+
+        circle_marker_015cd9c10694440ead5094c0c97ebfd4.bindPopup(popup_c964a10a14adfea43d7bdc673ceb3b21)
+        ;
+
+        
+    
+    
+            var circle_marker_faf43543735cfe2a451ff52e19b81abc = L.circleMarker(
+                [-24.516, 151.483],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_dd14c4db8cc11298e31ff9457119f40e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1a2645482a460a6111148c60fb48e02 = $(`<div id="html_f1a2645482a460a6111148c60fb48e02" style="width: 100.0%; height: 100.0%;">Suburb: Gindoran   Year: 1975   Occurrences: 2</div>`)[0];
+                popup_dd14c4db8cc11298e31ff9457119f40e.setContent(html_f1a2645482a460a6111148c60fb48e02);
+            
+        
+
+        circle_marker_faf43543735cfe2a451ff52e19b81abc.bindPopup(popup_dd14c4db8cc11298e31ff9457119f40e)
+        ;
+
+        
+    
+    
+            var circle_marker_3371c6f4af46c6ab86d5a704a2a0744c = L.circleMarker(
+                [-24.516, 151.483],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_59f31c908ddf214a022ac6d67c667633 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1284189e02f70190cc395c38431d200 = $(`<div id="html_f1284189e02f70190cc395c38431d200" style="width: 100.0%; height: 100.0%;">Suburb: Gindoran   Year: 1975   Occurrences: 3</div>`)[0];
+                popup_59f31c908ddf214a022ac6d67c667633.setContent(html_f1284189e02f70190cc395c38431d200);
+            
+        
+
+        circle_marker_3371c6f4af46c6ab86d5a704a2a0744c.bindPopup(popup_59f31c908ddf214a022ac6d67c667633)
+        ;
+
+        
+    
+    
+            var circle_marker_3d32a469e88fcedb0a79a5bcc5af8edc = L.circleMarker(
+                [-27.583333, 153.1],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_28451b8f94ab63f9184bda8775c8862e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e105b32600d99b50476ee43ef5d0d038 = $(`<div id="html_e105b32600d99b50476ee43ef5d0d038" style="width: 100.0%; height: 100.0%;">Suburb: Eight Mile Plains   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_28451b8f94ab63f9184bda8775c8862e.setContent(html_e105b32600d99b50476ee43ef5d0d038);
+            
+        
+
+        circle_marker_3d32a469e88fcedb0a79a5bcc5af8edc.bindPopup(popup_28451b8f94ab63f9184bda8775c8862e)
+        ;
+
+        
+    
+    
+            var circle_marker_ddde7ad6730a77929b25e6147ffea73f = L.circleMarker(
+                [-20.033333, 146.316667],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_c799bf9c97c35e4f3c7c4cfffbe972e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6b0b09862c50659a6aba730a99ac6596 = $(`<div id="html_6b0b09862c50659a6aba730a99ac6596" style="width: 100.0%; height: 100.0%;">Suburb: Breddan   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_c799bf9c97c35e4f3c7c4cfffbe972e2.setContent(html_6b0b09862c50659a6aba730a99ac6596);
+            
+        
+
+        circle_marker_ddde7ad6730a77929b25e6147ffea73f.bindPopup(popup_c799bf9c97c35e4f3c7c4cfffbe972e2)
+        ;
+
+        
+    
+    
+            var circle_marker_f08db067b9fe5844b2e47b727404a695 = L.circleMarker(
+                [-13.95, 143.2],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_219360928f4cff48a66f3080fc3f08ad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8f67f1ca31766bd1957243275b7817ed = $(`<div id="html_8f67f1ca31766bd1957243275b7817ed" style="width: 100.0%; height: 100.0%;">Suburb: Coen   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_219360928f4cff48a66f3080fc3f08ad.setContent(html_8f67f1ca31766bd1957243275b7817ed);
+            
+        
+
+        circle_marker_f08db067b9fe5844b2e47b727404a695.bindPopup(popup_219360928f4cff48a66f3080fc3f08ad)
+        ;
+
+        
+    
+    
+            var circle_marker_84d6dbdfaf1673e5c4eea76a36f79f8e = L.circleMarker(
+                [-27.583333, 153.1],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_553c24712138c1c0f57eac37028a52c8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_74f3f7bd4935b3146ce4ed69dddb87db = $(`<div id="html_74f3f7bd4935b3146ce4ed69dddb87db" style="width: 100.0%; height: 100.0%;">Suburb: Eight Mile Plains   Year: 1975   Occurrences: 2</div>`)[0];
+                popup_553c24712138c1c0f57eac37028a52c8.setContent(html_74f3f7bd4935b3146ce4ed69dddb87db);
+            
+        
+
+        circle_marker_84d6dbdfaf1673e5c4eea76a36f79f8e.bindPopup(popup_553c24712138c1c0f57eac37028a52c8)
+        ;
+
+        
+    
+    
+            var circle_marker_1f38a1af05de50dcb74b236096b5390e = L.circleMarker(
+                [-15.566667, 144.45],
+                {"bubblingMouseEvents": true, "color": "Orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "Red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_9b9d6b077be211ccee02fa430f5c90ad);
+        
+    
+        var popup_8837913d16cb2a961f0674c9fbe00a4d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_97365399d2960c036143141bd8c4371a = $(`<div id="html_97365399d2960c036143141bd8c4371a" style="width: 100.0%; height: 100.0%;">Suburb: Laura   Year: 1975   Occurrences: 1</div>`)[0];
+                popup_8837913d16cb2a961f0674c9fbe00a4d.setContent(html_97365399d2960c036143141bd8c4371a);
+            
+        
+
+        circle_marker_1f38a1af05de50dcb74b236096b5390e.bindPopup(popup_8837913d16cb2a961f0674c9fbe00a4d)
+        ;
+
+        
+    
+</script>
+</html>

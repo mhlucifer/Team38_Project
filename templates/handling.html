@@ -22,8 +22,7 @@
             <a href="/main" class="nav-item">Home</a>
             <div class="nav-item dropdown">
                 <div class="dropdown-container">
-                    <span class="nav-text" class="nav-item">Information</span>
-                    <button class="dropbtn">▼</button>
+                    <span class="nav-text">Info Toad ▼</span>
                 </div>
                 <div class="dropdown-content">
                     <a href="/history">History</a>
@@ -33,7 +32,7 @@
             <a href="/location" class="nav-item">Cane Toad Locator</a>
             <a href="/identifier" class="nav-item">Cane Toad Identifier</a>
             <a href="/handle" class="nav-item active">Handling</a>
-            <a href="#" class="nav-item">Test your knowledge</a>
+            <a href="/test_your_knowledge" class="nav-item">Test your knowledge</a>
             <a href="/about_us" class="nav-item">About us</a>
         </div>
     </div>
@@ -93,7 +92,8 @@
         </div>
         <div class="text-container">
             <h2>Reporting Tool</h2>
-            <input type="text" id="suburbInput" placeholder="Enter your suburb/postcode/state">
+            <input type="text" id="suburbInput" placeholder="Enter your suburb/postcode/state" oninput="showSuggestions(this.value)">
+            <div id="suggestionBox" class="suggestions"></div>
             <button onclick="searchLocation()">Search</button>
             <div id="messageBox"></div>
         </div>
@@ -104,13 +104,12 @@
       <!-- Footer Section -->
 <footer class="footer-section">
     <div class="footer-links">
-      <a href="//about_us">About us</a>
-      <a href="#">Terms of Use</a>
-      <a href="#">Data Privacy Policy</a>
-      <a href="#">Resources</a>
+      <a href="/about_us">About us</a>
+      <a href="/terms">Terms of Use</a>
+      <a href="/terms">Data Privacy Policy</a>
     </div>
     <div class="footer-copy">
-      <p>Copyright@2024</p>
+      <p>InvaToad@Copyright</p>
     </div>
   </footer>
 

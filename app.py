@@ -1,10 +1,8 @@
 from werkzeug.utils import secure_filename
-
 import app
 from flask import Flask, render_template, request, jsonify
-# from Backend_code.yearsearcher import year_searcher
-#from Backend_code.suburbsearcher import suburb_searcher
-# from Backend_code.csv_code import suburb_searcher2
+from Backend_code.year_searcher import year_searcher
+from Backend_code.suburb_searcher import suburb_searcher
 from Backend_code.classify import main
 import os
 from datetime import datetime
@@ -80,9 +78,13 @@ def identifier():
     return render_template('identifier.html')
 
 
-@app.route('/test_your_knowlege')
+@app.route('/test_your_knowledge')
 def test_your_knowledge():
-    return render_template('test_your_knowlege.html')
+    return render_template('test_your_knowledge.html')
+
+@app.route('/terms')
+def termsofuse():
+    return render_template('terms.html')
 
 
 @app.route('/model_identifier', methods=['POST'])
@@ -143,7 +145,7 @@ def generate_map():
     value = request.args.get('value')
     try:
         if map_type == 'suburb':
-            filename = suburb_searcher2(value)
+            filename = suburb_searcher(value)
         elif map_type == 'year':
             filename = year_searcher(value)
 
@@ -166,6 +168,18 @@ def generate_map():
             return jsonify({'error': 'No data found for the provided input'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+def load_locations():
+    with open("./static/api/location.txt", "r") as file:
+        return [line.strip() for line in file]
+
+
+@app.route('/autocomplete', methods=['GET'])
+def autocomplete():
+    query = request.args.get('query', '').lower()
+    suggestions = [line for line in load_locations() if query in line.lower()]
+    return jsonify(suggestions)
 
 
 if __name__ == '__main__':

@@ -1,3 +1,38 @@
+$(document).ready(function() {
+    $("#suburbInput").on("input", function() {
+        var inputVal = $(this).val();
+        if(inputVal.length > 1){ // Start search after at least 2 characters
+            $.ajax({
+                url: "/autocomplete?query=" + encodeURIComponent(inputVal),
+                type: "GET",
+                success: function(data) {
+                    $("#autocomplete-results").empty();
+                    data.forEach(function(item) {
+                        $("#autocomplete-results").append(`<div onclick="selectResult('${item}')">${item}</div>`);
+                    });
+                }
+            });
+        } else {
+            $("#autocomplete-results").empty();
+        }
+    });
+});
+
+function selectResult(value) {
+    $("#suburbInput").val(value);
+    $("#autocomplete-results").empty();
+}
+
+
+
+
+
+
+
+
+
+
+
 function loadMap(type) {
     let input;
     if (type === 'year') {
@@ -35,3 +70,5 @@ function loadMap(type) {
         alert('An error occurred while generating the map.');
     });
 }
+
+

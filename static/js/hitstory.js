@@ -30,6 +30,10 @@ window.addEventListener('scroll', function () {
     }
 });
 
+
+
+
+
 (function ($) {
     $.fn.timeline = function () {
         var selectors = {
@@ -59,3 +63,30 @@ window.addEventListener('scroll', function () {
 })(jQuery);
 
 $("#shell").timeline();
+
+
+
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('.item');
+    const navLinks = document.querySelectorAll('.sidebar a');
+    const buffer = 200; // Set a buffer
+    let currentActiveId = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top; // Position relative to the window
+        const sectionHeight = section.getBoundingClientRect().height;
+
+        //Activated when the top of the section enters the viewport and takes the buffer into account
+        if (sectionTop <= buffer && sectionTop + sectionHeight >= 0) {
+            currentActiveId = section.getAttribute('id');
+        }
+    });
+
+    //Update highlight status
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentActiveId) {
+            link.classList.add('active');
+        }
+    });
+});

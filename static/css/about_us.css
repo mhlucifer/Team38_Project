@@ -28,24 +28,54 @@ body {
     color: white;
     padding-left: 10px;
 }
+.logo-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: white; /* Set link color */
+}
+
 
 .frog-icon {
     width: 40px;
     height: 40px;
+    margin-right: 10px;
 }
 
 .navbar-items {
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 
-.navbar-items .nav-item{
+.navbar-items .nav-item {
+    /* Other styles */
     color: white;
     text-decoration: none;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     display: flex;
     align-items: center;
-    padding-left: 10px; 
+    padding-left: 12px;
+    font-family: 'Salsa', cursive;
+    position: relative;
+    transition: transform 0.2s ease; /* Only transition transform on hover */
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.navbar-items .nav-item.active {
+    background-color: #02312ac6;
+    transform: scale(1.05);
+    border-radius: 20px;
+    padding: 0 1.5rem; /* Adjust padding */
+}
+
+.navbar-items .nav-item:hover {
+    transform: scale(1.2);
+}
+
+/* Exclude specific elements from having the hover effect */
+.navbar-items .nav-item.no-hover:hover {
+    transform: none !important; /* Prevent transform on hover */
+    border-radius: 10px;
 }
 
 
@@ -60,14 +90,6 @@ body {
 }
 
 
-.nav-item.active {
-    text-decoration: underline; /* Underline for active page */
-    text-decoration-color: #a8d5a0; /* Change underline color */
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px; /* Adjust space between text and underline */
-    text-decoration-skip-ink: none; /* Ensure underline is not cut through descenders */
-}
-
 .dropdown {
     position: relative;
 }
@@ -79,59 +101,95 @@ body {
 
 }
 
-.nav-text {
-    color: white;
-    padding: 0 0.5rem; /* Adjust padding as needed */
-}
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #065247;
+    min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 10px;
     left: 0; /* Keep the drop-down button aligned to the left */
     top: 100%; /* Set the top distance to 100% to place the menu below the button */
 }
 
 .dropdown-content a {
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     white-space: nowrap;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+    background-color: rgba(138, 142, 137, 0.6);
+    border-radius: 10px;
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 
+
 /* Styling for the main header */
-.main-header {
-    background-image: url('/static/images/hero_image_about_us.png');
-    color: #fff;
+/* Global styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar styles */
+/* Add your navbar CSS styles here */
+
+/* Header Section styles */
+.header-section {
+    position:relative;
+    background-image: url("/static/images/hero_image_about_us.png");
+    background-size: 100% auto;
+    background-position: center; /* Center the background image horizontally and vertically */
+    z-index: -1;
+    height: 300px; /* Adjust height as needed */
+    padding-top: 80px;
+    margin: 0;
+  }
+  
+  .header-section::before {
+    content: '';
+    display: block; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(2, 25, 21, 0.6); 
+    z-index: -1; 
+}
+
+.header {
     text-align: center;
-    padding: 100px 0; 
-    font-family: Salsa;
-    background-size: cover;
+    color: white;
+    padding: 4rem 0;
     text-shadow: 2px 2px 4px black; /* Add text shadow for header */
-    
-    
+}
+
+.header h1 {
+    font-family: Salsa;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px black; /* Add text shadow for h1 */
 }
 
 
-
-
+/* Additional styles for your content and footer can be added here */
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #a8d5a0; /* This sets the background color to green */
-
+    background-color: #042237; /* This sets the background color to green */
+    color: white;
     width: 100%; /* Full width */
 }
 
@@ -222,7 +280,7 @@ body {
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align children to the left */
     padding: 1rem 2rem;
-    background-color: #F4C194; /* Change to match the exact color */
+    background-color: #b2cee8; /* Change to match the exact color */
     color: black; 
   }
   
@@ -241,7 +299,7 @@ body {
   }
   
   .footer-copy p {
-    margin: 0; /* Remove default margin */
+    margin: 10px; /* Remove default margin */
     text-align: center;
   }
   

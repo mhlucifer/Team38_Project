@@ -40,11 +40,11 @@ def year_searcher(Year):
             # Markers are created based on location and longitude and a popup is created for the particular location
             folium.CircleMarker(location=[Latitude, Longitude], radius=10, color='Orange', fill=True, fill_color="Red", popup=popup).add_to(mymap)
     else:
-        html = '<div style="font-size: 20pt; color : black">No cane toad sightings reported for the year 2021</div>'
+        html = '<div style="font-size: 30 pt; color : black">No cane toad sightings reported </div>'
         marker = folium.Marker(
         location=[-25.2744, 133.7751],
         icon=folium.DivIcon(
-        icon_size=(150,36),
+        icon_size=(150,150),
         icon_anchor=(0,0),
         html=html
     ))

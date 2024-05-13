@@ -2,9 +2,9 @@ from werkzeug.utils import secure_filename
 
 import app
 from flask import Flask, render_template, request, jsonify
-# from Backend_code.yearsearcher import year_searcher
-from Backend_code.suburbsearcher import suburb_searcher
-# from Backend_code.csv_code import suburb_searcher2
+from Backend_code.yearsearcher import year_searcher
+#from Backend_code.suburbsearcher import suburb_searcher
+from Backend_code.csv_code import suburb_searcher2
 from Backend_code.classify import main
 import os
 from datetime import datetime
@@ -93,19 +93,27 @@ def test_your_knowledge():
 @app.route('/model_identifier', methods=['POST'])
 def model_identifier():
     if 'imageFile' not in request.files:
-        return jsonify({'error': 'No file part'})
+        return jsonify({'error': 'No file found in request'}), 400
     file = request.files['imageFile']
+    print(file.filename)
     if file.filename == '':
-        return jsonify({'error': 'No selected file'})
+        return jsonify({'error': 'No file selected'}), 400
     if file:
+
+        # Check if the file is larger than 5MB
+        if int(request.headers['Content-Length']) > 5 * 1024 * 1024: # 5MB
+            clear_upload_folder()
+            return jsonify({'error': 'File size is too large. Maximum file size is 5MB'}), 400
 
         # Check if the file is an image
         if file.filename.split('.')[-1] in ['jpg', 'png', '.jpeg', '.gif', '.tiff', '.bmp', '.ppm']:
-            # Try converting other image types to jpg
+            # Try converting other image types to jpeg
             try:
                 img = Image.open(file)
                 img = img.convert('RGB')
-                file.filename = img.save(file.filename.split('.')[0] + '.jpg')
+                new_filename = file.filename.split('.')[0] + '.jpeg'
+                img.save(new_filename)
+                file.filename = new_filename
             # If it fails, return an error
             except Exception as e:
                 clear_upload_folder()

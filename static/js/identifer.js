@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var fileInput = document.getElementById('imageUpload');
     var submitBtn = document.getElementById('submitBtn');
     var resultDiv = document.getElementById('result');
+    var loadingSpinner = document.getElementById('loadingSpinner'); // Get the spinner element
 
     fileInput.addEventListener('change', function(event) {
         var file = event.target.files[0];
@@ -18,25 +19,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Submit button click event handler function
     submitBtn.addEventListener('click', function(event) {
-        event.preventDefault();  //
+        event.preventDefault();
+        loadingSpinner.style.display = 'block'; // Show the spinner when submit is clicked
         var formData = new FormData();
         formData.append('imageFile', fileInput.files[0]);
+
         fetch('/model_identifier', {
-    method: 'POST',
-    body: formData,
-})
-.then(response => response.json())
-.then(data => {
-    if (data.error) {
-        resultDiv.innerHTML = 'Error: ' + data.error;
-    } else {
-        resultDiv.innerHTML = '<strong>Is it a Cane Toad?</strong>: ' + (data.is_canetoad ? 'Yes' : 'No');
-                              //'<br><strong>Confidence:</strong> ' + (data.confidence * 100).toFixed(2) + '%'//;
-    }
-})
-.catch(error => {
-    console.error('Error:', error);
-    resultDiv.innerHTML = 'An error occurred.';
-});
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            loadingSpinner.style.display = 'none'; // Hide the spinner when data is received
+            if (data.error) {
+                resultDiv.innerHTML = 'Error: ' + data.error;
+            } else {
+                resultDiv.innerHTML = '<strong>Is it a Cane Toad?</strong>: ' + (data.is_canetoad ? 'Yes' : 'No');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.innerHTML = 'An error occurred.';
+            loadingSpinner.style.display = 'none'; // Hide the spinner on error
+        });
     });
 });

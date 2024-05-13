@@ -77,6 +77,48 @@ body {
     transform: scale(1.2);
 }
 
+
+
+
+
+.sidebar {
+    position: fixed;  
+    left: 0;
+    top: 50%;        
+    transform: translateY(-50%);
+    background-color: #F4DBC5; 
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    padding: 10px;
+    z-index: 1000; 
+}
+
+.sidebar a {
+    display: block;
+    padding: 8px;
+    color: #333; 
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    background-color: #F4DBC5;
+}
+
+.sidebar a.active {
+    background-color: #F79E02; /* 高亮颜色 */
+    color: white; /* 文字颜色 */
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Exclude specific elements from having the hover effect */
 .navbar-items .nav-item.no-hover:hover {
     transform: none !important; /* Prevent transform on hover */
@@ -137,7 +179,6 @@ body {
 
 /* history page */
 
-/* Your existing CSS styles */
 
 /* Add specific styles for the hero image */
 .header-section {

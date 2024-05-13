@@ -289,3 +289,38 @@ button:hover {
       align-items: center; /* Center the links */
     }
   }
+
+
+.search-container {
+     position: relative; /* Set positioning context */
+     width: 100%; /* Or adjust the width as needed */
+}
+
+#suburbInput {
+     width: 100%; /* The input box occupies the entire width of the container */
+     padding: 10px;
+     margin-bottom: 10px; /* Appropriate spacing */
+     box-sizing: border-box; /* width calculation including padding and border */
+}
+
+.autocomplete-results {
+     position: absolute;
+     top:240px; /* Located directly below the input box */
+     left: 0; /* Align with the left edge of the input box */
+     right: 0; /* Align with the right edge of the input box to ensure consistent width */
+     max-height: 200px; /* Control the maximum height */
+     overflow-y: auto; /* Display scroll bars when the maximum height is exceeded */
+     border: 1px solid #ccc; /* Add border */
+     background-color: white;
+     z-index: 1000; /* Make sure it is above other elements */
+     box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+.autocomplete-results div {
+     padding: 8px; /* Adjust padding to better display each item */
+     border-bottom: 1px solid #ccc; /* Separator between items */
+}
+
+.autocomplete-results div:hover {
+     background-color: #f1f1f1; /* Background color when mouse is hovering */
+}

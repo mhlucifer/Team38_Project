@@ -80,9 +80,9 @@ def identifier():
     return render_template('identifier.html')
 
 
-@app.route('/test_your_knowlege')
+@app.route('/test_your_knowledge')
 def test_your_knowledge():
-    return render_template('test_your_knowlege.html')
+    return render_template('test_your_knowledge.html')
 
 
 @app.route('/model_identifier', methods=['POST'])
@@ -161,6 +161,18 @@ def generate_map():
             return jsonify({'error': 'No data found for the provided input'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+def load_locations():
+    with open("./static/api/location.txt", "r") as file:
+        return [line.strip() for line in file]
+
+
+@app.route('/autocomplete', methods=['GET'])
+def autocomplete():
+    query = request.args.get('query', '').lower()
+    suggestions = [line for line in load_locations() if query in line.lower()]
+    return jsonify(suggestions)
 
 
 if __name__ == '__main__':

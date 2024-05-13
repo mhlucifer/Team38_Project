@@ -313,11 +313,74 @@ button:hover {
     background-color: #EF6C00;
 }
 
+/* Ensure that the container of the input box is relatively positioned */
 .text-container {
-    width: 50%;
-    padding: 2rem;
-    background-color: #123456; 
-    color: white;
+     position: relative;
+     width: 100%;
+     padding: 20px;
+     background-color: #f0f0f0;
+}
+
+/* Input box style */
+#suburbInput {
+     width: 100%;
+     padding: 10px;
+     margin: 0;
+     border: 2px solid #ccc;
+     border-radius: 4px;
+     font-size: 16px;
+}
+
+/* Search button style */
+button {
+     width: 30%;
+     padding: 10px 20px;
+     margin-left: 0px; /* There is a gap between the input box and the input box */
+     margin-top: 10px;
+     border: none;
+     background-color: #F4DBC5;
+     color: black;
+     border-radius: 4px;
+     cursor: pointer;
+}
+
+.suggestions {
+     position: absolute;
+     top: 126px; /* Increase the top value to ensure that the drop-down box is completely below the input box */
+     left: 30px;
+     right: 0;
+     border: 1px solid #ccc;
+     background-color: white;
+     display: none; /* Not displayed by default, only displayed when there are suggestions */
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.suggestions div {
+     padding: 10px;
+     cursor: pointer;
+     border-bottom: 1px solid #ccc;
+}
+
+.suggestions div:hover {
+     background-color: #e9e9e9;
+}
+
+#messageBox {
+     width: 95%;
+     padding: 10px 20px;
+     margin-top: 20px; /* Increase top gap */
+     border: 1px solid #ccc; /* Add border */
+     background-color: #f8f8f8; /* Slight background color */
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional slight shadow */
+     border-radius: 4px; /* rounded border */
+     display: none; /* Not displayed by default, only displayed when there is content */
+     font-size: 16px; /* font size */
+     color: #333; /* font color */
+}
+
+/* Display message box when there is content */
+.report .text-container.active #messageBox {
+     display: block;
 }
 
 /* Responsive adjustments */

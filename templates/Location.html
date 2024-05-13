@@ -21,8 +21,7 @@
       <a href="/main" class="nav-item">Home</a>
       <div class="nav-item dropdown">
           <div class="dropdown-container">
-              <span class="nav-text">Info Toad</span>
-              <button class="dropbtn">▼</button>
+            <span class="nav-text">Info Toad ▼</span>
           </div>
           <div class="dropdown-content">
               <a href="/history">History</a>
@@ -32,7 +31,7 @@
       <a href="/location" class="nav-item active">Cane Toad Locator</a>
       <a href="/identifier" class="nav-item">Cane Toad Identifier</a>
       <a href="/handle" class="nav-item">Handling</a>
-      <a href="#" class="nav-item">Test Your Knowledge</a>
+      <a href="/test_your_knowledge" class="nav-item">Test Your Knowledge</a>
       <a href="/about_us" class="nav-item">About us</a>
   </div>
 </div>
@@ -49,9 +48,10 @@
   <div class="content">
       <iframe id="suburbMapFrame"  frameborder="0"></iframe>
       <div class="search-container">
-          <input type="text" id="suburbInput" placeholder="Enter your suburb">
-          <button onclick="loadMap('suburb')">Search</button>
-      </div>
+        <input type="text" id="suburbInput" placeholder="Enter your suburb" autocomplete="off">
+        <div id="autocomplete-results" class="autocomplete-results"></div>
+        <button onclick="loadMap('suburb')">Search</button>
+    </div>
   </div>
 </section>
 
@@ -68,7 +68,7 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/static/js/location.js"></script>
 
 </div>

@@ -1,7 +1,7 @@
 import mysql.connector
 import folium
 
-
+#searches based on year 
 def year_searcher(Year):
     config = {
         'host': '20.163.171.202',
@@ -10,23 +10,25 @@ def year_searcher(Year):
         'database': 'toad_data',
     }
     
+    #make the connection 
     conn = mysql.connector.connect(**config)
     cursor = conn.cursor()
-
+    #SQL connection 
     query = """SELECT Latitude, Longitude, Year, Suburb
                FROM canetoad_sightings
                WHERE Year = %s;"""
     cursor.execute(query, (Year,))
-
+    #This looks up all the results 
     results = cursor.fetchall()
     total_results = len(results)
 
     # Center of the map 
     mymap = folium.Map(location=[-25.2744, 133.7751], zoom_start=4)
+    #this checks for total_results , if they are more than 0
 
     if total_results > 0:
         total = {}
-
+        #iterates over all ther results 
         for result in results:
             # The following is the result
             Latitude, Longitude, Year, Suburb = result
@@ -40,7 +42,7 @@ def year_searcher(Year):
             # Markers are created based on location and longitude and a popup is created for the particular location
             folium.CircleMarker(location=[Latitude, Longitude], radius=10, color='Orange', fill=True, fill_color="Red", popup=popup).add_to(mymap)
     else:
-        html = '<div style="font-size: 30 pt; color : black">No cane toad sightings reported </div>'
+        html = '<div style="font-size: 100 pt; color : black">No cane toad sightings reported </div>'
         marker = folium.Marker(
         location=[-25.2744, 133.7751],
         icon=folium.DivIcon(

@@ -42,7 +42,7 @@ def suburb_searcher(suburb):
             folium.CircleMarker(location=[Latitude, Longitude], radius=8, color='Orange', fill=True, fill_color="Red", popup=popup).add_to(mymap)
     else:
         mymap = folium.Map(location=[-25.2744, 133.7751], zoom_start=6)  # Center map on Australia
-        html = '<div style="font-size: 30 pt; color: black">No cane toad sightings reported</div>'
+        html = '<div style="font-size: 100 pt; color: black">No cane toad sightings reported</div>'
         marker = folium.Marker(
             location=[-25.2744, 133.7751],
             icon=folium.DivIcon(

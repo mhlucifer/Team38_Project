@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error:', error);
-            resultDiv.innerHTML = 'Unexpected error occurred. Please try another image.';
+            resultDiv.innerHTML = 'Sorry, an unexpected error has occurred. Please try uploading another image?';
             loadingSpinner.style.display = 'none'; // Hide the spinner on error
         });
     });

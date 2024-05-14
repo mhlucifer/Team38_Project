@@ -47,7 +47,7 @@ def login_page1():
 @app.route('/login-password', methods=['POST'])
 def login_page():
     password = request.form['password']
-    if password == '1234':
+    if password == 'tptt':
         return jsonify({"success": True, "message": "Login successful"})
     else:
         return jsonify({"success": False, "message": "Invalid password,Please try again"}), 401

@@ -29,8 +29,14 @@ body {
     padding-left: 10px;
 }
 .logo-link {
-    text-decoration: none; /* Remove underline from the link */
-    color: white; /* Set link color */
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Display as flex container */
+    align-items: center; /* Center items vertically */
+}
+
+.logo-link:hover {
+    text-decoration: none; /* Remove underline on hover as well */
 }
 
 
@@ -146,7 +152,7 @@ body {
 /* Header Section styles */
 .header-section {
     position:relative;
-    background-image: url("/static/images/hero_image_about_us.png");
+    background-image: url("/static/images/take-action.jpeg");
     background-size: 100% auto;
     background-position: center; /* Center the background image horizontally and vertically */
     z-index: -1;
@@ -163,7 +169,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(2, 25, 21, 0.6); 
+    background-color: rgba(2, 25, 21, 0.545); 
     z-index: -1; 
 }
 

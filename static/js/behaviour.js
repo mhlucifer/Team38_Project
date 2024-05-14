@@ -6,15 +6,11 @@ const slides = Array.from(document.querySelectorAll(".card"));
 
 const clock = document.querySelector("#clock-table");
 
-
 const timeLabels = ['Daytime Preference', 'Mobility', 'Mating Behaviour'];
-
 
 timeLabels.forEach((label, index) => {
     addThickClockScale(index * 120, label); // 360 / 3 = 120
-
 });
-
 
 function addThickClockScale(degree, label) {
     const invisibleClockTable = document.createElement("div");
@@ -29,30 +25,29 @@ function addThickClockScale(degree, label) {
     clock.appendChild(invisibleClockTable);
 }
 
-
 function slideToPrev() {
-    offset = Math.max(minOffset, offset - 1);
+    offset = offset === minOffset ? maxOffset : offset - 1;
     updateSlidesAndClock();
 }
-
 
 function slideToNext() {
-    offset = Math.min(maxOffset, offset + 1);
+    offset = offset === maxOffset ? minOffset : offset + 1;
     updateSlidesAndClock();
 }
 
-
 function updateSlidesAndClock() {
-    slides.forEach(slide => {
-        slide.style.transform = `translateY(${offset * -100}%)`;
+    slides.forEach((slide, index) => {
+        if (index === offset) {
+            slide.classList.add('active'); // Add active class to display the card
+        } else {
+            slide.classList.remove('active'); // Remove active class to hide the card
+        }
     });
-    clockRotate(offset * 120);
+    clockRotate(offset * 120); // Rotate clock based on offset
 }
 
 
 function clockRotate(degree) {
     clock.style.transform = `rotate(${degree}deg)`;
 }
-
-
 updateSlidesAndClock();

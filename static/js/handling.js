@@ -60,3 +60,17 @@ function searchLocation() {
          messageBox.style.display = 'block'; // Display message even if there is no match
      }
 }
+
+function changeSlide(index) {
+    const carousel = document.getElementById('carouselInner');
+    const itemWidth = document.querySelector('.carousel-item').offsetWidth;
+    carousel.style.transform = `translateX(-${(index - 1) * itemWidth}px)`;
+
+    // Highlight active label
+    const labels = document.querySelectorAll('.carousel-controls label');
+    labels.forEach(label => {
+        label.classList.remove('active');
+    });
+    const activeLabel = document.getElementById(`label${index}`);
+    activeLabel.classList.add('active');
+}

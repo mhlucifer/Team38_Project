@@ -2,7 +2,11 @@
 import mysql.connector
 import folium
 import datetime
+
 def suburb_searcher(suburb):
+  if not suburb:  
+        print("Invalid input: No data provided.")
+        return None
   #Change the suburb
   Suburb=suburb.title()
   config = {
@@ -12,6 +16,7 @@ def suburb_searcher(suburb):
   'database':'toad_data',
 
   }
+  #Make the connection
   conn = mysql.connector.connect(**config)
 
   cursor=conn.cursor()
@@ -22,9 +27,10 @@ def suburb_searcher(suburb):
   """
   cursor.execute(Query, (Suburb,))
   results = cursor.fetchall()
-
+  total_results=len(results)
   initial_lat, initial_lon = results[0][0], results[0][1]
   mymap = folium.Map(location=[initial_lat, initial_lon], zoom_start=6)
+
   #Make a dictionary 
   total={}
   #Go over the results 
@@ -40,6 +46,7 @@ def suburb_searcher(suburb):
     popup = folium.Popup(text, parse_html=True)
     #Markers are created based on location and longitude and a pop is created for the particular location
     folium.CircleMarker(location=[Latitude, Longitude],radius=8, color='Orange',  fill=True,fill_color="Red",popup=popup).add_to(mymap)
+  
   #save the filename
   timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
   filename = f"suburb_map_{timestamp}.html"

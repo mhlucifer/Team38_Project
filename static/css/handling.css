@@ -29,8 +29,14 @@ body {
     padding-left: 10px;
 }
 .logo-link {
-    text-decoration: none; /* Remove underline from the link */
-    color: white; /* Set link color */
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Display as flex container */
+    align-items: center; /* Center items vertically */
+}
+
+.logo-link:hover {
+    text-decoration: none; /* Remove underline on hover as well */
 }
 
 
@@ -135,83 +141,173 @@ body {
 
 
 /* Styling for the main header */
-.main-header {
-    background-image: url('/static/images/handling_header.jpg');
-    color: #fff;
-    text-align: center;
-    padding: 100px 0; 
-    font-family: Salsa;
+.header-section {
+    position: relative;
+    background-image: url("/static/images/handler-ai.png");
     background-size: cover;
-    text-shadow: 2px 2px 4px black; /* Add text shadow for header */
-}
+    background-position:center left ; /* Center the background image horizontally and vertically */
 
-
-
-
-
+    z-index: 0;
+    height: 300px; /* Adjust height as needed */
+  }
+  
+  .header-section::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(6, 47, 82, 0.534);
+    z-index: -1;
+  }
+  
+  .header {
+    text-align: center;
+    color: white;
+    padding: 4rem 0;
+    text-shadow: 2px 2px 4px black;
+  }
+  
+  .header h1 {
+    font-family: 'Salsa', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
 
 
 .content-section.guide {
-    padding: 20px; /* Padding around the entire section */
-    background-color: #042237; /* Background color for the section */
-    box-sizing: border-box;
-    height: auto; /* Adjust height as needed */
-    display: flex;
-    flex-direction: column; /* Stack vertically */
+    padding: 20px;
+    background-color: #042237;
+    color: white;
 }
 
 .guide-title {
-    width: 100%;
-    color: white;
     text-align: center;
-    margin-bottom: 20px; /* Space below the title */
+    margin-bottom: 20px;
 }
 
 .shell {
     display: flex;
-    width: 100%;
-    justify-content: space-between; /* Space between image and carousel */
-    align-items: flex-start; /* Align at the top */
+    justify-content: center;
+    align-items: center;
 }
-
-.guide-image {
-    flex: 1; /* Flexibility in sizing */
-    max-width: 30%; /* Maximum width allocated */
-    text-align: center; /* Center the image */
-    padding-right: 20px; /* Padding to separate from carousel */
-}
-
-.guide-image img {
-    width: 80%; /* Full width of the container */
-    height: auto; /* Maintain aspect ratio */
-}
+  
+  .header-section::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }
+  
+  .header {
+    text-align: center;
+    color: white;
+    padding: 6.5rem 0;
+    text-shadow: 2px 2px 4px black;
+  }
+  
+  .header h1 {
+    font-family: 'Salsa', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
 
 .carousel {
-    flex: 1;
-    max-width: 60%; /* Maximum width allocated */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .carousel-inner {
     display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* No scrollbar for cleaner design */
+    width: 500%; /* Adjust based on the number of items */
+    transition: transform 0.5s ease;
 }
 
 .carousel-item {
-    min-width: 300px; /* Minimum width for each item */
-    margin-right: 100px; /* Space between items */
-    background: white;
-    padding: 40px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    border-radius: 4px;
+    flex: 0 0 20%; /* Adjust based on the number of items */
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-item .step-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-item .step-image {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.carousel-item  {
+    max-width: 100%;
+    height: auto;
+}
+
+.step-image img {
+    max-width: 300px; /* Adjust the max-width as needed */
+    max-height: 300px; /* Adjust the max-height as needed */
+    border: 2px solid #ccc; /* Border style */
+    border-radius: 5px;
+}
+
+.carousel-item .step-info {
+    flex: 2;
+    text-align: left;
 }
 
 .carousel-controls {
     display: flex;
-    justify-content: space-between; /* Space out previous and next buttons */
-    margin-top: 10px; /* Margin from the carousel items */
+    justify-content: center;
+    margin-top: 10px;
 }
+
+.carousel-controls label {
+    cursor: pointer;
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #000;
+    transition: background-color 0.3s ease;
+}
+
+input[type="radio"]:checked + .carousel-inner {
+    transform: translateX(calc(-20% * (var(--index) - 1))); /* Adjust based on the number of items */
+}
+
+input[type="radio"]:checked + .carousel-controls label {
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.carousel-controls label.active {
+    background-color: #EF6C00;
+    color: #fff;
+}
+
+
+/* Adjust transform calculation based on the number of slides */
+
+
 
 .button {
     cursor: pointer;
@@ -408,7 +504,7 @@ button {
     flex-direction: column; /* Stack elements vertically */
     align-items: flex-start; /* Align children to the left */
     padding: 1rem 2rem;
-    background-color: #F4C194; /* Change to match the exact color */
+    background-color: #b2cee8; /* Change to match the exact color */
     color: black; 
   }
   

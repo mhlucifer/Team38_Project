@@ -29,10 +29,15 @@ body {
     padding-left: 10px;
 }
 .logo-link {
-    text-decoration: none; /* Remove underline from the link */
-    color: white; /* Set link color */
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Display as flex container */
+    align-items: center; /* Center items vertically */
 }
 
+.logo-link:hover {
+    text-decoration: none; /* Remove underline on hover as well */
+}
 
 .frog-icon {
     width: 40px;
@@ -141,22 +146,54 @@ body {
 
 
 /* Styling for the main header */
-.main-header {
-    background-image: url('/static/images/test_your_knowledge.png');
-    color: #FFFFFF;
-    text-align: center;
-    padding: 100px 0; 
-    font-family: Salsa;
+.header-section
+{
+    position: relative; 
+    background-image: url("/static/images/testyourknowledgeh.png");
     background-size: cover;
+    background-position:center;
+    background-position-y: 30%;
+    z-index: 0;
+    height: 300px;
+    
+}
+
+.header-section::before {
+    content: '';
+    display: block; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(6, 82, 71, 0.6); 
+    z-index: -1; 
+}
+
+
+
+.header {
+    text-align: center;
+    font-family: 'Salsa', cursive;
+    font-size: 1.5rem;
+    color: white;
+    padding: 5rem 0;
     text-shadow: 2px 2px 4px black; /* Add text shadow for header */
 }
 
 #quiz-container
 {
     background-color: #042237;
-    margin-top:0px
+    padding: 20px;
+    text-align: center;
 }
 
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Spacing between grid items */
+    justify-content: center; /* Center items horizontally */
+}
 
 .overlay {
     position: fixed;
@@ -177,13 +214,18 @@ body {
 
 
 .quiz-box {
-    background-color: #FFFFFF; /* A more vibrant blue */
-    margin: 10px;
+    background-color: #FFFFFF;
     padding: 20px;
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
-    flex: 1 1 45%; /* Keeps the original width adjustments */
-    border-radius: 10px; /* Rounded corners */
+    max-width: 600px; /* Set a minimum width for consistency */
+    min-height: 200px; /* Set a minimum height for consistency */
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding and borders in box size */
+    margin-left: 100px ;
+    margin-right: -40px ;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .quiz-box:hover {
@@ -312,6 +354,10 @@ button:hover {
     .footer-section {
       flex-direction: column; /* Stack the elements on smaller screens */
       text-align: center;
+    }
+
+    .quiz-box {
+        flex-basis: calc(100% - 20px); /* Each box takes 100% width minus margins on smaller screens */
     }
   
     .footer-links {

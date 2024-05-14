@@ -29,8 +29,14 @@ body {
   padding-left: 10px;
 }
 .logo-link {
-  text-decoration: none; /* Remove underline from the link */
-  color: white; /* Set link color */
+  text-decoration: none;
+  color: inherit;
+  display: flex; /* Display as flex container */
+  align-items: center; /* Center items vertically */
+}
+
+.logo-link:hover {
+  text-decoration: none; /* Remove underline on hover as well */
 }
 
 
@@ -137,12 +143,13 @@ body {
 /* Add specific styles for the hero image */
 .header-section {
   position: relative;
-  background-image: url("/static/images/identifierbg.jpg");
+  background-image: url("/static/images/hero_image_about_us.png");
   background-size: center;
-  background-position: center; /* Center the background image horizontally and vertically */
+  background-position: center;
+  background-position-y: 30%; /* Center the background image horizontally and vertically */
   z-index: 0;
   height: 300px; /* Adjust height as needed */
-  margin-top: 0;
+  
 }
 
 .header-section::before {
@@ -153,14 +160,14 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+ 
   z-index: -1;
 }
 
 .header {
   text-align: center;
   color: white;
-  padding: 4rem 0;
+  padding: 6.5rem 0;
   text-shadow: 2px 2px 4px black;
 }
 
@@ -214,7 +221,7 @@ body {
 }
 
 .upload-container {
-  border: 2px dashed #042237;
+  border: 2px dashed rgba(3, 34, 107, 0.523);
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
@@ -223,7 +230,7 @@ body {
 
 .content-container {
   background-color: #042237;
-  border: 4px solid #c1d1d9;
+  border: 4px solid #adc3ce;
   border-radius: 8px;
   text-align: justify;
   font-family: 'Open Sans', sans-serif;
@@ -285,7 +292,7 @@ body {
   }
   
   .upload-box:hover {
-    background-color: #f4c8c8;
+    background-color: #f5d497;
   }
 
   

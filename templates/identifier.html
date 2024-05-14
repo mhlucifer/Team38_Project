@@ -46,7 +46,7 @@
 
   <div class="container-wrapper">
     <div class="upload-container">
-      <h1>Please ensure toad is clearly shown in the image</h1>
+      <h2>Please ensure toad is clearly shown in the image</h2>
       <form id="uploadForm" enctype="multipart/form-data">
         <div id="uploadBox" class="upload-box" onclick="document.getElementById('imageUpload').click();">
           <span id="uploadText">Upload image here (max. 5MB)</span>
@@ -58,14 +58,15 @@
       <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
         <span class="sr-only">Loading...</span>
     </div>
+      <div id="result"></div>
     </div>  
     <div class="content-container">
-      <div id="result"></div>
       
       <!-- About the Cane Toad Identifier -->
       <div class="info-section">
         <h2>About the Cane Toad Identifier</h2>
-        <p>The Cane Toad Identifier is a tool designed to help identify cane toads (Rhinella marina) from images.</p>
+        <p>Hello! I am a neural network trained specifically to help you identify cane toads <i>(Rhinella marina)</i> from images.</p>
+        <p>Simply upload an image of a cane toad and I will do my best to identify it for you.</p>
       </div>
       
       <!-- How to Use section -->
@@ -79,7 +80,7 @@
           <li>The identification results will be shown in the "Result" section below.</li>
           <li>Identified a cane toad near you? Head to our <a href="/handle" style="color: yellow;">handling guide </a> for next steps.</li>
         </ol>
-        <p><strong>Note:</strong> Ensure that the uploaded image contains clear and visible details to improve identification accuracy.</p>
+        <p><strong>Note:</strong> Please ensure that the uploaded image contains clear and visible details to improve my accuracy.</p>
         <p><strong>Disclaimer:</strong> This result is calculated based on a predictive machine learning model and is not a substitute for expert's advice.</p>
       </div>
     </div>

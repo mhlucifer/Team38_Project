@@ -46,7 +46,7 @@ def suburb_searcher(suburb):
         marker = folium.Marker(
             location=[-25.2744, 133.7751],
             icon=folium.DivIcon(
-                icon_size=(150, 150),
+                icon_size=(300, 200),
                 icon_anchor=(0, 0),
                 html=html
             )

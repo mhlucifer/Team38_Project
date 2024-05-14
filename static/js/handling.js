@@ -18,10 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const stateInfo = {
      "Victoria": "Contact Customer Service Center on 136186. If in doubt, take a photograph and email to highrisk.invasiveanimals@agriculture.vic.gov.au",
-     "Queensland": "If you think what you spot is a cane toad, please call the Government of Western Australia Cane Toad Hotline on 1800 084 881.",
+     "Queensland": "No contact number , please follow the instructions provided above.",
      "Western Australia": "If you think what you spot is a cane toad, please call the Government of Western Australia Cane Toad Hotline on 1800 084 881.",
      "New South Wales": "Use this form to report a cane toad https://forms.bf.dpi.nsw.gov.au/forms/9247",
-     "South Australia": "Report any cane toad to National Pest Alert Hotline (Freecall): 1800 084 881."
+     "South Australia": "Report any cane toad to National Pest Alert Hotline (Freecall): 1800 084 881.",
+     "Northern Territory" : "No contact number , please follow the instructions provided above.",
+     "Tasmania": "Report any sightings or concerns to Quarantine Tasmania on 1800 084 881"
 };
 
 function showSuggestions(input) {

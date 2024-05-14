@@ -139,6 +139,12 @@ def clear_upload_folder():
     for file in os.listdir(app.config['UPLOAD_FOLDER']):
         os.remove(os.path.join(app.config['UPLOAD_FOLDER'], file))
 
+def clear_prev_maps():
+    # Remove suburb_map files
+    for file in os.listdir('templates'):
+        if 'suburb_map' in file:
+            os.remove(os.path.join('templates', file))
+
 # Globally store the last file name
 last_generated_file = None
 @app.route('/generate_map', methods=['POST'])
@@ -146,6 +152,11 @@ def generate_map():
     global last_generated_file
     map_type = request.args.get('type')
     value = request.args.get('value')
+    try:
+        clear_prev_maps()
+    except Exception as e:
+        pass
+    
     try:
         if map_type == 'suburb':
             filename = suburb_searcher(value)

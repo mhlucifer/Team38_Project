@@ -196,6 +196,16 @@ body {
     overflow: hidden;
 }
 
+/* css for source section */
+.source{
+    display: flex;
+    position: relative;
+    color: #fff;
+    background-color: #042237;
+    overflow: hidden;
+    padding: 20px;
+}
+
 .iconfont {
     width: 30px; /* Reduce icon size */
     height: 40px; /* Reduce icon height */

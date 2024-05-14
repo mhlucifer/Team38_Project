@@ -93,7 +93,7 @@ def not_found(e):   return render_template('404.html'), 404
 @app.route('/model_identifier', methods=['POST'])
 def model_identifier():
     if 'imageFile' not in request.files:
-        return jsonify({'error': 'No file found in request'}), 400
+        return jsonify({'error': 'No file has been uploaded'}), 400
     file = request.files['imageFile']
     print(file)
     if file.filename == '':
@@ -156,7 +156,7 @@ def generate_map():
         clear_prev_maps()
     except Exception as e:
         pass
-    
+
     try:
         if map_type == 'suburb':
             filename = suburb_searcher(value)

@@ -41,17 +41,18 @@ def suburb_searcher(suburb):
             # Markers are created based on location and longitude and a popup is created for the particular location
             folium.CircleMarker(location=[Latitude, Longitude], radius=8, color='Orange', fill=True, fill_color="Red", popup=popup).add_to(mymap)
     else:
-        mymap = folium.Map(location=[-25.2744, 133.7751], zoom_start=6)  # Center map on Australia
-        html = '<div style="font-size: 100 pt; color: black">No cane toad sightings reported</div>'
+        mymap = folium.Map(location=[-25.2744, 133.7751], zoom=2)
+        html = '<div style="font-family: \'Open Sans\', sans-serif; font-size: 50px; color: white; background-color: rgba(0,0,0,0.5); padding: 10px;">No cane toad sightings reported</div>'
         marker = folium.Marker(
-            location=[-25.2744, 133.7751],
-            icon=folium.DivIcon(
-                icon_size=(300, 200),
-                icon_anchor=(0, 0),
-                html=html
-            )
-        )
-        marker.add_to(mymap)
+        location=[-25.2744, 133.7751],
+        icon=folium.DivIcon(
+        icon_size=(500,500),
+        icon_anchor=(0,0),
+        html=html
+    )
+)
+    marker.add_to(mymap)
+
 
     # Save the filename
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")

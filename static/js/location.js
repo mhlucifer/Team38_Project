@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    // Request default map
+    loadMap('suburb', 'default');
+    loadMap('year', 'default');
+
     $("#suburbInput").on("input", function() {
         var inputVal = $(this).val();
         if(inputVal.length > 1){ // Start search after at least 2 characters
@@ -16,6 +20,14 @@ $(document).ready(function() {
             $("#autocomplete-results").empty();
         }
     });
+
+    $("#searchSuburbBtn").click(function() {
+        loadMap('suburb');
+    });
+
+    $("#searchYearBtn").click(function() {
+        loadMap('year');
+    });
 });
 
 function selectResult(value) {
@@ -23,25 +35,17 @@ function selectResult(value) {
     $("#autocomplete-results").empty();
 }
 
-
-
-
-
-
-
-
-
-
-
-function loadMap(type) {
-    let input;
-    if (type === 'year') {
-        input = document.getElementById('yearInput').value;
-    } else if (type === 'suburb') {
-        input = document.getElementById('suburbInput').value;
-    } else {
-        console.error('Unknown type for map generation');
-        return;
+function loadMap(type, value = null) {
+    let input = value;
+    if (!input) {
+        if (type === 'year') {
+            input = document.getElementById('yearInput').value;
+        } else if (type === 'suburb') {
+            input = document.getElementById('suburbInput').value;
+        } else {
+            console.error('Unknown type for map generation');
+            return;
+        }
     }
 
     let apiUrl = `/generate_map?type=${type}&value=${input}`;
@@ -70,5 +74,3 @@ function loadMap(type) {
         alert('An error occurred while generating the map.');
     });
 }
-
-

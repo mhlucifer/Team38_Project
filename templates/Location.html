@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/static/css/location.css">
 </head>
 
+<body>
 <div class="navbar">
   <div class="navbar-logo">
       <a href="/main" class="logo-link">
@@ -60,11 +61,11 @@
 <section class="container suburb-container">
   <h2>Use this map to locate where Cane Toads have been found in your suburbs:</h2>
   <div class="content">
-      <iframe id="suburbMapFrame"  frameborder="0"></iframe>
+      <iframe id="suburbMapFrame" src="/generate_map?type=suburb&value=default" frameborder="0"></iframe>
       <div class="search-container">
         <input type="text" id="suburbInput" placeholder="Enter your suburb" autocomplete="off">
         <div id="autocomplete-results" class="autocomplete-results"></div>
-        <button onclick="loadMap('suburb')">Search</button>
+        <button id="searchSuburbBtn" onclick="loadMap('suburb')">Search</button>
     </div>
   </div>
 </section>
@@ -72,31 +73,27 @@
 <section class="container year-container">
   <h2>Use this map to see the Cane Toads population over the years:</h2>
   <div class="content">
-      <iframe id="yearMapFrame" frameborder="0"></iframe>
+      <iframe id="yearMapFrame" src="/generate_map?type=year&value=default" frameborder="0"></iframe>
       <div class="search-container">
           <input type="text" id="yearInput" placeholder="Enter a year">
-          <button onclick="loadMap('year')">Search</button>
+          <button id="searchYearBtn" onclick="loadMap('year')">Search</button>
       </div>
   </div>
 </section>
 
-
-
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/static/js/location.js"></script>
 
-</div>
+</body>
 
 </html>
 
-  
-    <!-- Footer Section -->
+<!-- Footer Section -->
 <footer class="footer-section">
     <div class="footer-links">
       <a href="/about_us">About us</a>
       <a href="/terms">Terms of Use</a>
       <a href="/terms">Data Privacy Policy</a>
-
     </div>
     <div class="footer-copy">
       <p>InvaToad@Copyright</p>

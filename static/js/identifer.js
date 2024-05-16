@@ -34,7 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.error) {
                 resultDiv.innerHTML = 'Error: ' + data.error;
             } else {
-                resultDiv.innerHTML = '<strong>Is it a Cane Toad?</strong>: ' + (data.is_canetoad ? 'Yes' : 'No');
+                var resultMessage = '<strong style="font-size: 1.5em;">Is it a Cane Toad?</strong>: ';
+                resultMessage += data.is_canetoad 
+                    ? '<span style="color: green; font-size: 1.5em;">Yes</span>' 
+                    : '<span style="color: red; font-size: 1.5em;">No</span>';
+                resultDiv.innerHTML = resultMessage;
             }
         })
         .catch(error => {

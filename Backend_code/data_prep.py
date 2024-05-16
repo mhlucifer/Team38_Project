@@ -102,3 +102,5 @@ df['combined_location'] = df['Suburb'] + ', ' + df['postcode'] + ', ' + df['stat
 
 #This dataframe is saved as data.csv 
 
+df.to_csv("data.csv")
+

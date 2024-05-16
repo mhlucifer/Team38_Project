@@ -1,4 +1,4 @@
-from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename, send_from_directory
 import app
 from flask import Flask, render_template, request, jsonify
 from Backend_code.year_searcher import year_searcher
@@ -202,6 +202,11 @@ def autocomplete():
     query = request.args.get('query', '').lower()
     suggestions = [line for line in load_locations() if query in line.lower()]
     return jsonify(suggestions)
+
+
+@app.route('/handling_header')
+def home():
+    return render_template('handling_header.html')
 
 
 if __name__ == '__main__':

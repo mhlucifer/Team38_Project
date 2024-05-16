@@ -344,17 +344,22 @@ input[type="radio"] {
 }
 
 .image-container {
-    width: 35%; 
-    padding: 2rem; 
+    width: 100%;
+    padding: 2rem;
     text-align: center;
     background-color: #7AA4A0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.image-container img {
+.image-container iframe {
     width: 100%;
-    max-width: 500px; 
-    height: auto; 
+    height: 500px; /* 确保iframe有固定的高度 */
+    border: none;
 }
+
+
 
 /* Styling for the Guide section */
 .guide .text-container {
@@ -462,17 +467,20 @@ button {
 }
 
 #messageBox {
-     width: 95%;
-     padding: 10px 20px;
-     margin-top: 20px; /* Increase top gap */
-     border: 1px solid #ccc; /* Add border */
-     background-color: #f8f8f8; /* Slight background color */
-     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional slight shadow */
-     border-radius: 4px; /* rounded border */
-     display: none; /* Not displayed by default, only displayed when there is content */
-     font-size: 16px; /* font size */
-     color: #333; /* font color */
+    width: 95%;
+    padding: 10px 20px;
+    margin-top: 20px; /* Increase top gap */
+    border: 1px solid #ccc; /* Add border */
+    background-color: #f8f8f8; /* Slight background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional slight shadow */
+    border-radius: 4px; /* rounded border */
+    display: none; /* Not displayed by default, only displayed when there is content */
+    font-size: 16px; /* font size */
+    color: #333; /* font color */
+    height: 200px; /* Fixed height */
+    overflow-y: auto; /* Add vertical scroll if content exceeds height */
 }
+
 
 /* Display message box when there is content */
 .report .text-container.active #messageBox {

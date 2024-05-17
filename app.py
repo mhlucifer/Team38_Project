@@ -133,7 +133,7 @@ def model_identifier():
         clear_upload_folder()
         print(response)
         return response
-    
+
 def clear_upload_folder():
     # Remove everything in static/uploads
     for file in os.listdir(app.config['UPLOAD_FOLDER']):
@@ -163,33 +163,17 @@ def generate_map():
             filename = year_searcher(value)
 
         if filename:
-            # Add timestamp to the filename to ensure it is unique
-            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-            base_name, ext = os.path.splitext(filename)
-            unique_filename = f"{base_name}_{timestamp}{ext}"
-            full_path = f'templates/{unique_filename}'
+            full_path = f'templates/{filename}'
 
-            # Attempt to rename the file, catching any errors
-            try:
-                os.rename(f'templates/{filename}', full_path)
-            except OSError as e:
-                return jsonify({'error': f"Error renaming file: {str(e)}"}), 500
-
-            # delete the last file
-            if last_generated_file and os.path.exists(last_generated_file):
-                try:
-                    os.remove(last_generated_file)
-                except OSError as e:
-                    return jsonify({'error': f"Error deleting file: {str(e)}"}), 500
-
-            # add the file name
+            # Update the last generated file
             last_generated_file = full_path
 
-            return render_template(unique_filename)
+            return render_template(filename)
         else:
             return jsonify({'error': 'No data found for the provided input'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
 
 
 @app.route('/clear_maps', methods=['POST'])

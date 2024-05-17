@@ -44,29 +44,33 @@
   </div>
 
   <div class="background-container">
-    <!-- Suburban research area -->
-    <section class="container suburb-container">
-        <h2>Use this map to locate where Cane Toads have been found in your suburbs:</h2>
-        <div class="content">
-            <iframe id="suburbMapFrame" src="/generate_map?type=suburb&value=default" frameborder="0"></iframe>
-            <div class="search-container">
-                <input type="text" id="suburbInput" placeholder="Enter your suburb" autocomplete="off">
-                <div id="autocomplete-results" class="autocomplete-results"></div>
-                <button id="searchSuburbBtn" onclick="loadMap('suburb')">Search</button>
-            </div>
-        </div>
-    </section>
+   <!-- Suburban research area -->
+<section class="container suburb-container">
+  <h2>Use this map to locate where Cane Toads have been found in your suburbs:</h2>
+  <div class="content">
+      <iframe id="suburbMapFrame" src="/generate_map?type=suburb&value=default" frameborder="0"></iframe>
+      <div class="search-container">
+        <input type="text" id="suburbInput" placeholder="Enter your suburb" autocomplete="off">
+        <div id="autocomplete-results" class="autocomplete-results"></div>
+        <button id="searchSuburbBtn" onclick="loadMap('suburb')">Search</button>
+    </div>
+  </div>
+</section>
 
-    <section class="container year-container">
-        <h2>Use this map to see the Cane Toads population over the years:</h2>
-        <div class="content">
-            <iframe id="yearMapFrame" src="/generate_map?type=year&value=default" frameborder="0"></iframe>
-            <div class="search-container">
-                <input type="text" id="yearInput" placeholder="Enter a year">
-                <button id="searchYearBtn" onclick="loadMap('year')">Search</button>
-            </div>
-        </div>
-    </section>
+<section class="container year-container">
+  <h2>Use this map to see the Cane Toads population over the years:</h2>
+  <div class="content">
+      <iframe id="yearMapFrame" src="/generate_map?type=year&value=default" frameborder="0"></iframe>
+      <div class="search-container">
+          <input type="text" id="yearInput" placeholder="Enter a year">
+          <button id="searchYearBtn" onclick="loadMap('year')">Search</button>
+      </div>
+  </div>
+</section>
+
+<!-- Loader Elements -->
+<div class="overlay" id="overlay"></div>
+<div class="loader" id="loader"></div>
 
     <!-- Source information -->
     <div class="source-info">

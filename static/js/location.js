@@ -35,6 +35,16 @@ function selectResult(value) {
     $("#autocomplete-results").empty();
 }
 
+function showLoader() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('loader').style.display = 'block';
+}
+
+function hideLoader() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('loader').style.display = 'none';
+}
+
 function loadMap(type, value = null) {
     let input = value;
     if (!input) {
@@ -49,6 +59,9 @@ function loadMap(type, value = null) {
     }
 
     let apiUrl = `/generate_map?type=${type}&value=${input}`;
+
+    // Show the loader
+    showLoader();
 
     fetch(apiUrl, { method: 'POST' })
     .then(response => {
@@ -72,5 +85,15 @@ function loadMap(type, value = null) {
     .catch(error => {
         console.error('Error:', error);
         alert('An error occurred while generating the map.');
+    })
+    .finally(() => {
+        // Hide the loader
+        hideLoader();
     });
 }
+
+
+// Clear previous maps when user leaves the page
+window.addEventListener('beforeunload', function (event) {
+    navigator.sendBeacon('/clear_maps');
+});

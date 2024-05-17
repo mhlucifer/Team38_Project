@@ -146,16 +146,13 @@ body {
 
 
 /* Styling for the main header */
-.header-section
-{
+.header-section {
     position: relative; 
     background-image: url("/static/images/testyourknowledgeh.png");
     background-size: cover;
     background-position:center;
     background-position-y: 30%;
-    z-index: 0;
     height: 300px;
-    
 }
 
 .header-section::before {
@@ -166,11 +163,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(6, 82, 71, 0.6); 
-    z-index: -1; 
+    background-color: rgba(15, 25, 23, 0.407); 
+    z-index: 1; /* Ensure this is below the .header text */
 }
-
-
 
 .header {
     text-align: center;
@@ -178,8 +173,11 @@ body {
     font-size: 1.5rem;
     color: white;
     padding: 5rem 0;
+    z-index: 2; /* Ensure this is above the .header-section::before */
+    position: relative; /* Create a new stacking context */
     text-shadow: 2px 2px 4px black; /* Add text shadow for header */
 }
+
 
 #quiz-container
 {
@@ -205,6 +203,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index:1000;
 }
 
 .cont-size

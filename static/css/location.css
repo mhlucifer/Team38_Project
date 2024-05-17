@@ -154,7 +154,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(6, 47, 82, 0.534);
+    background-color: rgba(16, 55, 90, 0.54);
     z-index: -1;
   }
   
@@ -171,8 +171,37 @@ body {
     margin-bottom: 0.5rem;
   }
 
+
+  .source-info {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #06524d9b;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-left: 20px;
+}
+
+.source-info p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.source-info .source-label {
+    text-decoration: none; /* Remove underline from "Source" */
+}
+
+.source-info a {
+    color: #ffdd00;
+    text-decoration: underline;
+    font-style: bold;
+    
+}
+
 /* CSS for the first section */
 section {
+    margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 8px;
@@ -215,14 +244,17 @@ section h2 {
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    max-width: 300px; 
+    max-width: 250px; 
     height: 500px; 
+    margin-left: 10px;
+    border-radius: 20px; /* Add border-radius for rounded corners */
 }
 
 
 input[type="text"], button {
     padding: 10px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    border-radius: 5px; 
 }
 
 button {
@@ -240,7 +272,7 @@ button:hover {
 }
 
 .suburb-container {
-    background-color: #042237; 
+    background-color: #065247; 
    
 }
 
@@ -248,9 +280,32 @@ button:hover {
     background-color:#7AA4A0; 
 }
 
-.suburb-container h2, .year-container h2 {
-    color: white; 
+.background-container {
+    background-color: #042237; /* Background color behind both sections */
+    padding: 20px; /* Add padding to create space around the sections */
+     /* Add border radius to match section */
 }
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* Move padding, border-radius, and box-shadow rules to .background-container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.suburb-container h2,
+.year-container h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+    color: white; /* Text color for both sections */
+}
+
+
+
 
 /* Footer Section */
 .footer-section {
@@ -316,7 +371,9 @@ button:hover {
      right: 0; /* Align with the right edge of the input box to ensure consistent width */
      max-height: 200px; /* Control the maximum height */
      overflow-y: auto; /* Display scroll bars when the maximum height is exceeded */
-     border: 1px solid #ccc; /* Add border */
+      /* Add border */
+     border-radius: 2px;
+     border-top: 0;
      background-color: white;
      z-index: 1000; /* Make sure it is above other elements */
      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
@@ -330,3 +387,40 @@ button:hover {
 .autocomplete-results div:hover {
      background-color: #f1f1f1; /* Background color when mouse is hovering */
 }
+
+
+/* Loader CSS */
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-right: 16px solid green;
+            border-bottom: 16px solid red;
+            border-left: 16px solid pink;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            display: none; /* Initially hidden */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Overlay for loader */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none; /* Initially hidden */
+        }

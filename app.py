@@ -1,11 +1,11 @@
-from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename, send_from_directory
 import app
 from flask import Flask, render_template, request, jsonify
 from Backend_code.year_searcher import year_searcher
 from Backend_code.suburb_searcher import suburb_searcher
 from Backend_code.classify import main
 import os
-from datetime import datetime
+from datetime import datetime, time
 from PIL import Image
 
 
@@ -133,29 +133,28 @@ def model_identifier():
         clear_upload_folder()
         print(response)
         return response
-    
+
 def clear_upload_folder():
     # Remove everything in static/uploads
     for file in os.listdir(app.config['UPLOAD_FOLDER']):
         os.remove(os.path.join(app.config['UPLOAD_FOLDER'], file))
 
-def clear_prev_maps():
-    # Remove suburb_map files
-    for file in os.listdir('templates'):
-        if 'suburb_map' in file:
-            os.remove(os.path.join('templates', file))
 
 # Globally store the last file name
 last_generated_file = None
+
+
 @app.route('/generate_map', methods=['POST'])
 def generate_map():
     global last_generated_file
     map_type = request.args.get('type')
     value = request.args.get('value')
-    try:
-        clear_prev_maps()
-    except Exception as e:
-        pass
+
+    # Check for default map requests
+    if map_type == 'suburb' and value == 'default':
+        return render_template('default_suburb_map.html')
+    elif map_type == 'year' and value == 'default':
+        return render_template('default_year_map.html')
 
     try:
         if map_type == 'suburb':
@@ -164,24 +163,30 @@ def generate_map():
             filename = year_searcher(value)
 
         if filename:
-            # Add timestamp to the filename to ensure it is unique
-            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-            unique_filename = f"{filename.split('.')[0]}_{timestamp}.html"
-            full_path = f'templates/{unique_filename}'
-            os.rename(f'templates/{filename}', full_path)
+            full_path = f'templates/{filename}'
 
-            # delete the last file
-            if last_generated_file and os.path.exists(last_generated_file):
-                os.remove(last_generated_file)
-
-            # add the file name
+            # Update the last generated file
             last_generated_file = full_path
 
-            return render_template(unique_filename)
+            return render_template(filename)
         else:
             return jsonify({'error': 'No data found for the provided input'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+
+@app.route('/clear_maps', methods=['POST'])
+def clear_maps():
+    try:
+        for file in os.listdir('templates'):
+            if ('suburb_map' in file or 'year_map' in file) and not (
+                    file == 'default_suburb_map.html' or file == 'default_year_map.html'):
+                os.remove(os.path.join('templates', file))
+        return jsonify({'status': 'success'}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
 
 
 def load_locations():
@@ -194,6 +199,11 @@ def autocomplete():
     query = request.args.get('query', '').lower()
     suggestions = [line for line in load_locations() if query in line.lower()]
     return jsonify(suggestions)
+
+
+@app.route('/handling_header')
+def home():
+    return render_template('handling_header.html')
 
 
 if __name__ == '__main__':

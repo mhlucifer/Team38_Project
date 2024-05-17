@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     $("#suburbInput").on("input", function() {
         var inputVal = $(this).val();
-        if(inputVal.length > 1){ // Start search after at least 2 characters
+        if(inputVal.length > 0){ // Start search after at least 2 characters
             $.ajax({
                 url: "/autocomplete?query=" + encodeURIComponent(inputVal),
                 type: "GET",

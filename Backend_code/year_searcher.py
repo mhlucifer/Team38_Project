@@ -1,3 +1,6 @@
+import os
+import datetime
+
 import mysql.connector
 import folium
 
@@ -50,9 +53,14 @@ def year_searcher(Year):
         icon_anchor=(0,0),
         html=html
     ))
-        marker.add_to(mymap)    
-    
-    filename = "year_map.html"
-    mymap.save('templates/' + filename)
+        marker.add_to(mymap)
+    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    filename = f"year_map_{timestamp}.html"
+    file_path = os.path.join('templates', filename)
+
+    # Save the map
+    mymap.save(file_path)
+
+
 
     return filename
